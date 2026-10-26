@@ -1,0 +1,45 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Why Every IAM Lab Needs a Positive Test and a Failure Test | CyberAndChill</title><meta name="description" content="Why Every IAM Lab Needs a Positive Test and a Failure Test"><link rel="canonical" href="https://blog.cyberandchill.com/posts/why-every-iam-lab-needs-a-positive-test-and-a-failure-test/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">AI · 2026-10-25</p><h1>Why Every IAM Lab Needs a Positive Test and a Failure Test</h1><article class="content">
+<p>An allowed login shows that one path worked. It doesn't establish that the right people were allowed, the wrong people were blocked, or your intended policy caused the outcome.</p>
+<p><strong>Test an allowed case and a comparable denied case.</strong> Then explain which condition makes the results different.</p>
+<p>That gives an access-control lab a stronger conclusion than a successful screenshot alone. Keep the accounts, resource, and session conditions clear so you can distinguish a permission decision from an unrelated failure such as disabled sign-in.</p>
+<h2>Write the expected behavior before configuring access</h2>
+<p><strong>Use a small fictional example: members of a purchasing group may read supplier documents.</strong> A user outside that group may not read them. Neither account should be able to edit the documents.</p>
+<p>Now you have separate requirements to test. Read access and write access are different actions, and a test of one does not establish the other.</p>
+<p>Microsoft's <a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-principals">security principals documentation</a> explains the account and group identities involved in Windows access control. Your exercise adds the specific resource and expected permissions.</p>
+<p><strong>Write the test cases before looking at the result.</strong> Otherwise, it is easy to redefine success around whatever happened.</p>
+<h2>Make the denied user a fair comparison</h2>
+<p>The denied account should reach the same resource through a comparable path. It should not fail simply because the computer is offline or the account cannot authenticate at all.</p>
+<p>If one account can find the server and the other cannot resolve its name, you have not isolated authorization.</p>
+<p>Check the prerequisites that both accounts need. Then vary the access-relevant condition, such as group membership.</p>
+<p>This is the reason a red error message by itself is weak evidence. The failure must correspond to the behavior you intended to test.</p>
+<h2>Test the action, not just the screen</h2>
+<p>Opening a folder is different from reading a file. Reading is different from modifying. A visible application icon is different from permission to use the application's functions.</p>
+<p>State exactly what the user attempted and record the result for that action.</p>
+<p>For a small permissions lab, three tests may be enough: authorized read succeeds, unauthorized read fails, and an authorized reader cannot write. The scenario determines the right set.</p>
+<p>Use ordinary test accounts for these checks. Testing as an administrator can hide the very restrictions you are trying to demonstrate.</p>
+<h2>Retest after removing the permission you rely on</h2>
+<p>Add a controlled change to your allowed and denied cases:</p>
+<ol>
+<li>
+<strong>Remove the relevant membership</strong> from the previously authorized user.</li>
+<li>
+<strong>Check alternate access paths,</strong> such as another group or a direct permission.</li>
+<li>
+<strong>Establish appropriate fresh session conditions</strong> for the system you're testing.</li>
+<li>
+<strong>Repeat the same resource action</strong> and record the result.</li>
+</ol>
+<p>This gives you <a href="https://cyberandchill.com/posts/three-identity-test-cases-that-make-an-access-control-demo">three access-control test cases</a>: intended access, intended denial, and a permission change.</p>
+<p>Keep other conditions comparable. An account prevented from signing in doesn't test the same boundary as an authenticated account denied access to a file.</p>
+<p>If access remains, investigate before declaring the removal ineffective. The user may still have another valid assignment or a session state that affects the test.</p>
+<p>Your explanation should connect the change to the behavior, not just present two screenshots with no account context.</p>
+<h2>Document the limits of your conclusion</h2>
+<p>A good conclusion might be: “In this isolated lab, the configured group allowed read access to this resource, while the comparison account was denied. Neither test account could modify the file.”</p>
+<p>That is narrower and more credible than “implemented enterprise least privilege.”</p>
+<p>Record the accounts, the resource, the relevant configuration, and the session conditions. Keep secrets and real organizational information out of public evidence.</p>
+<p>If a test fails unexpectedly, preserve the observation and explain the correction. A useful lab is allowed to reveal a mistake.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> includes practical lab areas that can become stronger evidence when you test them this way. The $9 guide helps connect those results with the IAM role you are working toward.</p>
+<p>When someone asks whether your access model works, you should have evidence for who gets in and who stays out.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/why-every-iam-lab-needs-a-positive-test-and-a-failure-test">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

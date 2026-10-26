@@ -1,0 +1,97 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Three IAM Labs I'd Build Before Buying Another Cybersecurity Course | CyberAndChill</title><meta name="description" content="Three IAM Labs I'd Build Before Buying Another Cybersecurity Course"><link rel="canonical" href="https://blog.cyberandchill.com/posts/three-iam-labs-i-d-build-before-buying-another-cybersecurity/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>Three IAM Labs I'd Build Before Buying Another Cybersecurity Course</h1><article class="content">
+<p>If you want to move into Identity and Access Management (IAM), you don't need to start with an enormous home lab.</p>
+<p>I'd build <strong>three focused projects</strong> that demonstrate different parts of identity work:</p>
+<ol>
+<li>Control who can access a resource.</li>
+<li>Connect an application to a sign-in system.</li>
+<li>Change access when an employee joins, transfers, or leaves.</li>
+</ol>
+<p>Each project should solve a believable business problem and produce evidence you can show in an interview.</p>
+<p>The goal isn't to collect screenshots. It's to understand how the system behaves—and prove you tested it.</p>
+<h2>Lab 1: Show why one employee gets access and another doesn't</h2>
+<p><strong>Business scenario:</strong> Two employees need different levels of access to the same shared folder.</p>
+<p>In an isolated Windows lab, create:</p>
+<ul>
+<li>Two fictional user accounts.</li>
+<li>A security group for employees who need access.</li>
+<li>One shared test folder or file.</li>
+</ul>
+<p>Give the group the required permission. Add User A to the group and leave User B out.</p>
+<p>Now test using their ordinary accounts, not an administrator account.</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Expected result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>User A opens the folder</td>
+<td>Allowed</td>
+</tr>
+<tr>
+<td>User B opens the folder</td>
+<td>Denied</td>
+</tr>
+<tr>
+<td>User A is removed from the group, then retested appropriately</td>
+<td>Access is revoked</td>
+</tr>
+</tbody>
+</table>
+<p>Remember that group changes and existing sessions or tokens may affect when a permission change takes effect. Record the actual conditions of your test instead of pretending every change is instantaneous.</p>
+<p><strong>What to publish:</strong> A simple access matrix, a diagram of the account/group/resource relationship, and screenshots or logs demonstrating the results.</p>
+<p>Microsoft documents the role of <a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-groups">Active Directory security groups</a> in assigning access to shared resources.</p>
+<h2>Lab 2: Configure single sign-on and troubleshoot a failure</h2>
+<p><strong>Business scenario:</strong> An employee needs to sign in to a test business application using an identity provider.</p>
+<p>Choose a documented application and identity-provider combination you can operate safely.</p>
+<p>Your project should show:</p>
+<ol>
+<li>The application and identity provider are configured to work together.</li>
+<li>A test user can sign in successfully.</li>
+<li>You can explain the basic authentication flow.</li>
+<li>You can introduce and fix <strong><a href="https://cyberandchill.com/posts/your-first-sso-lab-should-include-something-that-breaks">one reversible configuration error</a></strong>.</li>
+</ol>
+<p>For example, depending on the integration, an incorrect redirect URI or other mismatch may cause an authentication failure.</p>
+<p>Don't stop after taking a screenshot of the application dashboard.</p>
+<p>Document the error, where you looked for evidence, the correction, and a successful retest. That's the part that demonstrates troubleshooting.</p>
+<h2>Lab 3: Manage an employee's access through a job change</h2>
+<p><strong>Business scenario:</strong> A fictional employee joins the company, transfers from sales to finance, then leaves.</p>
+<p>Create an access table for each stage:</p>
+<ul>
+<li>
+<strong>Joiner:</strong> Which accounts and permissions are approved for sales?</li>
+<li>
+<strong>Mover:</strong> Which sales entitlements should be removed, and which finance permissions should be added?</li>
+<li>
+<strong>Leaver:</strong> What accounts, application assignments, and sessions need attention?</li>
+</ul>
+<p>You can model the workflow manually before using automation or paid governance features.</p>
+<p>The technical steps matter, but so do the business decisions: who approves access, who owns the application, and how you verify a change.</p>
+<p>Don't claim that disabling one account automatically terminates every existing session in every connected service.</p>
+<p><strong>What to publish:</strong> A before-and-after permission table, a brief workflow diagram, and the results of your access checks.</p>
+<h2>Make each project understandable in 30 seconds</h2>
+<p>Give each project a short README with:</p>
+<ul>
+<li>
+<strong>Problem:</strong> What employee or business need are you addressing?</li>
+<li>
+<strong>Setup:</strong> What systems and fictional accounts did you use?</li>
+<li>
+<strong>Test:</strong> What should work, and what should fail?</li>
+<li>
+<strong>Result:</strong> What actually happened?</li>
+<li>
+<strong>Limitation:</strong> What didn't this small lab test?</li>
+</ul>
+<p>Exclude passwords, tokens, employer details, and sensitive system information from your public portfolio.</p>
+<p>You can reuse the same lab infrastructure for all three projects. What should change is the <strong>skill each project demonstrates</strong>.</p>
+<h2>Choose the lab that matches a job you want</h2>
+<p>You don't need to finish all three before applying anywhere.</p>
+<p>If the roles you're targeting emphasize directory access, begin with Lab 1. If they emphasize federation and troubleshooting, Lab 2 may be more relevant. Governance-focused roles could make Lab 3 a better first choice.</p>
+<p>I mapped these three projects to IAM roles and a 90-day career plan in <a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a>. It's a $9 guide for deciding what to build and how to turn it into credible evidence.</p>
+<p><strong>Finish one project that answers a real hiring question before expanding your home lab.</strong></p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/three-iam-labs-i-d-build-before-buying-another-cybersecurity">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

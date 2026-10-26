@@ -1,0 +1,61 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Build the Business Scenario First. Choose the Identity Tools Second. | CyberAndChill</title><meta name="description" content="Build the Business Scenario First. Choose the Identity Tools Second."><link rel="canonical" href="https://blog.cyberandchill.com/posts/build-the-business-scenario-first-choose-the-identity-tools/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-26</p><h1>Build the Business Scenario First. Choose the Identity Tools Second.</h1><article class="content">
+<p>Before choosing identity tools, define <strong>the person, resource, permitted action, and event that should end access</strong>.</p>
+<p>For example, a contractor needs to read project documents for a limited assignment, must not change them, and should lose that permission when the work ends.</p>
+<p>That gives your lab a purpose and a test plan before you install anything. Choose tools that can demonstrate those requirements, rather than inventing a business story afterward to justify the products you wanted to try.</p>
+<h2>Define the people and the resource</h2>
+<p>Keep the first scenario small. Use a fictional contractor, a project owner, and one test resource containing dummy information. Decide who needs access and who has authority to approve it.</p>
+<p><strong>Avoid adding departments, subsidiaries, and dozens of applications simply to make the story look like an enterprise.</strong> Each extra element should create a question you intend to investigate.</p>
+<p>A narrow scenario is easier to test and explain. You can expand it later when a new requirement justifies the extra complexity.</p>
+<h2>Specify the action, duration, and boundary</h2>
+<p>Write what the user should be able to do, for how long, and what should remain unavailable.</p>
+<p>“Has project access” is too broad. “Can read the project folder during the assignment, cannot modify its files, and cannot access finance material” gives you testable conditions.</p>
+<p>Then define what should trigger a change. The assignment might end, the person's role might change, or the sponsor might reject a renewal.</p>
+<p>These details help you distinguish access provisioning from the ongoing decision about whether access is still appropriate.</p>
+<h2>Write the test cases before configuring the tools</h2>
+<p>Build a small validation table for the fictional contractor:</p>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Expected result</th>
+<th>Evidence to capture</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Approved contractor reads a project file</td>
+<td>Allowed</td>
+<td>The account, action, and observed result</td>
+</tr>
+<tr>
+<td>Contractor attempts to modify the file</td>
+<td>Denied</td>
+<td>The failed operation under the intended permissions</td>
+</tr>
+<tr>
+<td>Assignment ends and access is removed</td>
+<td>Access no longer works under the documented test conditions</td>
+<td>The change and subsequent access check</td>
+</tr>
+</tbody>
+</table>
+<p>Creating an account doesn't prove any of these requirements. Likewise, removing a membership is a configuration action; the resulting behavior still needs a test.</p>
+<p>The <a href="https://cyberandchill.com/posts/three-identity-test-cases-that-make-an-access-control-demo">three identity test cases that make a demo credible</a> provide a useful starting point for this validation plan.</p>
+<p>Record session conditions and limitations. Don't claim that one fresh-session check proves every existing session or connected application has been terminated.</p>
+<h2>Choose a tool that can support the intended test</h2>
+<p>Now consider the implementation. A directory and test folder may be sufficient for a resource-access exercise. A test identity provider and compatible application may be more appropriate for sign-in. A manual approval record can support a governance design exercise when you clearly distinguish it from automated enforcement.</p>
+<p>Check product documentation, prerequisites, licensing, and the limits of your environment before committing.</p>
+<p>There is no advantage in choosing a large platform when most of your time will be spent managing dependencies unrelated to the skill you want to demonstrate.</p>
+<h2>Keep policy and enforcement separate in the write-up</h2>
+<p>Your policy states what should happen. Your configuration or workflow describes how you attempted to make it happen. Your test results show what you observed.</p>
+<p>Those three layers should not be merged into one claim.</p>
+<p>For example, a document saying access expires on Friday does not prove the system removes it. A scheduled removal does not prove every application session has ended. Your evidence should match the exact boundary you tested.</p>
+<p>That distinction makes a small lab more credible without requiring you to simulate every production concern.</p>
+<h2>Finish with a case study someone can follow</h2>
+<p>Lead with the fictional situation, show the important design choice, present the results, and state the limitations.</p>
+<p>Put installation details below the explanation. The reader should understand why the project exists before seeing how you installed its components.</p>
+<p>You now have a project selected for a reason, rather than a tool installation searching for a story.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> includes directory access, SSO, and identity lifecycle lab areas alongside role-selection guidance. The $9 guide helps you choose a relevant direction; a clear business scenario helps make the resulting work understandable and worth discussing in an application or interview.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/build-the-business-scenario-first-choose-the-identity-tools">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

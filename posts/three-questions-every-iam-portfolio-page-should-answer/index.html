@@ -1,0 +1,55 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Three Questions Every IAM Portfolio Page Should Answer | CyberAndChill</title><meta name="description" content="Three Questions Every IAM Portfolio Page Should Answer"><link rel="canonical" href="https://blog.cyberandchill.com/posts/three-questions-every-iam-portfolio-page-should-answer/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-26</p><h1>Three Questions Every IAM Portfolio Page Should Answer</h1><article class="content">
+<p>An IAM portfolio page should answer three questions quickly: <strong>What problem did you test? What did you personally do? What evidence supports the result?</strong></p>
+<p>The configuration details belong underneath those answers. A reviewer shouldn't have to reconstruct the purpose of your project from screenshots and installation notes.</p>
+<p>Start by making the claim easy to evaluate. A small, well-explained access test is more useful than a larger project whose purpose and ownership remain unclear.</p>
+<h2>State the user, resource, and access boundary</h2>
+<p>Compare these descriptions:</p>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>What the reader can evaluate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“Installed Active Directory”</td>
+<td>A component was installed, but its purpose is unclear.</td>
+</tr>
+<tr>
+<td>“Tested whether a contractor could read a project folder without changing its files”</td>
+<td>A specific access requirement with observable results.</td>
+</tr>
+</tbody>
+</table>
+<p>The second description identifies the person, the resource, and the boundary you intended to enforce.</p>
+<p>Make the environment explicit. This was a fictional contractor in an isolated lab, not a real client engagement. Don't add invented business losses or enterprise scale to make the exercise sound important.</p>
+<p>Also describe the limit of the claim. A successful login doesn't prove that folder permissions are correct. The tests need to cover the actual actions your project says should be allowed or denied.</p>
+<h2>Make the requirement testable in one sentence</h2>
+<p>Try this structure: “When [condition], [identity] should be able to [action] on [resource], but not [excluded action].”</p>
+<p>For example: “While assigned to the project, the contractor should be able to read the project folder, but not edit its files or access finance records.”</p>
+<p>The wording is not a security specification for every environment. It is a way to make your small project's goal inspectable.</p>
+<p>Once the requirement is clear, the reader can understand why you chose particular accounts, groups, policies, and tests.</p>
+<h2>Question two: Which part was your work?</h2>
+<p>Separate your decisions from the tools' features and the tutorial's instructions.</p>
+<p>You might have followed vendor guidance to install a product, then designed the fictional access rules, configured the groups, ran the tests, and documented an unexpected result.</p>
+<p>That is a useful contribution. You do not need to imply you invented the platform or wrote every supporting component.</p>
+<p>Explain any relevant assistance honestly. Automation can perform a configuration while you remain responsible for selecting the scenario, checking the result, and understanding the failure conditions.</p>
+<p>A reviewer should be able to ask about your decisions and receive a specific answer.</p>
+<h2>Show a decision that could have gone another way</h2>
+<p>Choose one design choice worth explaining. Perhaps you used separate groups for read and modify access rather than a shared broad permission. Perhaps you kept the first project local rather than adding cloud synchronization immediately.</p>
+<p>Explain the reason and limitation. “This made the small test easier to inspect” is often a better explanation than “This is best practice” with no supporting context.</p>
+<p>You are demonstrating judgment within a defined exercise, not claiming your design should be deployed unchanged everywhere.</p>
+<h2>Question three: What evidence supports the outcome?</h2>
+<p>Place the expected result next to the observed result.</p>
+<p>A compact table can list the identity, attempted action, expected outcome, actual outcome, and relevant evidence. Include a failure case that tests the intended boundary, not just a broken installation.</p>
+<p>For example, a user being denied an action they should not have is a successful security test. An unavailable server preventing everyone from doing anything is not equivalent evidence.</p>
+<p>The <a href="https://cyberandchill.com/posts/three-identity-test-cases-that-make-an-access-control-demo">three test cases that strengthen an access-control demonstration</a> help distinguish meaningful validation from a collection of success screenshots.</p>
+<h2>Put detailed instructions after the answers</h2>
+<p>The full setup remains valuable, but it belongs beneath the summary, decisions, and test results.</p>
+<p>Use descriptive headings so readers can jump to architecture, configuration, troubleshooting, and limitations. Keep the opening focused enough that someone can explain the project back to you after a brief skim.</p>
+<p>Before publishing, ask a person unfamiliar with the lab to answer the three questions. Their confusion will tell you which explanation needs work.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> includes three practical IAM lab areas and guidance on turning them into career evidence. The $9 guide helps you choose useful work; these three questions help make that work understandable to someone considering your application.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/three-questions-every-iam-portfolio-page-should-answer">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

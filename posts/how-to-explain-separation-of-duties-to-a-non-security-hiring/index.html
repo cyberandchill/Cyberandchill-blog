@@ -1,0 +1,46 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>How to Explain Separation of Duties to a Non-Security Hiring Manager | CyberAndChill</title><meta name="description" content="How to Explain Separation of Duties to a Non-Security Hiring Manager"><link rel="canonical" href="https://blog.cyberandchill.com/posts/how-to-explain-separation-of-duties-to-a-non-security-hiring/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">AI · 2026-10-26</p><h1>How to Explain Separation of Duties to a Non-Security Hiring Manager</h1><article class="content">
+<p>Separation of duties prevents <strong>one person from completing a sensitive process without an appropriate independent check</strong>.</p>
+<p>A simple example is a payment process: creating a payment and approving that same payment should not automatically be the same person's responsibility.</p>
+<p>You don't need a long security definition to explain why that matters. Start with the mistake or misuse the organization wants to prevent, then show how the responsibilities and controls are divided.</p>
+<h2>Explain the dangerous combination, not just the individual permissions</h2>
+<p>Imagine a fictional company where an employee can create a supplier, change its bank details, and approve payments to it.</p>
+<p>Each permission may be legitimate for some job. The combination deserves attention because it gives one person control over a complete path from creating the destination to releasing money.</p>
+<p>That is the useful explanation for a hiring manager: the risk comes from capabilities that should not sit together without appropriate controls.</p>
+<p><a href="https://csrc.nist.gov/glossary/term/separation_of_duty">NIST's definition of separation of duty</a> describes dividing sensitive capabilities so one user cannot misuse the system alone.</p>
+<h2>Distinguish separation of duties from least privilege</h2>
+<p>Least privilege asks whether someone has only the access needed for their responsibilities. Separation of duties asks whether particular responsibilities or actions should be kept apart.</p>
+<p>A person could have a carefully limited role and still hold an incompatible second role.</p>
+<p>In the payment example, “payment preparer” and “payment approver” might each be narrowly scoped. Assigning both to the same person could still defeat the intended independent review.</p>
+<p>This is why “we use roles” is not enough. Someone must define which combinations are unacceptable and how exceptions are handled.</p>
+<h2>Describe two ways to enforce the separation</h2>
+<p>One approach prevents conflicting roles from being assigned together. Another checks the specific action, such as preventing the person who submitted a request from approving that request.</p>
+<p>NIST distinguishes these kinds of static and dynamic separation. You do not need the terminology to explain the business effect, but you should understand the difference when discussing a design.</p>
+<p>A small organization may need carefully governed exceptions. That does not mean the conflict disappears. It means the exception needs an owner, a reason, an expiry or review point, and an appropriate independent check.</p>
+<h2>Build a small lab around the approval decision</h2>
+<p>You can explore the concept without buying a large governance platform.</p>
+<p>Create a fictional access-request workflow with requester and approver identities. Define a rule that the requester cannot approve their own request. Record an approved request from a different authorized reviewer and a self-approval attempt that is rejected.</p>
+<p>Label any manual simulation clearly. A spreadsheet showing the intended rule is a design artifact; it is not proof that an application enforces the rule.</p>
+<p>Keep the distinction between policy, implementation, and test evidence visible in your portfolio.</p>
+<h2>Check whether another route bypasses the approval</h2>
+<p>An approval screen doesn't prove that the whole access process is controlled.</p>
+<p>Ask:</p>
+<ul>
+<li>
+<strong>Direct changes:</strong> Could an administrator grant the same access outside the workflow?</li>
+<li>
+<strong>Authority:</strong> Who is permitted to make that direct change?</li>
+<li>
+<strong>Evidence:</strong> Would the change be recorded and reviewed?</li>
+<li>
+<strong>Exceptions:</strong> How would an urgent or unusual request be authorized?</li>
+</ul>
+<p>These questions help you distinguish the workflow's technical enforcement from the surrounding procedures.</p>
+<p>For a small lab, you can demonstrate that <a href="https://cyberandchill.com/posts/a-governance-portfolio-project-that-goes-beyond-creating">one request follows an approval path</a> while acknowledging that privileged administrators have other capabilities. Don't present the exercise as proof that every bypass has been eliminated.</p>
+<p>Explain what the lab enforces, what remains a process requirement, and what would need more investigation in production. That makes the demonstration more credible than simply calling it a complete separation-of-duties solution.</p>
+<h2>Use a plain-English interview answer</h2>
+<p>Try: “Separation of duties prevents one person from controlling incompatible steps in a sensitive process. I would first identify the conflicting actions, then check how the system prevents or detects the combination.”</p>
+<p>Follow it with the payment example or your actual lab. Avoid reciting a control name without explaining the problem it addresses.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> introduces IAM lanes, including governance, and practical ways to build evidence for a career move. The $9 guide helps connect concepts like this to a role and a project rather than leaving them as interview vocabulary.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/how-to-explain-separation-of-duties-to-a-non-security-hiring">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

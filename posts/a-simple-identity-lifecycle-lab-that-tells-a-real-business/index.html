@@ -1,0 +1,89 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A Simple Identity Lifecycle Lab That Tells a Real Business Story | CyberAndChill</title><meta name="description" content="A Simple Identity Lifecycle Lab That Tells a Real Business Story"><link rel="canonical" href="https://blog.cyberandchill.com/posts/a-simple-identity-lifecycle-lab-that-tells-a-real-business/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>A Simple Identity Lifecycle Lab That Tells a Real Business Story</h1><article class="content">
+<p>Use one fictional employee to demonstrate how access changes when someone joins, transfers, and leaves.</p>
+<p><strong>The project should show three verified states, not three account-management screenshots.</strong> Record what the employee needs, what changes, and why each permission is added, retained, or removed.</p>
+<p>Keep the scenario small enough that a reader can inspect the decisions. You can model parts you haven't implemented, provided you label them clearly. That creates a more useful business story than presenting every step as a fully automated enterprise lifecycle process.</p>
+<h2>Give the employee a role and a starting requirement</h2>
+<p>Imagine a fictional employee named Morgan joining the sales team.</p>
+<p>Morgan needs basic employee services and read access to a sales application. Morgan does not need finance approval rights or administrative access.</p>
+<p>Write those requirements before creating anything. Identify who supplies the employee information and who approves the application role.</p>
+<p>In the lab, those people can be fictional workflow roles represented in a document. You do not need to build an HR platform to demonstrate that the source and approval decisions matter.</p>
+<h2>Verify the joiner's initial access state</h2>
+<p>After creating the fictional identity, record four things:</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>What to capture</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Intended assignments</strong></td>
+<td>The approved access for Morgan's starting role</td>
+</tr>
+<tr>
+<td><strong>Observed assignments</strong></td>
+<td>What the implemented system actually shows</td>
+</tr>
+<tr>
+<td><strong>Allowed action</strong></td>
+<td>A test of the required work</td>
+</tr>
+<tr>
+<td><strong>Prohibited action</strong></td>
+<td>A test showing excluded access remains unavailable</td>
+</tr>
+</tbody>
+</table>
+<p>If an application account or approval is simulated, state that instead of implying the whole workflow is live.</p>
+<p>The useful starting state is that Morgan can perform the defined work and cannot perform the excluded action under the conditions you tested.</p>
+<p>An account-list screenshot alone doesn't establish that. Capture the behavior and the relevant context before moving to the transfer stage, so the later comparison starts from a result you've actually verified.</p>
+<h2>Make the move a before-and-after comparison</h2>
+<p>Now Morgan transfers to a reporting team. The new role needs a different resource. The old sales access may need to end, or a limited overlap may be approved for a handover.</p>
+<p>Represent the decision explicitly:</p>
+<table>
+<thead>
+<tr>
+<th>Access</th>
+<th>Before move</th>
+<th>Intended after move</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>General employee services</td>
+<td>Present</td>
+<td>Retained</td>
+</tr>
+<tr>
+<td>Sales application</td>
+<td>Present</td>
+<td>Removed or time-limited</td>
+</tr>
+<tr>
+<td>Reporting resource</td>
+<td>Absent</td>
+<td>Added after approval</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Don't automatically choose removal or retention for every scenario.</strong> Explain the fictional business decision and then implement the part your environment supports.</p>
+<h2>Verify the change as the employee experiences it</h2>
+<p>Check that the new work is possible and that the old access behaves according to the decision.</p>
+<p>Account for the relevant user session and application behavior in your test. A change visible in an administration screen is not always the same as a verified user outcome.</p>
+<p>Record what you refreshed, where you checked, and which systems were outside the lab's scope.</p>
+<p>This gives the project a more useful story than “added Morgan to another group.” It demonstrates that you understood the existing access as well as the new request.</p>
+<h2>Treat leaving as a set of responsibilities</h2>
+<p>When Morgan leaves, identify the access paths and ownership issues the process must address.</p>
+<p>Your small lab may test account disablement and group removal while documenting separate application sessions or data-transfer decisions as limitations.</p>
+<p><strong>Don't imply that one directory action ends every possible session or removes every local application account.</strong></p>
+<p>Use <a href="https://cyberandchill.com/posts/why-offboarding-is-more-than-disabling-an-account">the wider offboarding checklist</a> to explain why the technical scope needs to be stated carefully.</p>
+<h2>Package the project around three state changes</h2>
+<p>Your final page can show the initial state, the move, and the departure with the decision and evidence for each.</p>
+<p>Include any exception, such as a temporary handover permission, and explain who owns the follow-up. Use fictional data throughout.</p>
+<p>A reader should be able to see what changed, why it changed, and how you checked it. They shouldn't need to inspect every configuration screenshot to understand the business story.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> includes identity lifecycle work alongside directory access and SSO labs. The $9 guide helps connect these practical examples to a suitable IAM role and a 90-day plan.</p>
+<p>One employee is enough to demonstrate several important identity decisions. Keep the scenario small and the evidence complete.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/a-simple-identity-lifecycle-lab-that-tells-a-real-business">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

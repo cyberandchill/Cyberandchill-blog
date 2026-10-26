@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>What to Do When Your IAM Lab Doesn't Match the Tutorial | CyberAndChill</title><meta name="description" content="What to Do When Your IAM Lab Doesn't Match the Tutorial"><link rel="canonical" href="https://blog.cyberandchill.com/posts/what-to-do-when-your-iam-lab-doesn-t-match-the-tutorial/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-26</p><h1>What to Do When Your IAM Lab Doesn't Match the Tutorial</h1><article class="content">
+<p>When your IAM lab differs from a tutorial, <strong>compare the assumptions before rebuilding the environment</strong>.</p>
+<p>The guide may use another product version, feature entitlement, permission level, application type, or starting configuration. A moved menu or unexpected result doesn't automatically mean you failed to follow instructions.</p>
+<p>Identify the first meaningful difference and investigate it. The mismatch can produce useful troubleshooting evidence if you keep the changes controlled and document what actually applies to your environment.</p>
+<h2>Identify the first point where reality diverges</h2>
+<p><strong>Write down the last step that behaved as expected and the first step that did not.</strong></p>
+<p>Include the exact action, the observed result, and any relevant error. Avoid summarizing the entire problem as “the tutorial doesn't work.”</p>
+<p>This gives you a bounded place to investigate.</p>
+<p>If you changed several settings while trying to fix the issue, record those changes too. The current environment may no longer match the tutorial or the state in which the original problem appeared.</p>
+<h2>Check the prerequisites one by one</h2>
+<p>Compare the tutorial with your setup:</p>
+<table>
+<thead>
+<tr>
+<th>Prerequisite</th>
+<th>What to verify</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Version or interface</td>
+<td>Is the documented task still performed the same way?</td>
+</tr>
+<tr>
+<td>Feature availability</td>
+<td>Is the capability available in this environment?</td>
+</tr>
+<tr>
+<td>Permissions</td>
+<td>What authority does the task actually require?</td>
+</tr>
+<tr>
+<td>Application type</td>
+<td>Does the example use the same kind of integration?</td>
+</tr>
+<tr>
+<td>Starting configuration</td>
+<td>Which settings does the author assume already exist?</td>
+</tr>
+</tbody>
+</table>
+<p>Use current official documentation for the task rather than relying only on screenshots.</p>
+<p>Don't address a permissions mismatch by granting broad administrator access without understanding the requirement. Identify the appropriate authority in your isolated environment.</p>
+<p>The goal is to find the missing prerequisite, not make every restriction disappear until the tutorial appears to work.</p>
+<h2>Check whether your starting state is really clean</h2>
+<p>Earlier experiments can affect later results. A previous group membership, policy, application registration, or cached session may make the lab behave differently from a newly created example. Inspect the relevant state before assuming the current step is wrong.</p>
+<p><strong>Keep the investigation focused on components that could plausibly affect the symptom.</strong></p>
+<p>If you need to return to a known state, do it deliberately and document what will be lost. Rebuilding can be appropriate, but it should follow a reason rather than replace understanding every time something becomes confusing.</p>
+<h2>Change one relevant variable at a time</h2>
+<p>Use the evidence to choose a next check or a reversible modification.</p>
+<p>Record what you changed and what happened. If the result improves, verify that the change explains the behavior rather than assuming correlation is enough.</p>
+<p>Avoid combining several fixes from unrelated search results.</p>
+<p>A successful outcome is less useful if you cannot tell which action mattered. The learning value comes from connecting the requirement, configuration, and observed result—not simply reaching the same final screenshot as the tutorial.</p>
+<h2>Update the project to reflect what you actually learned</h2>
+<p>If the current documentation requires a different step, explain that difference in your notes.</p>
+<p>If the tutorial's environment had a feature you do not have, state the limitation and choose a suitable scope rather than pretending you completed the unavailable part.</p>
+<p>Use <a href="https://cyberandchill.com/posts/how-to-document-lab-troubleshooting-without-making-up-drama">troubleshooting notes without invented drama</a> to preserve the useful reasoning.</p>
+<p>The final portfolio should describe your implementation and tests, not reproduce the tutorial's claims when your environment behaved differently.</p>
+<h2>Decide whether the exercise still serves the career goal</h2>
+<p>Sometimes a tutorial is simply the wrong fit for your equipment, time, or target role.</p>
+<p>You can choose a smaller or more relevant exercise without treating that as failure. Keep the learning objective and change the implementation when the evidence supports doing so.</p>
+<p>The important question is whether the project helps you explain or demonstrate a capability you actually need.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> helps choose practical identity projects around a career target and organize the work in a 90-day plan. The $9 guide gives you a reason for the lab beyond completing someone else's sequence of screens.</p>
+<p>A tutorial is a starting reference. Your understanding grows when you can explain why your environment behaves the way it does.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/what-to-do-when-your-iam-lab-doesn-t-match-the-tutorial">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

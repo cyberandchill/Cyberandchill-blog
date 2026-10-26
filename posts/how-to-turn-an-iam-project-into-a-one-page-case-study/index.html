@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>How to Turn an IAM Project Into a One-Page Case Study | CyberAndChill</title><meta name="description" content="How to Turn an IAM Project Into a One-Page Case Study"><link rel="canonical" href="https://blog.cyberandchill.com/posts/how-to-turn-an-iam-project-into-a-one-page-case-study/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>How to Turn an IAM Project Into a One-Page Case Study</h1><article class="content">
+<p>Turn your IAM project into a one-page case study by leading with the access problem, your decision, and the tested result.</p>
+<p><strong>Treat the page as the project's summary, not its complete build diary.</strong> Detailed commands and screenshots can remain available after the reader understands what you demonstrated.</p>
+<p>The fictional contractor example below shows how to organize that summary. Keep the scenario, evidence, and limitations visible so a reviewer can understand the work without opening every file in your repository or guessing which parts you personally completed.</p>
+<h2>Start with the access problem, not the installation</h2>
+<p>A weak opening says, “I installed a server and created several users.”</p>
+<p>A more useful opening says, “I tested whether a temporary contractor could read project files without reaching the finance folder.”</p>
+<p>The second version names the user, the intended access, and the boundary. Someone can immediately understand what success would look like.</p>
+<p>Label the environment as a lab. Give the fictional organization a simple description, such as a small company sharing two departmental folders. There's no benefit in making the scenario sound like paid enterprise work.</p>
+<h2>Show the decision you made</h2>
+<p>Use a short paragraph to explain the access model.</p>
+<p>For example: “I assigned permissions through two security groups rather than granting access separately to every account. The contractor received the project-reader group and no finance membership.”</p>
+<p>Then explain the tradeoff. Group-based access makes this example easier to review, but it still depends on somebody maintaining membership when responsibilities change.</p>
+<p>That sentence demonstrates more understanding than a list of product names. It also prevents the case study from suggesting that one configuration solves every access problem.</p>
+<h2>Show expected and observed access in one small table</h2>
+<p>Put the evidence before a long tool list. For a contractor-access scenario, a result table might look like this:</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Expected result</th>
+<th>Observation to record</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Open the project document</strong></td>
+<td>Allowed</td>
+<td>The actual result from the contractor account</td>
+</tr>
+<tr>
+<td><strong>Open a finance document</strong></td>
+<td>Denied</td>
+<td>The actual result from the same relevant context</td>
+</tr>
+<tr>
+<td><strong>Modify the project document</strong></td>
+<td>Denied</td>
+<td>Whether the write attempt was rejected</td>
+</tr>
+</tbody>
+</table>
+<p>Fill in observations only after running the tests. If a result differs, keep that failure and record what you changed before retesting.</p>
+<p>Include the account, resource path, and session conditions needed to interpret the evidence. A screenshot saying “access denied” is not sufficient without that context.</p>
+<p>The table should make both the requirement and your verification easy to inspect.</p>
+<h2>Describe one finding that changed your approach</h2>
+<p>The case study becomes more useful when it includes a real decision prompted by evidence.</p>
+<p>Perhaps you discovered an extra group membership that made the contractor's access broader than intended. Explain how you identified the path and checked the effect of removing it.</p>
+<p>Don't invent a troubleshooting crisis to make the story exciting. A straightforward finding is enough.</p>
+<p>If nothing broke, describe a deliberate comparison you performed. Testing direct access against group-based access can still reveal why you selected one model for the scenario.</p>
+<h2>State the limits of the project</h2>
+<p>A small lab doesn't demonstrate every part of contractor management.</p>
+<p>This example might exclude approval workflows, automatic expiration, application accounts, and session revocation. Say so in one sentence.</p>
+<p>That boundary helps an interviewer ask useful follow-up questions. It also gives you a sensible next project instead of an inflated claim that you've implemented complete identity governance.</p>
+<p><strong>Use <a href="https://cyberandchill.com/posts/what-happens-when-a-contractor-s-access-never-expires">the problem of contractor access that never expires</a> as a separate follow-up rather than trying to cover it in this case study.</strong></p>
+<h2>Keep supporting material one click away</h2>
+<p>Finish with links to the diagram, configuration notes, and sanitized test evidence. Give each link a descriptive label.</p>
+<p>Your one-page summary should stand alone, but technical readers should be able to inspect the work behind it. Before publishing, ask a colleague to identify the problem and result without your explanation. Anything they misread deserves a clearer sentence.</p>
+<p>The full documentation structure belongs in <a href="https://cyberandchill.com/posts/the-readme-template-i-d-use-for-every-identity-project">a reusable identity-project README</a>, not inside a crowded introduction.</p>
+<p>I included portfolio guidance and three practical lab directions in <a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a>. The $9 guide helps connect that evidence to an IAM role you're actually considering.</p>
+<p>A finished case study gives you something concrete to discuss. That's a better outcome than another impressive-looking repository nobody can interpret.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/how-to-turn-an-iam-project-into-a-one-page-case-study">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

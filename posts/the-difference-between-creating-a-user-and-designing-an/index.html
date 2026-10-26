@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Difference Between Creating a User and Designing an Access Model | CyberAndChill</title><meta name="description" content="The Difference Between Creating a User and Designing an Access Model"><link rel="canonical" href="https://blog.cyberandchill.com/posts/the-difference-between-creating-a-user-and-designing-an/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">Career · 2026-10-25</p><h1>The Difference Between Creating a User and Designing an Access Model</h1><article class="content">
+<p>Creating a user establishes an identity in a system. <strong>Designing an access model defines what people with different responsibilities should be allowed to do</strong>.</p>
+<p>The model also needs to handle joining, changing jobs, exceptions, and leaving. Otherwise, account creation can be consistent while access decisions remain improvised.</p>
+<p>Use a small fictional team to explore the distinction. The reasoning can come before a large governance platform or a complicated automation project.</p>
+<h2>Define three responsibilities before creating accounts</h2>
+<p>Imagine a project with contributors, reviewers, and an owner.</p>
+<p>Contributors prepare sample documents. Reviewers read and comment on them. The owner approves final publication and is responsible for deciding who needs each level of access.</p>
+<p>These are business responsibilities, not automatically the names of technical groups or application roles.</p>
+<p>Write the permitted actions for each responsibility first. That gives you a requirement to translate into controls instead of letting whichever permissions are easiest to assign become the access model by default.</p>
+<h2>Map responsibilities to specific permissions</h2>
+<p>Create a small table in your notes with the responsibilities as rows and the actions as columns.</p>
+<p>For each combination, mark whether the action is allowed, denied, or requires a separate approval. Be precise about actions such as viewing, editing, publishing, and administering.</p>
+<p>Then decide how the test environment can represent those permissions.</p>
+<p>A group or role may be a useful implementation mechanism, but the access model is the reasoning behind the assignment. Don't confuse naming a group with deciding what its members should be able to do.</p>
+<h2>Define how assignments change when responsibilities change</h2>
+<p>For each role in the fictional model, answer:</p>
+<ul>
+<li>
+<strong>Entry:</strong> Who confirms that someone now performs this responsibility?</li>
+<li>
+<strong>Transfer:</strong> What happens when a contributor becomes an owner or reviewer?</li>
+<li>
+<strong>Removal:</strong> Which old permissions should disappear or be reconsidered?</li>
+<li>
+<strong>Exception:</strong> How is a temporary deviation approved and tracked?</li>
+</ul>
+<p>Model these events with fictional identities instead of only testing the initial assignment.</p>
+<p>A process that continually adds permissions can leave people with access that no longer fits their work. Changes and removal should be part of the ordinary model, not unspecified cleanup for another team.</p>
+<p><strong>Record both the intended assignments and the observed behavior.</strong> That helps demonstrate that you thought about the lifecycle of the decision, not just which groups to populate on day one.</p>
+<h2>Keep approval and implementation distinct</h2>
+<p>The person who can technically assign a role is not necessarily the person who should decide that the role is appropriate.</p>
+<p>In your scenario, identify the resource owner or another designated authority for the business decision. Then identify who implements the approved change and verifies the result.</p>
+<p>The exact arrangement depends on the organization. The learning goal is to recognize that these are separate responsibilities that need to be connected.</p>
+<p>A model becomes easier to operate when those responsibilities are visible rather than hidden inside an administrator's personal judgment.</p>
+<h2>Test the model with ordinary users</h2>
+<p>Create test accounts representing the fictional responsibilities and check the intended actions.</p>
+<p><strong>Test both what should work and what should remain unavailable.</strong> Then simulate a role change and inspect the resulting state.</p>
+<p>Record discrepancies rather than adjusting the story to fit the configuration. An unexpected permission may reveal a problem with the mapping, inheritance, or another access path.</p>
+<p>Use <a href="https://cyberandchill.com/posts/role-based-access-control-sounds-simple-until-roles-start">the problems that appear when roles multiply</a> to think about how the model could become harder to maintain as requirements grow.</p>
+<h2>Explain the model as a portfolio decision</h2>
+<p>Your writeup should show the business responsibilities, permission matrix, assignment process, tests, and limitations.</p>
+<p>Label any part you designed but did not implement. A clear conceptual model can be useful, but it should not be presented as a fully deployed system.</p>
+<p>The project demonstrates a different skill from simply creating several accounts. It shows that you can connect access to a repeatable business requirement and evaluate whether the controls match that requirement.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> connects directory access and identity lifecycle projects with a practical career plan. The $9 guide helps you move from routine account tasks toward evidence of deeper identity understanding.</p>
+<p>Creating the user is one step. Designing the access model explains what should happen after the account exists—and when the person's responsibilities change.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/the-difference-between-creating-a-user-and-designing-an">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

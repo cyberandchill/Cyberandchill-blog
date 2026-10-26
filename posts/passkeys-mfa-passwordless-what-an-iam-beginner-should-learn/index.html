@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Passkeys, MFA, Passwordless: What an IAM Beginner Should Learn First | CyberAndChill</title><meta name="description" content="Passkeys, MFA, Passwordless: What an IAM Beginner Should Learn First"><link rel="canonical" href="https://blog.cyberandchill.com/posts/passkeys-mfa-passwordless-what-an-iam-beginner-should-learn/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-26</p><h1>Passkeys, MFA, Passwordless: What an IAM Beginner Should Learn First</h1><article class="content">
+<p>Passkeys, MFA, and passwordless describe related but different aspects of authentication.</p>
+<p><strong>Learn the method, the policy requiring it, and the enrollment and recovery process before comparing every product feature</strong>.</p>
+<p>For an IAM beginner, the useful goal is a complete explanation of one supported sign-in scenario. You should be able to distinguish having a method available from requiring an appropriate control for a particular attempt—and recognize what happens when the user needs recovery.</p>
+<h2>MFA describes the use of multiple authentication factors</h2>
+<p>Multifactor authentication combines more than one factor category in the authentication process, rather than relying only on a single secret such as a password.</p>
+<p>The user experience and security properties depend on the methods and implementation. Two methods should not be assumed equivalent merely because both are called MFA.</p>
+<p>Microsoft's <a href="https://learn.microsoft.com/en-us/entra/identity/authentication/overview-authentication">authentication overview</a> describes supported methods and distinguishes phishing-resistant approaches.</p>
+<p>For learning, ask what is being proven, how the proof is checked, and which access policy requires it in the particular scenario.</p>
+<h2>Passwordless describes a sign-in experience without entering a password</h2>
+<p>Passwordless is a broad category, not one protocol or one product.</p>
+<p>Different implementations can use different credentials and user-verification methods. A passwordless experience does not remove the need to understand enrollment, device handling, recovery, and authorization.</p>
+<p>The term also does not mean the user receives unlimited access after signing in.</p>
+<p>Keep the method and the resulting access decision separate. A successful authentication still needs to connect to the application's intended permissions and the policies governing the resource.</p>
+<h2>Passkeys use public-key cryptography for authentication</h2>
+<p>FIDO describes <a href="https://fidoalliance.org/passkeys-2/">passkeys</a> as credentials that use cryptographic key pairs for passwordless, phishing-resistant sign-in. They can be synced across devices or bound to a particular device, depending on the implementation.</p>
+<p>The service receives proof associated with the credential rather than the user typing a reusable password into that service's login form.</p>
+<p>Local user verification may involve a PIN or biometrics. FIDO's <a href="https://fidoalliance.org/specifications/">specification overview</a> explains that biometric information, when used, remains on the user's device.</p>
+<p>Do not reduce the explanation to “your fingerprint becomes your password.” That hides the cryptographic relationship that makes the method different.</p>
+<h2>Separate having a method from requiring it</h2>
+<p>A registered method doesn't, by itself, establish which access attempts must use it.</p>
+<p>For the scenario you're studying, answer:</p>
+<ul>
+<li>
+<strong>Registration:</strong> How is the credential or method established for the user?</li>
+<li>
+<strong>Availability:</strong> Under what conditions may the user use it?</li>
+<li>
+<strong>Enforcement:</strong> Which policy or requirement applies to the particular sign-in?</li>
+<li>
+<strong>Evidence:</strong> What shows the relevant requirement was evaluated?</li>
+</ul>
+<p>The details vary by platform and configuration. Check current supported documentation before designing a test.</p>
+<p>Use <strong><a href="https://cyberandchill.com/posts/mfa-enrollment-vs-mfa-enforcement-the-distinction-that">the distinction between enrollment and enforcement</a></strong> to keep the exercise focused on actual access behavior. A rollout can produce a list of configured methods without demonstrating the intended requirements.</p>
+<p>Record what your specific user, application, and test conditions establish. Don't infer complete authentication protection from one registration screen or a single successful prompt.</p>
+<h2>Recovery belongs in the learning plan</h2>
+<p><strong>Ask what happens if the user loses a device, replaces a credential, or cannot complete the normal sign-in process.</strong></p>
+<p>A recovery path needs an appropriate way to establish the user's identity and restore access under the organization's policy. It should not casually bypass the protections the normal sign-in was intended to provide.</p>
+<p>For a beginner lab, document the supported recovery options and the assumptions you are making. Do not experiment with real accounts you cannot safely recover or publish recovery secrets in the project.</p>
+<h2>Build a small comparison you can explain</h2>
+<p>Choose one supported test scenario and document the registration, sign-in, relevant policy, and recovery considerations.</p>
+<p>State which behavior you actually tested and which you only researched. Avoid claiming that one successful demonstration proves every method is supported on every device or application.</p>
+<p>The useful outcome is a clear explanation of the method and lifecycle, not a list of fashionable authentication terms.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> helps organize identity fundamentals, practical labs, and career positioning around a target role. The $9 guide gives the learning a direction before the terminology becomes overwhelming.</p>
+<p>Learn what the method proves, when it is required, and how it is managed over time. The product details are easier to understand once those questions are clear.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/passkeys-mfa-passwordless-what-an-iam-beginner-should-learn">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

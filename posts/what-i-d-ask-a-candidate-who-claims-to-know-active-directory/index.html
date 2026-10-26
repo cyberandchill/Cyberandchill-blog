@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>What I'd Ask a Candidate Who Claims to Know Active Directory | CyberAndChill</title><meta name="description" content="What I'd Ask a Candidate Who Claims to Know Active Directory"><link rel="canonical" href="https://blog.cyberandchill.com/posts/what-i-d-ask-a-candidate-who-claims-to-know-active-directory/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">AI · 2026-10-25</p><h1>What I'd Ask a Candidate Who Claims to Know Active Directory</h1><article class="content">
+<p>“Knowing Active Directory” could mean resetting passwords, managing permissions, or designing a directory environment. The phrase alone doesn't establish the scope.</p>
+<p><strong>Use a small access scenario to show what you actually understand.</strong> Explain the account, resource, permission path, and investigation before proposing a change.</p>
+<p>That is more useful interview preparation than memorizing obscure trivia. It lets you distinguish tasks you've performed from architecture you've only studied, while showing how you reason when a familiar Windows problem doesn't behave as expected.</p>
+<h2>Establish the account and resource before proposing a fix</h2>
+<p><strong>Start with a fictional employee who cannot open a departmental file share.</strong> Clarify four things:</p>
+<ol>
+<li>
+<strong>Account:</strong> Which identity is the person using?</li>
+<li>
+<strong>Account type:</strong> Is it a domain account or a local account?</li>
+<li>
+<strong>Resource:</strong> Which system hosts the share or file?</li>
+<li>
+<strong>Requirement:</strong> What access should the person have, and why?</li>
+</ol>
+<p>The answers establish the scope of the investigation. Don't assume every Windows access issue belongs in the same directory-management screen.</p>
+<p>Microsoft's <a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-principals">security principals reference</a> provides background for identifying the relevant identities.</p>
+<p>In an interview, connect that concept to the example rather than stopping at a definition. Explain what you would inspect next, which evidence would matter, and what you still don't know. A well-scoped question is more useful than a confident but unsupported password reset.</p>
+<h2>Ask how the permission reaches the user</h2>
+<p>Next, ask which group or assignment is supposed to provide access and who approved it.</p>
+<p>The candidate should distinguish an organizational unit from a security group and explain the actual permission path rather than treating every container as an access boundary.</p>
+<p>Then ask what else could grant access. Nested membership or another assignment may matter in a particular environment.</p>
+<p>The goal is not an exhaustive lecture. It is a clear explanation of why the candidate believes this user should receive this permission on this resource.</p>
+<h2>Ask what they would check before changing membership</h2>
+<p>A good investigation should verify the user, resource, error, and expected behavior. It should also consider whether the problem is reaching the system, authenticating, or being authorized.</p>
+<p>Adding broad permissions before identifying the failure can make the symptom disappear while creating a different problem.</p>
+<p><strong>Ask the candidate to name one piece of evidence that would support the next action.</strong> If they cannot, the proposed fix may be guesswork.</p>
+<p>They should also explain which changes require approval and when they would escalate rather than experiment.</p>
+<h2>Ask about a directory dependency they have diagnosed</h2>
+<p>A client that cannot join a domain offers another useful discussion.</p>
+<p>Can the candidate explain why the correct DNS path matters? Can they read the error and identify the appropriate troubleshooting reference instead of immediately rejoining, rebuilding, or disabling a firewall?</p>
+<p>Microsoft's <a href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/active-directory/active-directory-domain-join-troubleshooting-guidance">domain-join guidance</a> provides a structured starting point.</p>
+<p>For a portfolio exercise, <a href="https://cyberandchill.com/posts/a-simple-windows-lab-can-reveal-huge-gaps-in-your-iam">using a small Windows lab to expose gaps in your understanding</a> is more productive than memorizing a list of interview questions without testing the ideas.</p>
+<p>I would also ask how they verified a change after making it. A successful administrator action is not the same as a successful user outcome. The answer should include the relevant test account, resource, and expected behavior rather than only a completed ticket.</p>
+<h2>Ask them to state what they have not done</h2>
+<p>Someone may have strong account-management experience but no responsibility for replication, architecture, or disaster recovery. That is not a reason to erase the experience they do have.</p>
+<p>It is a reason to describe the boundary accurately.</p>
+<p>A candidate who can distinguish their own work from the team's broader responsibilities gives the interviewer a more reliable picture of how much support they would need.</p>
+<p>You can prepare for these conversations by building one bounded scenario and practicing the explanation. The directory project and positioning guidance in <a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> are designed to connect those two activities. The book is $9.</p>
+<p>“Know AD” is a claim. A clear account of the identity, permission, evidence, and limitation shows what the claim actually means.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/what-i-d-ask-a-candidate-who-claims-to-know-active-directory">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

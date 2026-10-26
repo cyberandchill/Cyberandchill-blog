@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Role-Based Access Control Sounds Simple Until Roles Start Multiplying | CyberAndChill</title><meta name="description" content="Role-Based Access Control Sounds Simple Until Roles Start Multiplying"><link rel="canonical" href="https://blog.cyberandchill.com/posts/role-based-access-control-sounds-simple-until-roles-start/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>Role-Based Access Control Sounds Simple Until Roles Start Multiplying</h1><article class="content">
+<p>Role-based access becomes difficult when every exception turns into another permanent role.</p>
+<p><strong>Start with the permissions people need, then decide which combinations deserve a standard role.</strong> Otherwise, the design can become harder to explain than the individual assignments it replaced.</p>
+<p>A small access matrix is enough to explore the problem. The important test is whether the model remains understandable when someone changes responsibilities—not just whether the initial assignment works.</p>
+<h2>Start with permissions before naming roles</h2>
+<p>Imagine a fictional reporting application with three actions: view reports, export data, and manage report definitions.</p>
+<p>List the actions and identify who legitimately needs each one. Don't begin by copying every job title into a role list.</p>
+<p>Two people with different titles may need the same permission set. Two people with the same title may have a justified difference in responsibility.</p>
+<p>The role should represent an access need you can explain, not simply reproduce the organization chart.</p>
+<h2>Compare common patterns in a small matrix</h2>
+<p>Create a table with fictional users or functions on one axis and permissions on the other.</p>
+<p>Look for repeated combinations. A reader role might permit viewing. An analyst role might add a justified export capability. A separate administrative role might manage definitions.</p>
+<p>Keep powerful actions distinct where the scenario requires it.</p>
+<p>The matrix makes the design visible. It also helps you notice when a proposed role grants an extra permission merely because bundling it is convenient.</p>
+<h2>Decide what qualifies as a standard role</h2>
+<p>A standard role should have a clear purpose, an owner, and an understandable membership rule or approval path.</p>
+<p>If you create a role for one temporary exception, ask whether the same need is likely to recur and who will maintain it.</p>
+<p>Sometimes a separate assignment with an expiry and review requirement is clearer than adding another permanent role. In other environments, a carefully defined role may be the right choice.</p>
+<p>The important thing is to document the decision instead of allowing the catalog to grow without a design rule.</p>
+<h2>Make exceptions visible and temporary where appropriate</h2>
+<p>Suppose one analyst needs export access for a short project.</p>
+<p>Record why the exception exists, who approved it, and when it must be reviewed or removed. Don't quietly expand the standard analyst role for everyone to satisfy one person's request.</p>
+<p>Also check whether the additional permission conflicts with another responsibility in the scenario.</p>
+<p>An exception process is not a failure of role-based access. Untracked exceptions that become permanent without review are the problem to avoid.</p>
+<h2>Test a transfer and an exception removal separately</h2>
+<p>A role model should handle changing responsibilities, not only a new employee's first day.</p>
+<p>Use a fictional transfer and record:</p>
+<ol>
+<li>
+<strong>Before:</strong> The person's current standard role and any separate exception.</li>
+<li>
+<strong>Required change:</strong> Which old permissions must disappear and which new ones are approved.</li>
+<li>
+<strong>After:</strong> The access actually observed following the change.</li>
+<li>
+<strong>Exception removal:</strong> Whether the special permission can be removed without damaging legitimate standard access.</li>
+</ol>
+<p>Adding the new role is not enough if the obsolete role remains assigned. Likewise, removing a standard role doesn't prove a separately granted exception disappeared.</p>
+<p>Use <strong><a href="https://cyberandchill.com/posts/what-should-happen-to-access-when-an-employee-changes-teams">a role-change access comparison</a></strong> to make these transitions visible. A reviewer should be able to distinguish intended access, implemented assignments, and verified behavior rather than infer all three from a role name.</p>
+<h2>Keep the design explainable to the owner</h2>
+<p>An application owner should be able to understand what a role permits and why a person would receive it.</p>
+<p>If your names and nesting require a long technical explanation for every decision, simplify the presentation or reconsider the model.</p>
+<p>The portfolio version can include the permission matrix, the standard-role rules, one exception, and the lifecycle test results. State that the example is a small design exercise, not a complete enterprise role-engineering program.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> includes practical access and lifecycle work alongside guidance on choosing an IAM specialty. The $9 guide helps connect these design questions to a realistic next career move.</p>
+<p>A good role catalog is not the one with the most entries. It's the one whose permissions, ownership, and changes remain understandable to the people responsible for using it.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/role-based-access-control-sounds-simple-until-roles-start">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

@@ -1,0 +1,49 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>What Happens When a Contractor's Access Never Expires? | CyberAndChill</title><meta name="description" content="What Happens When a Contractor's Access Never Expires?"><link rel="canonical" href="https://blog.cyberandchill.com/posts/what-happens-when-a-contractor-s-access-never-expires/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">Career · 2026-10-26</p><h1>What Happens When a Contractor's Access Never Expires?</h1><article class="content">
+<p>A contractor's access can outlast the assignment when <strong>there is no clear end condition, responsible sponsor, or verification step</strong>.</p>
+<p>An account's existence is only part of the question. You also need a current reason for each permission the person retains.</p>
+<p>Use a fictional contractor project to practice the full decision: who approves temporary access, when it should end, what changes at that point, and how you confirm the result. That is more useful than simply adding an expiry date to a form.</p>
+<h2>Record the end condition when access is requested</h2>
+<p><strong>Use a fictional contractor joining a project for a defined period.</strong></p>
+<p>The request should identify the sponsor, the resource, the permitted actions, and the expected end date. It should also explain how an extension would be approved.</p>
+<p>This turns “temporary access” from a vague description into a condition someone can act on.</p>
+<p>You are not trying to predict every contract change. You are making sure a change has an owner and a decision path rather than relying on an administrator to guess what the business intended.</p>
+<h2>Distinguish access expiry from account removal</h2>
+<p>A contractor may have several assignments or resources.</p>
+<p>Ending access to one project does not necessarily mean deleting the entire identity immediately. Conversely, retaining the identity does not justify retaining every permission it has accumulated.</p>
+<p>For a lab, keep the scope explicit: which assignment is expiring, which access should be removed, and what should remain if another approved need exists.</p>
+<p>This distinction helps you avoid presenting account deletion as the universal answer to every lifecycle event.</p>
+<h2>Make the sponsor's decision visible</h2>
+<p>Suppose the project owner wants to extend access.</p>
+<p><strong>Record the reason, the new duration, and who approved it.</strong> Avoid treating the absence of a response as automatic permission to keep access indefinitely unless you are explicitly modeling an authorized policy that says so.</p>
+<p>Your project can compare two cases: one assignment expires without renewal, while another receives a documented extension.</p>
+<p>Use dummy records and clearly label any manual process. A spreadsheet can demonstrate your decision model, but it does not prove an identity product enforced that model automatically.</p>
+<h2>Use platform features only within their actual scope</h2>
+<p>Some governance platforms provide time-limited access assignments and review workflows.</p>
+<p><a href="https://learn.microsoft.com/en-us/entra/architecture/6-secure-access-entitlement-managment">Microsoft's external-access guidance</a> discusses access-package expiration and reviews. It also distinguishes access granted through that mechanism from access that may exist elsewhere.</p>
+<p>That boundary matters. A correctly expired package does not prove every independent permission, account, or session has been addressed.</p>
+<p>For implementation, verify the current feature requirements and configuration behavior. Do not assume that enabling a lifecycle option covers resources outside the workflow you configured.</p>
+<h2>Test the resource after the contractor's assignment ends</h2>
+<p>Use the fictional contractor to establish a working baseline. Then follow your documented removal or expiry process.</p>
+<p>Record:</p>
+<ol>
+<li>
+<strong>Before:</strong> Which approved action worked?</li>
+<li>
+<strong>Change:</strong> Which assignment or permission expired or was removed?</li>
+<li>
+<strong>Retest:</strong> Which resource action did you attempt afterward?</li>
+<li>
+<strong>Session conditions:</strong> Was this a new session, an existing session, or another defined test?</li>
+<li>
+<strong>Limit:</strong> Which other applications or session types did you not evaluate?</li>
+</ol>
+<p>Keep configuration evidence and behavior evidence separate. A screenshot showing a removed assignment is not, by itself, a test of the resulting access.</p>
+<p>The <a href="https://cyberandchill.com/posts/why-offboarding-is-more-than-disabling-an-account">difference between offboarding and merely disabling an account</a> explains why this distinction matters. Your lab doesn't have to reproduce complete enterprise offboarding, but its claims should stay within the permissions and sessions you actually checked.</p>
+<h2>Turn the exercise into a governance story</h2>
+<p>Your portfolio should show the request, approval, initial access, end event, and verification.</p>
+<p>The technical configuration is one part of the story. The other part is the responsibility: who decided access was appropriate, when that decision stopped applying, and how the system's state was checked afterward.</p>
+<p>This gives you a concrete way to discuss identity governance without needing to claim experience running a large commercial platform.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> includes identity lifecycle as one of three practical lab areas. The $9 guide helps you connect an exercise like this to an IAM lane and a career plan, so the project demonstrates a responsibility rather than just another account-creation task.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/what-happens-when-a-contractor-s-access-never-expires">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

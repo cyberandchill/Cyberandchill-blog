@@ -1,0 +1,60 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>What Should Happen to Access When an Employee Changes Teams? | CyberAndChill</title><meta name="description" content="What Should Happen to Access When an Employee Changes Teams?"><link rel="canonical" href="https://blog.cyberandchill.com/posts/what-should-happen-to-access-when-an-employee-changes-teams/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">Career · 2026-10-25</p><h1>What Should Happen to Access When an Employee Changes Teams?</h1><article class="content">
+<p>When an employee transfers teams, compare their existing access with the access required for the new role.</p>
+<p><strong>Adding the new permissions is only half the decision.</strong> Old permissions may need removal, temporary retention, or explicit review by an owner.</p>
+<p>Use a before-and-after record to make those choices visible. This is a practical governance exercise because it connects the employee's work with technical changes and approvals. A completed request for the new application doesn't tell you what happened to the old department's resources.</p>
+<h2>Start with the new role's actual work</h2>
+<p>Do not begin by copying the access of a convenient colleague.</p>
+<p>In a fictional transfer, the employee may need to view invoices but not approve payments. Another finance employee may have broader responsibilities and therefore a different access set.</p>
+<p><strong>Identify the resources and actions required for the new job.</strong> Ask the appropriate owner to confirm them.</p>
+<p>A job title or department name can help organize the request, but it does not replace an access decision. The more sensitive the action, the more important the distinction becomes.</p>
+<h2>Classify each existing and requested entitlement</h2>
+<p>Create a list covering old-team resources, new-team resources, and shared applications. Give each item an explicit decision:</p>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Add</strong></td>
+<td>Approved access is needed for the new responsibilities</td>
+</tr>
+<tr>
+<td><strong>Retain</strong></td>
+<td>Existing access remains justified</td>
+</tr>
+<tr>
+<td><strong>Remove</strong></td>
+<td>The previous business need no longer applies</td>
+</tr>
+<tr>
+<td><strong>Review</strong></td>
+<td>An owner must resolve uncertainty before you assume the access should remain</td>
+</tr>
+</tbody>
+</table>
+<p>Record the reason and relevant owner rather than relying on an unexplained group list.</p>
+<p>Microsoft's <a href="https://learn.microsoft.com/en-us/entra/id-governance/access-reviews-overview">access-review overview</a> describes the broader practice of checking whether access still belongs. A lab can demonstrate the reasoning at a much smaller scale.</p>
+<p>The purpose of the list is to make accidental retention visible. You don't need a complicated platform before you can explain that decision process.</p>
+<h2>Treat temporary overlap as an exception with an end</h2>
+<p>Sometimes the employee needs old access briefly to complete a handoff. That can be a legitimate requirement.</p>
+<p><strong>Record the reason, the owner who approved it, the scope, and the expiration or review date.</strong> “Keep the old access for now” is not a complete decision.</p>
+<p>In your fictional scenario, the employee might retain read-only access to a purchasing archive for a limited transition period while losing the ability to create new orders.</p>
+<p>That example demonstrates a deliberate compromise instead of treating every move as either full retention or immediate removal of everything.</p>
+<h2>Verify both the new access and the removed access</h2>
+<p>Test the intended new task. Then test that the old task is no longer available under the appropriate session conditions.</p>
+<p>A successful finance login does not prove the purchasing permission was removed. A changed group list does not prove every application has reflected the change.</p>
+<p>Keep your conclusion specific to the systems you tested. Identify any manual follow-up or application behavior that remains outside the lab.</p>
+<p><a href="https://cyberandchill.com/posts/why-every-iam-lab-needs-a-positive-test-and-a-failure-test">Designing positive and negative access tests</a> helps turn the transfer record into evidence rather than an administrative checklist.</p>
+<p>Include a check for separately managed applications. A directory group change may not cover a local application account or a manually assigned role. Your scenario should identify which systems are connected to the change and which require a separate verified action.</p>
+<h2>Capture the decision trail for the next reviewer</h2>
+<p>A useful record includes the transfer event, the intended permissions, the approvals, the implementation, and the verification.</p>
+<p>The next person should not need to reconstruct why an unusual permission remained. If there was an exception, the record should make its owner and end condition clear.</p>
+<p>In an interview, this gives you a more substantial example than “I added users to groups.” You can explain the business change and how you prevented old access from becoming invisible baggage.</p>
+<p>The lifecycle project in <a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> is a practical place to build that example. The $9 guide combines it with role selection and portfolio guidance so the work supports a specific career direction.</p>
+<p>The transfer is complete when the access matches the new responsibility, including the old access that should no longer be there.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/what-should-happen-to-access-when-an-employee-changes-teams">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

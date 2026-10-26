@@ -1,0 +1,47 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>What an AD Admin Needs to Know Before Touching Microsoft Entra ID | CyberAndChill</title><meta name="description" content="What an AD Admin Needs to Know Before Touching Microsoft Entra ID"><link rel="canonical" href="https://blog.cyberandchill.com/posts/what-an-ad-admin-needs-to-know-before-touching-microsoft/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>What an AD Admin Needs to Know Before Touching Microsoft Entra ID</h1><article class="content">
+<p>Before making an Entra ID change, confirm the tenant, account, administrative authority, identity source, and system responsible for the result.</p>
+<p><strong>Familiar words don't guarantee familiar behavior.</strong> An AD background helps with users, groups, and access concepts, but cloud administrative boundaries and relationships still need to be learned.</p>
+<p>Use the checks below to avoid applying a domain-controller assumption to the wrong context. A small comparison project is a better way to demonstrate the transition than treating a recognizable console label as evidence that you already understand the platform.</p>
+<h2>Confirm which tenant and account you are using</h2>
+<p>A cloud administration session can involve more than one organization or identity context.</p>
+<p>Before changing anything, verify the tenant and administrative account. Keep personal, lab, and employer identities clearly separated.</p>
+<p>In a practice environment, use fictional identities and a documented recovery method. Do not connect a personal device or production directory simply because a tutorial expects an existing environment.</p>
+<p>The first useful habit is not speed in the portal. It is certainty about where the change will occur.</p>
+<h2>Learn the administrative role rather than assuming domain-wide authority</h2>
+<p>An AD background may make broad administrative access feel familiar. Cloud administration should still use permissions appropriate to the task.</p>
+<p>Microsoft's <a href="https://learn.microsoft.com/en-us/entra/fundamentals/compare">comparison of AD and Entra ID</a> outlines differences in their administrative models.</p>
+<p>Identify which role permits the action you need and which resources it covers. Do not assume that access in one administrative area implies authority over every service connected to the tenant.</p>
+<p>A lab is a good place to practice explaining the permission requirement before performing the action.</p>
+<h2>Find where the identity is managed</h2>
+<p>An account visible in Entra may be cloud-managed or connected to an on-premises identity source.</p>
+<p>That distinction can affect where a change should be made and how the result appears elsewhere.</p>
+<p><strong>Ask which system is authoritative for the information you are changing.</strong> Then verify the relevant synchronization or provisioning behavior instead of treating every field as independently editable everywhere.</p>
+<p>A diagram that names the source, the destination, and the tested change is more useful than a broad arrow labeled “hybrid.”</p>
+<h2>Keep device identity and device management distinct</h2>
+<p>Don't use “joined,” “registered,” and “managed” as interchangeable descriptions.</p>
+<p>For a device scenario, identify:</p>
+<ul>
+<li>
+<strong>Identity relationship:</strong> What state the device actually has in the directory.</li>
+<li>
+<strong>User sign-in:</strong> How that state relates to the sign-in you're investigating.</li>
+<li>
+<strong>Management:</strong> Which system manages the device and applies the relevant configuration.</li>
+<li>
+<strong>Evidence:</strong> Where you verified those facts rather than inferred them from a label.</li>
+</ul>
+<p>Microsoft documents <a href="https://learn.microsoft.com/en-us/entra/identity/devices/concept-directory-join">Entra joined devices</a> separately from other device states. Start with the documented state of your test machine.</p>
+<p><a href="https://cyberandchill.com/posts/domain-join-vs-entra-join-why-the-difference-matters">The difference between domain join and Entra join</a> is a useful comparison for an AD administrator, but it doesn't settle every management question.</p>
+<p>Keeping those concepts separate makes a lab explanation—and a resume claim—more precise about what you actually configured and tested.</p>
+<h2>Inspect the evidence in the system responsible for the decision</h2>
+<p>A failed cloud application sign-in may require evidence from Entra and the application, not only the local Windows event log.</p>
+<p><strong>Identify the stage of the flow and then choose the relevant records.</strong> Keep the test user, application, timestamp, and observed behavior together.</p>
+<p>The habit you are transferring from AD is structured troubleshooting. The locations and meanings of the evidence may be different.</p>
+<p>Before testing a restrictive policy, confirm a documented recovery path for the lab. A successful experiment should not depend on locking yourself out and rebuilding the tenant. The recovery plan is part of understanding the administrative boundary.</p>
+<h2>Build one comparison project before claiming broad cloud identity experience</h2>
+<p>Choose a familiar requirement and demonstrate how it works in the new environment. State what transferred from your AD knowledge and what you had to learn.</p>
+<p>The role and lab guidance in <a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> helps turn that transition into a clear learning plan. The $9 book is designed for people with existing IT experience, not people starting from nothing.</p>
+<p>Your AD background is an advantage when you use it to ask better questions, not when you use it to skip the questions that make Entra different.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/what-an-ad-admin-needs-to-know-before-touching-microsoft">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A Practical SSO Portfolio Project Without a Production Application | CyberAndChill</title><meta name="description" content="A Practical SSO Portfolio Project Without a Production Application"><link rel="canonical" href="https://blog.cyberandchill.com/posts/a-practical-sso-portfolio-project-without-a-production/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-26</p><h1>A Practical SSO Portfolio Project Without a Production Application</h1><article class="content">
+<p>You can demonstrate single sign-on without touching an employer's production application. <strong>Use a supported test application, a compatible identity provider, and fictional users.</strong></p>
+<p>Your project should answer two questions: can you explain the working sign-in flow, and can you diagnose one controlled failure?</p>
+<p>Start with a documented configuration and establish a successful baseline. The value comes from explaining the integration and its evidence, not merely showing that two products are running in your home lab.</p>
+<h2>Choose a supported sample that fits your environment</h2>
+<p><strong>Use a sample application intended for the protocol supported by your chosen identity provider.</strong></p>
+<p><a href="https://www.keycloak.org/securing-apps/overview">Keycloak's application-integration guidance</a>, for example, covers registering a client and integrating compatible applications using OpenID Connect or SAML.</p>
+<p>Before starting, check:</p>
+<ul>
+<li>
+<strong>Compatibility:</strong> Does the example match the protocol and product version you're using?</li>
+<li>
+<strong>Prerequisites:</strong> Can your lab meet its documented requirements?</li>
+<li>
+<strong>Scope:</strong> Does it demonstrate the integration you want to explain?</li>
+<li>
+<strong>Isolation:</strong> Are the identities, data, and resources strictly for testing?</li>
+</ul>
+<p>Follow the supported configuration rather than combining unrelated steps from old tutorials.</p>
+<p>A development example may deliberately simplify deployment concerns. Keep those limitations visible and don't describe the resulting lab as a production-ready architecture. The objective is a controlled, understandable sign-in integration that you can test safely.</p>
+<h2>Write down the integration contract</h2>
+<p>Before testing, record the non-secret settings that must agree between the application and identity provider.</p>
+<p>Depending on the protocol and application, these may include the client or entity identifier, expected issuer, callback or reply address, and the information used to identify the user.</p>
+<p>Keep secrets outside public documentation. Do not publish client secrets, private keys, live tokens, or session captures to make the project look technical.</p>
+<p>Your public diagram should explain the relationship while leaving sensitive implementation material out.</p>
+<h2>Establish a successful baseline first</h2>
+<p>Sign in with a fictional test user and confirm the intended application behavior.</p>
+<p><strong>Record what happened at each stage: the application initiated sign-in, the identity provider handled authentication, and the application accepted the result for the expected user.</strong></p>
+<p>Do not assume a successful identity-provider login proves the application works. Verify the actual outcome in the application.</p>
+<p>Save enough sanitized evidence to compare against a later failure. Without a baseline, you may spend the project investigating several unrelated setup problems at once.</p>
+<h2>Introduce one reversible configuration error</h2>
+<p>Choose a documented setting whose role you understand, such as a callback-address mismatch in a suitable OIDC test.</p>
+<p>Record the original value privately, change only that setting, and observe the failure. Then restore it and repeat the test.</p>
+<p>The aim is to identify where the systems disagreed and which evidence supported the diagnosis. Do not disable validation, use broad wildcard settings, or weaken security checks merely to make the error disappear.</p>
+<p>The <a href="https://cyberandchill.com/posts/the-sso-misconfiguration-i-d-intentionally-create-in-a">controlled SSO misconfiguration exercise</a> can help you frame the experiment as troubleshooting rather than random breakage.</p>
+<h2>Separate sign-in from authorization</h2>
+<p>After the integration works, ask what the application allows the user to do.</p>
+<p>A basic sample may demonstrate authentication without a meaningful role model. State that limitation. Do not describe it as proof of fine-grained authorization unless you actually configured and tested those controls.</p>
+<p>You can add a separate access test later when the application supports it and the target role makes it relevant.</p>
+<p>Keeping the first claim narrow makes the evidence easier to defend.</p>
+<h2>Publish the explanation, not the session contents</h2>
+<p>Your project page should contain a simple flow diagram, the important configuration relationships, the successful baseline, the controlled failure, and the verified recovery.</p>
+<p>Describe what you learned and what remains outside scope. Include links to the official documentation you followed so someone can understand the implementation context.</p>
+<p>Use a sanitized screenshot only when it supports a specific claim. Raw authentication traces can contain material that should never be published.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> places SSO alongside directory access and identity lifecycle work in a practical career plan. The $9 guide helps you select a project for the role you want. A supported sample application is enough to begin building evidence you can explain honestly.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/a-practical-sso-portfolio-project-without-a-production">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

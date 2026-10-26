@@ -1,0 +1,60 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Difference Between 'I Used Entra' and 'I Understand Entra' | CyberAndChill</title><meta name="description" content="The Difference Between 'I Used Entra' and 'I Understand Entra'"><link rel="canonical" href="https://blog.cyberandchill.com/posts/the-difference-between-i-used-entra-and-i-understand-entra/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>The Difference Between 'I Used Entra' and 'I Understand Entra'</h1><article class="content">
+<p>“I used Entra” tells an employer the platform was present. <strong>It doesn't identify what you understood, changed, or verified</strong>.</p>
+<p>Account creation, log investigation, application assignment, and access policy work involve different responsibilities.</p>
+<p>Choose one actual example and explain the object, your authority, the expected behavior, and the evidence. That turns familiarity with an interface into a specific capability a reviewer can question—and helps you identify what still needs deeper study.</p>
+<h2>Explain the object rather than only the screen</h2>
+<p>What were you working with: a user, group, application registration, enterprise application, role assignment, or another object?</p>
+<p>You don't need to know every object in the platform. You do need to understand the one your example depends on.</p>
+<p>Microsoft's <a href="https://learn.microsoft.com/en-us/entra/identity-platform/app-objects-and-service-principals">application and service-principal documentation</a> is useful for one commonly confused area.</p>
+<p>If the explanation stops at “I clicked the application page,” return to the underlying concept. Knowing where an object appears is different from understanding what it represents.</p>
+<h2>Explain the authority behind the action</h2>
+<p>What role or permission allowed the action, and what was its scope?</p>
+<p>Avoid assuming that every administrator role has equivalent authority. Also distinguish permissions to administer directory objects from permissions to manage other resources or application functions.</p>
+<p>For a lab, use appropriate limited authority where feasible and document any elevated setup requirements separately.</p>
+<p>A credible explanation recognizes that access to a portal is not the same as permission to perform every operation inside it. The boundary matters even when a powerful test account makes the demonstration easy.</p>
+<h2>Connect the action to the behavior it was meant to change</h2>
+<p><strong>Use the specific configuration, not a universal assumption about the platform.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Outcome to explain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Assigned a user to an application</td>
+<td>What that assignment was intended to enable in this integration</td>
+</tr>
+<tr>
+<td>Changed group membership</td>
+<td>Which resource or policy depended on that membership</td>
+</tr>
+<tr>
+<td>Inspected a sign-in record</td>
+<td>Which user attempt and question the record concerned</td>
+</tr>
+</tbody>
+</table>
+<p>The same-looking action can have different implications in different environments.</p>
+<p>State the conditions you tested and the result you expected. Don't turn one familiar setting into a claim about every tenant or application.</p>
+<p>If another system owns part of the outcome, make that boundary clear. Understanding where your action's effect needs further verification is part of a credible explanation, not a weakness to hide.</p>
+<h2>Explain how you verified the result</h2>
+<p>A successful save operation establishes that a configuration change was accepted. It may not establish the complete user outcome.</p>
+<p>Describe the relevant test, identity, action, and observed result. Include a comparison or denial case when it helps validate the requirement.</p>
+<p>If another team verified the application side, say so rather than claiming the entire end-to-end test yourself.</p>
+<p>Use <a href="https://cyberandchill.com/posts/how-to-make-an-entra-id-skill-claim-credible">a credible Entra skill claim</a> to connect the configuration with evidence that an interviewer can understand and question.</p>
+<h2>Use one example to test your understanding</h2>
+<p><strong>Choose a task you have actually performed and answer the four questions without relying on the portal's labels alone.</strong></p>
+<p>Then draw the relevant flow or object relationship on paper. Notice where you become vague.</p>
+<p>That gap is a useful learning target. It does not mean your prior experience is worthless, and it does not require you to learn the entire platform before applying for a suitable role.</p>
+<p>A narrow example explained accurately is stronger than a broad claim that collapses under the first follow-up question.</p>
+<h2>Turn familiarity into a deliberate next step</h2>
+<p>If you have mainly operated established procedures, build a small fictional project that helps you understand one underlying mechanism.</p>
+<p>If you already understand the mechanism, improve the evidence and explanation. If the target role requires a different responsibility, choose the next project accordingly.</p>
+<p>Keep professional experience and lab practice clearly labeled.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> connects existing IT experience, practical identity projects, and career positioning in a 90-day plan. The $9 guide helps you decide which gap matters next.</p>
+<p>Using a platform gives you a starting point. Understanding it means you can explain the relevant object, authority, behavior, and result without depending on a familiar sequence of clicks.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/the-difference-between-i-used-entra-and-i-understand-entra">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

@@ -1,0 +1,47 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Why Privileged Accounts Deserve a Different Set of Rules | CyberAndChill</title><meta name="description" content="Why Privileged Accounts Deserve a Different Set of Rules"><link rel="canonical" href="https://blog.cyberandchill.com/posts/why-privileged-accounts-deserve-a-different-set-of-rules/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">Career · 2026-10-25</p><h1>Why Privileged Accounts Deserve a Different Set of Rules</h1><article class="content">
+<p>Privileged accounts need different handling because <strong>their actions can affect other people's access and the systems those people depend on</strong>.</p>
+<p>An ordinary user may read a report. An administrator may change permissions, alter a service, or grant authority to someone else.</p>
+<p>Start by identifying the scope and consequence of the privileged action. Then examine the appropriate account context, approval, duration, evidence, and recovery arrangements for that environment.</p>
+<h2>Define the privileged action instead of relying on the title</h2>
+<p>“Admin” can describe very different permissions. Identify what the account can change, where that authority applies, and which other identities or systems could be affected. A narrowly scoped application role is not the same as broad directory administration.</p>
+<p>Use the actual permission model and current documentation.</p>
+<p>This makes the risk discussion concrete. You can explain why the action needs stronger handling without claiming that every account with an impressive name has identical power.</p>
+<h2>Keep routine activity separate from the administrative task</h2>
+<p>Browsing, email, and user testing don't automatically require the authority used to administer a service.</p>
+<p>Follow the organization's supported separation of administrative activity. Don't invent a personal workaround that bypasses its controls.</p>
+<p>In a lab, make the distinction visible:</p>
+<ul>
+<li>
+<strong>Configuration context:</strong> The authorized account used to create or change the control.</li>
+<li>
+<strong>User test context:</strong> The fictional ordinary account whose permissions you're evaluating.</li>
+<li>
+<strong>Recorded action:</strong> Which identity performed the operation shown in the evidence.</li>
+</ul>
+<p>Testing everything as an administrator can hide the boundary your project is supposed to demonstrate. A successful action under broad authority says little about what the intended user can do.</p>
+<p>Separating contexts helps you explain both why elevated access was needed for configuration and why it should not become the default for unrelated work.</p>
+<h2>Limit the scope and duration where the design supports it</h2>
+<p><strong>Ask which permission is required, on which resource, and for how long.</strong></p>
+<p>A task that needs temporary elevated access does not necessarily justify permanent broad membership. Microsoft describes time-bound and approval-related capabilities in its <a href="https://learn.microsoft.com/en-us/entra/id-governance/privileged-identity-management/pim-configure">Privileged Identity Management overview</a>.</p>
+<p>Those product features are implementation options, not a substitute for deciding who should receive the authority.</p>
+<p>Document the need and the owner of the decision. A temporary setting still requires a justified task.</p>
+<p>Consider a fictional operator who needs to restart one application service. The question is whether that specific action can be authorized without handing over unrelated administrative power. The exact implementation varies, but the narrower requirement gives the design a useful starting point.</p>
+<h2>Make privileged activity accountable</h2>
+<p>The organization should be able to understand who used the authority, for what purpose, and what changed through its approved monitoring and records.</p>
+<p>Shared or poorly documented activity can make that harder to establish.</p>
+<p>A lab example can model an approved administrative task, the limited scope, and a record of the result. Label simulated approval or monitoring steps clearly.</p>
+<p>Don't publish actual credentials, tokens, or sensitive administrative details to prove the account was powerful.</p>
+<h2>Plan for recovery without casually bypassing controls</h2>
+<p>Administrative controls need an operational recovery plan appropriate to the environment.</p>
+<p>That does not mean disabling protections whenever somebody is inconvenienced. It means following the organization's documented emergency-access and incident procedures with the required oversight.</p>
+<p>For personal practice, avoid configurations that can lock you out of your primary accounts or devices. Keep the test environment recoverable and separate from everyday systems.</p>
+<p>The project should demonstrate careful authority, not unnecessary risk taken for a screenshot.</p>
+<h2>Use a small scenario to explain the distinction</h2>
+<p>Create a fictional task where an administrator changes one resource while an ordinary user performs a limited business action.</p>
+<p>Show the permissions each requires and the actions each should be denied. Explain how approval, duration, and verification would work in the supported scope.</p>
+<p>Use <a href="https://cyberandchill.com/posts/pam-vs-iam-where-one-specialty-ends-and-the-other-begins">the relationship between PAM and broader IAM</a> to decide whether this area fits your career interests.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> compares identity lanes and provides practical access and lifecycle lab directions. The $9 guide helps you choose which responsibility to build toward instead of treating all identity work as account creation.</p>
+<p>Privileged access is different because the consequences are different. Make the task, scope, and accountability visible before deciding which control should enforce them.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/why-privileged-accounts-deserve-a-different-set-of-rules">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

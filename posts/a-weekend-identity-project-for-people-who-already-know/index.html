@@ -1,0 +1,56 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A Weekend Identity Project for People Who Already Know Windows | CyberAndChill</title><meta name="description" content="A Weekend Identity Project for People Who Already Know Windows"><link rel="canonical" href="https://blog.cyberandchill.com/posts/a-weekend-identity-project-for-people-who-already-know/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>A Weekend Identity Project for People Who Already Know Windows</h1><article class="content">
+<p>Already know Windows and have a safe AD lab? Try <strong>delegating one administrative task within one fictional organizational unit</strong>, then test that the authority doesn't extend elsewhere.</p>
+<p>This develops a more specific capability than installing another server. It connects an administrative action to its intended scope.</p>
+<p>Treat “weekend” as a scope suggestion, not a setup-time guarantee. Establish the isolated environment first, use fictional accounts, and keep personal and production identities out of the exercise.</p>
+<h2>Define the administrative task and its boundary</h2>
+<p><strong>Use fictional users in two separate test organizational units.</strong></p>
+<p><strong>Choose one narrow task, such as a password-reset operation for ordinary test users in the first unit.</strong> The second unit provides a comparison scope where the operator should not receive the same delegated authority.</p>
+<p>Write the expected behavior before configuring anything. The project is about delegated administration, not proving that a broad administrator can perform an administrative action. Keep the operator's ordinary account separate from the account used to set up the lab.</p>
+<h2>Read the delegation model before using the wizard</h2>
+<p>Microsoft's <a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/delegation-control-wizard">Delegation of Control guidance</a> explains how tasks can be delegated to users or groups at a chosen scope.</p>
+<p>Pay attention to what objects are included under the selected container and what permissions the chosen task grants.</p>
+<p>Do not select the domain root casually because it is convenient.</p>
+<p>Use a dedicated lab group for the operator and document the intended scope. The configuration should reflect the narrow requirement rather than rely on a powerful membership that makes every test succeed.</p>
+<h2>Establish the baseline before delegating</h2>
+<p>Using the fictional operator's ordinary session, check the relevant action against an ordinary test user in each scope.</p>
+<p>Record the expected and observed results. The baseline helps you distinguish the effect of the delegation from permissions the operator already possessed.</p>
+<p>If the operator can already perform the task everywhere, investigate that before continuing.</p>
+<p>A project that begins with unexplained broad authority cannot demonstrate a narrow delegation boundary clearly. Fix the test setup or choose a clean operator account appropriate to the exercise.</p>
+<h2>Test the delegated task inside and outside its approved scope</h2>
+<p>Use an authorized setup account to configure only the task and boundary in the requirement.</p>
+<p>Then switch to the fictional operator's ordinary session:</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>What it checks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Perform the task in the approved test unit</td>
+<td>The intended authority is usable</td>
+</tr>
+<tr>
+<td>Try the comparable task on an ordinary user in another unit</td>
+<td>The authority is appropriately bounded</td>
+</tr>
+</tbody>
+</table>
+<p>Record actual results and relevant session conditions. The comparison—not the wizard's completion screen—is the main evidence.</p>
+<p>If both operations succeed unexpectedly, investigate the actual permission path. Don't silently broaden the requirement to match the configuration.</p>
+<p>The exercise should show that you understand where administrative authority applies and how you verified that boundary. A screenshot of the setup is context; it is not a substitute for the operator tests.</p>
+<h2>Document recovery and cleanup</h2>
+<p>Record how the delegated permission can be reviewed and removed in your lab. Verify the resulting state after cleanup using an appropriate test method.</p>
+<p>Do not assume that deleting a screenshot or closing the console reverses the configuration.</p>
+<p>Keep the test accounts clearly fictional and avoid including passwords or other secrets in the public writeup.</p>
+<p>Use <a href="https://cyberandchill.com/posts/why-privileged-accounts-deserve-a-different-set-of-rules">the reasons administrative permissions need deliberate boundaries</a> to explain why the project matters beyond the mechanics of the wizard.</p>
+<h2>Present the project as a bounded administrative-control example</h2>
+<p>Your portfolio page should include the task, approved scope, baseline, configuration summary, allowed test, denied test, and cleanup result.</p>
+<p>State what you did not test, such as protected accounts, other administrative tasks, or broader organizational delegation designs.</p>
+<p>That makes the example credible without inflating it into a complete privileged-access deployment.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> helps connect familiar IT skills with identity responsibilities and practical portfolio evidence. The $9 guide includes three core IAM lab directions and a 90-day plan for choosing the next useful step.</p>
+<p>The useful weekend result is not another machine. It is a clear demonstration that administrative authority can be limited, tested, and explained.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/a-weekend-identity-project-for-people-who-already-know">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

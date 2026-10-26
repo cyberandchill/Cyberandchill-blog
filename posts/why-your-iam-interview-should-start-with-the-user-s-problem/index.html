@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Why Your IAM Interview Should Start With the User's Problem | CyberAndChill</title><meta name="description" content="Why Your IAM Interview Should Start With the User's Problem"><link rel="canonical" href="https://blog.cyberandchill.com/posts/why-your-iam-interview-should-start-with-the-user-s-problem/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>Why Your IAM Interview Should Start With the User's Problem</h1><article class="content">
+<p>Start an IAM interview example with <strong>what the user needed to do and what prevented it</strong>.</p>
+<p>If you begin with product names and log terminology, the interviewer may spend the first minute trying to understand why any of those details matter.</p>
+<p>Explain the problem, state your contribution, then walk through the evidence and result. You can show technical depth once the listener has a clear reason to follow it.</p>
+<h2>Explain the intended action in one sentence</h2>
+<p>For a fictional example, use: <strong>“A newly transferred employee could sign in, but couldn't open the reporting page required for their new team.”</strong></p>
+<p>That sentence identifies the user, the intended action, and the failure.</p>
+<p>It also distinguishes successful sign-in from access to a resource. You haven't diagnosed the cause yet, and you shouldn't pretend otherwise.</p>
+<p>Compare that with “I troubleshot an IAM issue involving groups and SSO.” The second version names a subject but leaves the listener to reconstruct the problem.</p>
+<h2>State what you owned before describing the solution</h2>
+<p>Make your responsibility explicit:</p>
+<ul>
+<li>Did you investigate the symptom?</li>
+<li>Did you implement a change someone else approved?</li>
+<li>Did you assist another team?</li>
+<li>Did you own the full process and verification?</li>
+</ul>
+<p>For example: “I checked the access request and compared the user's approved group membership with the application requirement. The application team owned the role mapping.”</p>
+<p>That tells the interviewer where to focus follow-up questions. It also avoids accidentally taking credit for the application's design or another team's correction.</p>
+<p>A narrower contribution can still demonstrate strong judgment. Explain the evidence you selected, the boundary you recognized, and the handoff you made. Being precise about ownership makes the technical detail more credible—not less impressive.</p>
+<h2>Walk through the evidence in the order it mattered</h2>
+<p>Explain what you checked and what each finding ruled in or out.</p>
+<p>In the fictional transfer scenario, you might confirm the approved new role, establish that authentication succeeded, and then compare the relevant entitlement with the application's access requirement.</p>
+<p>Don't recite every click. Include the observations that changed the investigation.</p>
+<p>A useful explanation sounds like reasoning: “Because the sign-in completed, I focused next on the authorization path.” It doesn't sound like a random list of actions that happened to end with success.</p>
+<h2>Describe the change and the test separately</h2>
+<p>Making a change is not the same as proving the problem is resolved.</p>
+<p>State what was authorized, who made the change, and how you checked the intended result. Include any important boundary, such as another team verifying the application behavior.</p>
+<p>For a lab, show both the intended user's access and a control user who should remain excluded. For professional work, describe the verification you genuinely performed without adding tests that never happened.</p>
+<p>The result should answer the opening problem, not merely confirm that a configuration screen looked correct.</p>
+<h2>Be ready to explain alternatives and limitations</h2>
+<p>An interviewer may ask what else could have caused the symptom or what you would do if the first check showed something different.</p>
+<p>You don't need to pretend there was only one possible explanation. Acknowledge the alternatives and identify the evidence that would distinguish them.</p>
+<p>Also say what you didn't own or couldn't confirm. That is more useful than stretching a narrow example into a claim of complete architectural expertise.</p>
+<p><strong>Use <a href="https://cyberandchill.com/posts/how-to-answer-tell-me-about-a-time-access-failed-without">an honest access-failure example</a> when your strongest evidence comes from a lab rather than a production incident.</strong></p>
+<h2>Practice a concise opening, then allow questions</h2>
+<p>Prepare a version with five parts: user problem, your responsibility, decisive evidence, authorized action, and verified result.</p>
+<p>You should be able to give that overview without turning it into a memorized performance. The goal is to create a clear starting point for a technical conversation.</p>
+<p>If the interviewer asks for the protocol, log, or permission detail, you now have context for explaining it.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> connects practical identity projects with resume and interview positioning. The $9 guide helps you build examples worth discussing, not just terminology worth memorizing.</p>
+<p>Start with what needed to work for the user. Then show how your technical judgment helped establish the result.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/why-your-iam-interview-should-start-with-the-user-s-problem">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

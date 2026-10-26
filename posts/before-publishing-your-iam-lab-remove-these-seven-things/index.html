@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Before Publishing Your IAM Lab, Remove These Seven Things | CyberAndChill</title><meta name="description" content="Before Publishing Your IAM Lab, Remove These Seven Things"><link rel="canonical" href="https://blog.cyberandchill.com/posts/before-publishing-your-iam-lab-remove-these-seven-things/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-26</p><h1>Before Publishing Your IAM Lab, Remove These Seven Things</h1><article class="content">
+<p>Before publishing an IAM lab, <strong>inspect the whole project for sensitive information—not just the screenshot you intend to share</strong>.</p>
+<p>Credentials, tokens, personal details, and internal information can appear in configuration files, logs, browser tabs, filenames, and earlier commits.</p>
+<p>Review these seven categories before making the repository public. A clean README is not evidence that the other files are safe, and deleting a leaked secret from the latest version does not make that secret safe to keep using.</p>
+<h2>1. Remove credentials and recover access safely if they leaked</h2>
+<p><strong>Look for passwords, API keys, client secrets, private keys, recovery codes, and credentials stored in scripts or environment files.</strong></p>
+<p>If a real secret has already been exposed, deleting it from the current file is not enough. Revoke or rotate it through the appropriate process.</p>
+<p><a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository">GitHub's sensitive-data guidance</a> makes that distinction and explains why repository history, forks, and other copies complicate cleanup.</p>
+<p>Do not publish a working credential merely because the account belongs to a lab.</p>
+<h2>2. Remove live tokens and session material</h2>
+<p>Authentication traces can contain access tokens, refresh tokens, cookies, or other session information.</p>
+<p>A trace may look like an educational collection of headers while still containing material that could grant access. Do not paste it into a public decoder or repository to make the project easier to inspect.</p>
+<p>Use deliberately synthetic examples or carefully prepared non-sensitive summaries. Explain the fields that matter without including a usable credential.</p>
+<p>The <a href="https://cyberandchill.com/posts/what-to-learn-about-tokens-before-your-first-identity">difference between understanding tokens and exposing them</a> is an important part of learning identity safely.</p>
+<h2>3. Replace real-user information with fictional identities</h2>
+<p>Inspect more than the central panel of a screenshot.</p>
+<p>Check:</p>
+<ul>
+<li>
+<strong>Identity details:</strong> Names, email addresses, phone numbers, profile images, and account identifiers.</li>
+<li>
+<strong>Screen edges:</strong> Browser tabs, notification banners, sidebars, and background windows.</li>
+<li>
+<strong>Files:</strong> Names and paths that disclose a person or organization.</li>
+<li>
+<strong>Repeated appearances:</strong> The same identity in logs, diagrams, exports, or other screenshots.</li>
+</ul>
+<p>Using fictional people from the beginning is safer than trying to redact every occurrence afterward.</p>
+<p><strong>Keep only what the reader needs to understand the test.</strong> A public demonstration can show an account's role in an access decision without exposing a real person's details.</p>
+<p>If the material came from work, fictionalizing a visible name does not itself grant permission to publish the underlying record. Check authorization and remove material you are not permitted to share.</p>
+<h2>4. Remove employer and customer material</h2>
+<p>Do not publish internal tickets, diagrams, configurations, procedures, or customer details without authorization.</p>
+<p>Replacing a company name does not automatically make an internal artifact appropriate for public use. The design or surrounding information may still be confidential.</p>
+<p>For a personal portfolio, rebuild the general concept with fictional data and independently created material. Label it as a lab rather than presenting it as a redacted customer engagement.</p>
+<p>Respecting that boundary is evidence of judgment, not a weakness in the portfolio.</p>
+<h2>5. Remove unnecessary infrastructure exposure</h2>
+<p>Review hostnames, public addresses, tenant identifiers, internal paths, device names, and access URLs.</p>
+<p>Not every identifier is a secret. The question is whether publishing it is necessary and appropriate for the explanation. Remove unnecessary details that reveal how to reach or map your environment.</p>
+<p>A diagram can show “test identity provider” and “sample application” without including every live endpoint.</p>
+<p>Keep the technical relationship clear while limiting information that does not help the reader evaluate your work.</p>
+<h2>6. Remove raw exports and hidden supporting files</h2>
+<p>Check archives, backups, editor files, notebooks, logs, and generated reports before adding them to the repository.</p>
+<p>A sanitized summary can accidentally sit beside the original unredacted export. Review the actual files included in the publication, not only the ones linked from the README.</p>
+<p>Use an explicit allowlist of intended public artifacts when practical. A small, deliberate publication set is easier to inspect than an entire working directory copied wholesale.</p>
+<h2>7. Remove sensitive content from the publication history</h2>
+<p>Inspect commits and branches, not just the latest version.</p>
+<p>Changing a repository to private or deleting a current file does not recall copies already obtained by others. Follow the platform's documented cleanup process when exposure has occurred, and address the credential risk first.</p>
+<p>After the review, open the public-facing project while signed out and inspect what a stranger can actually see.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> includes practical labs and portfolio guidance for a career move. The $9 guide is meant to help you show relevant capability. A safe publication should demonstrate that capability without giving away access, personal information, or someone else's confidential work.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/before-publishing-your-iam-lab-remove-these-seven-things">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

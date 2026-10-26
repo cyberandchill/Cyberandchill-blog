@@ -1,0 +1,59 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The IAM Specialty That Begins When HR Hires Someone | CyberAndChill</title><meta name="description" content="The IAM Specialty That Begins When HR Hires Someone"><link rel="canonical" href="https://blog.cyberandchill.com/posts/the-iam-specialty-that-begins-when-hr-hires-someone/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>The IAM Specialty That Begins When HR Hires Someone</h1><article class="content">
+<p><a href="https://cyberandchill.com/posts/why-identity-teams-talk-to-hr-security-it-and-application">HR</a> can trigger an identity change before anyone opens an administration console. A new hire, transfer, or departure needs to become an appropriate access decision.</p>
+<p><strong>Correct automation still needs reliable information and clear approval.</strong> If the source record is incomplete, a workflow can execute exactly as designed and still grant the wrong access.</p>
+<p>For an IAM learning project, trace where each required fact comes from and who owns the decision. That lets you practice lifecycle reasoning before treating account creation as the whole problem.</p>
+<h2>Separate the business event from the access decision</h2>
+<p>A hire tells you someone is joining. It doesn't automatically tell you every application and permission they should receive.</p>
+<p>A department change tells you something about the person's role. It may not explain which temporary responsibilities remain or which access should be removed immediately.</p>
+<p>For a fictional employee, list the event and the information required to act on it: identity, role, manager, effective date, and the relevant access owner.</p>
+<p>The exact fields depend on the organization. The exercise is to discover what the decision needs rather than assume that an account-creation request contains a complete answer.</p>
+<h2>Identify who owns each fact and access decision</h2>
+<p>The information needed for a lifecycle change may come from different people. Record those responsibilities explicitly:</p>
+<table>
+<thead>
+<tr>
+<th>Information or decision</th>
+<th>What your scenario must identify</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Start or departure date</strong></td>
+<td>The source authorized to confirm the event</td>
+</tr>
+<tr>
+<td><strong>Role or department</strong></td>
+<td>The owner of the relevant business definition</td>
+</tr>
+<tr>
+<td><strong>Resource access</strong></td>
+<td>The person authorized to approve the entitlement</td>
+</tr>
+<tr>
+<td><strong>Missing or conflicting value</strong></td>
+<td>The owner who can clarify it before a change proceeds</td>
+</tr>
+</tbody>
+</table>
+<p>A directory administrator shouldn't have to guess because a request contains an empty field.</p>
+<p>In your fictional scenario, decide what happens when two inputs conflict. Does the request pause for clarification, and who receives it?</p>
+<p>This is part of the technical design: it prevents a reliable automation process from converting uncertain information into an unjustified access change.</p>
+<h2>Model an incomplete record before automating</h2>
+<p>Create a fictional request with one missing or inconsistent piece of information.</p>
+<p>Perhaps the employee's department is blank, the manager is unknown, or the effective date conflicts with the approved request. Write the expected response: pause the affected action, record the reason, and route the question to the appropriate owner.</p>
+<p><strong>Don't make “guess from another employee” the default recovery method.</strong> Similar titles do not necessarily justify identical access.</p>
+<p>A small exception case can reveal whether you understand the process more effectively than a perfect set of sample data where every workflow succeeds.</p>
+<h2>Connect reliable inputs to lifecycle actions</h2>
+<p>Microsoft's <a href="https://learn.microsoft.com/en-us/entra/id-governance/what-are-lifecycle-workflows">Lifecycle Workflows overview</a> describes tasks and execution conditions used around joiner, mover, and leaver events.</p>
+<p>The product is one implementation of a broader problem: deciding which action should run for which identity and when.</p>
+<p>You can practice the reasoning manually before using a particular automation feature. Record the input, decision, action, and verification. Then investigate which steps your available platform can automate and what licensing or prerequisites apply.</p>
+<p>Don't claim an automated lifecycle process when the lab only documents a manual sequence. Both can teach something, but they demonstrate different capabilities.</p>
+<h2>Show that the result matches the business event</h2>
+<p>After a change, verify the intended access state rather than merely confirming that a workflow ran.</p>
+<p>For a mover, compare what was added, retained, and removed. For a departure, state which access paths your project addresses and what remains outside its scope.</p>
+<p>A useful portfolio artifact includes the source-data assumptions and exception handling alongside the technical result. It shows you understand why the change should happen, not only how to trigger it.</p>
+<p>Include the effective time in the record when it affects the scenario. A technically correct change applied too early or too late may still fail the business requirement. Document how your exercise handles that timing rather than leaving it implicit.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> introduces lifecycle and governance work as practical career directions. It helps connect the ordinary business event—somebody joining, moving, or leaving—to the identity responsibilities you can learn and demonstrate next. The ebook is $9.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/the-iam-specialty-that-begins-when-hr-hires-someone">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

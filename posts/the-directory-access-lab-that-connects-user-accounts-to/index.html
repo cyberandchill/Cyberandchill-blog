@@ -1,0 +1,59 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Directory Access Lab That Connects User Accounts to Security | CyberAndChill</title><meta name="description" content="The Directory Access Lab That Connects User Accounts to Security"><link rel="canonical" href="https://blog.cyberandchill.com/posts/the-directory-access-lab-that-connects-user-accounts-to/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>The Directory Access Lab That Connects User Accounts to Security</h1><article class="content">
+<p>A directory-access lab should show what an account can do, not just that the account exists.</p>
+<p><strong>Use a permissions matrix to connect users, groups, resources, and allowed actions.</strong> Two fictional roles and one folder can be enough to demonstrate the difference between reading and changing information.</p>
+<p>Define the expected behavior before configuring the environment. Then test each relevant action and explain any mismatch. That produces a more useful IAM example than a user-creation screenshot because the project is testing an actual access requirement.</p>
+<h2>Separate read access from permission to change files</h2>
+<p><strong>Use a fictional purchasing team and a supplier folder.</strong> Define the requirements before you build:</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Required action</th>
+<th>Action outside the requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Reviewer</strong></td>
+<td>Read the test documents</td>
+<td>Change their contents</td>
+</tr>
+<tr>
+<td><strong>Editor</strong></td>
+<td>Update the test documents</td>
+<td>Anything beyond the defined editing requirement</td>
+</tr>
+<tr>
+<td><strong>Other employee</strong></td>
+<td>No access through this design</td>
+<td>Read or change the supplier documents</td>
+</tr>
+</tbody>
+</table>
+<p>“Access to the folder” is too broad to test. Reading, creating, modifying, and deleting are different actions, so choose the ones your scenario actually requires.</p>
+<p><strong>Don't assume an editing label settles every permission detail.</strong> State which actions you'll verify and what this version leaves untested.</p>
+<p>Start with those few checks. You can expand the scenario once you understand the first permission path and can explain its results.</p>
+<h2>Use groups to represent the intended access</h2>
+<p>Create fictional test identities and appropriate lab groups for the defined roles. <a href="https://cyberandchill.com/posts/how-to-practice-least-privilege-in-a-small-active-directory">Configure the resource permissions</a> through the intended groups.</p>
+<p>Microsoft's <a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-principals">security-principal guidance</a> explains the use of groups to manage shared rights and permissions rather than assigning everything separately to individual accounts.</p>
+<p>Record which membership is supposed to provide which capability. Keep group names descriptive enough that the diagram and evidence remain understandable.</p>
+<p>Don't use broad administrative membership to avoid permission problems. That would bypass the learning question rather than answer it.</p>
+<h2>Test each role against each relevant action</h2>
+<p>Use a reviewer account to attempt reading and modifying. Use an editor account for the corresponding actions. Then use an unrelated account to test the intended exclusion.</p>
+<p>Record expected and actual results in the same matrix. Confirm the active identity and use appropriate fresh-session conditions after membership changes.</p>
+<p>If you're accessing a Windows resource through a network share, account for the relevant permission layers rather than assuming one visible setting explains the result. Use current platform documentation for your implementation.</p>
+<p>An unexpected success is as important as an unexpected failure. Both mean the behavior needs investigation.</p>
+<h2>Investigate the permission path, not just the error</h2>
+<p>When the result differs from your expectation, trace how the user receives access.</p>
+<p>Check the memberships and permissions relevant to your lab, including inheritance or other assignments that may affect the outcome. Change one relevant condition at a time where possible.</p>
+<p>Avoid adding a broad allow rule because it makes the test pass quickly. Your goal is to match the defined role, including the actions it should not perform.</p>
+<p>Document the original result, the cause you established, the correction, and the retest. That sequence shows more understanding than presenting only the final working configuration.</p>
+<h2>Turn the matrix into the portfolio summary</h2>
+<p>Put the business requirement and the final test matrix near the top of the write-up. Add a simple diagram and the configuration details needed to support the conclusion.</p>
+<p>State the limits: one resource, fictional roles, and the specific actions tested. This isn't a complete enterprise access model.</p>
+<p>Then explain the career connection. You practiced translating a requirement into group-based permissions, checking behavior, and troubleshooting a mismatch. Those are more informative claims than “built an Active Directory lab.”</p>
+<p>Keep the original matrix even when a test fails. Mark the unexpected outcome instead of silently changing the requirement to fit the configuration. The mismatch is what gives the troubleshooting work a clear purpose and makes the correction understandable.</p>
+<p>My <a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> places directory access work alongside sign-in and lifecycle projects. It helps you build evidence that connects familiar account administration to the access decisions identity roles are responsible for supporting. The ebook is $9.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/the-directory-access-lab-that-connects-user-accounts-to">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

@@ -1,0 +1,57 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Microsoft Identity Terms That Confuse Even Experienced IT People | CyberAndChill</title><meta name="description" content="The Microsoft Identity Terms That Confuse Even Experienced IT People"><link rel="canonical" href="https://blog.cyberandchill.com/posts/the-microsoft-identity-terms-that-confuse-even-experienced/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>The Microsoft Identity Terms That Confuse Even Experienced IT People</h1><article class="content">
+<p>Microsoft identity terms are easier to understand when you separate products, organizational boundaries, application objects, and permission systems.</p>
+<p><strong>Don't assume familiar words describe the same authority or relationship in every context.</strong> A tenant, subscription, directory role, and resource role answer different questions.</p>
+<p>Before building a cloud-identity lab, learn the distinctions that affect your scenario. You don't need a glossary of every feature. You need to know which system contains the object, which action you're performing, and which permission governs that action.</p>
+<h2>Active Directory and Entra ID are not interchangeable</h2>
+<p>Active Directory Domain Services is the directory technology associated with Windows domains. Microsoft Entra ID is the cloud identity service previously named Azure Active Directory.</p>
+<p>The rename does not mean that on-premises Active Directory was renamed Entra ID. It also doesn't make the two systems identical.</p>
+<p>Microsoft's <a href="https://learn.microsoft.com/en-us/entra/fundamentals/new-name">naming guidance</a> explains that distinction. In conversation, say which directory you mean rather than shortening both to “AD” and hoping the listener follows.</p>
+<p>This matters when someone asks where an account is managed or which system authenticated a user.</p>
+<h2>A tenant is not the same thing as a subscription</h2>
+<p>A tenant is an identity boundary in Entra ID. An Azure subscription is associated with Azure resource management and billing.</p>
+<p>They relate to each other, but they answer different questions. Knowing which tenant contains a user doesn't by itself tell you which Azure resources that user can manage.</p>
+<p>In a lab diagram, label the identity boundary separately from the resource scope. That makes it easier to explain why an account can exist without having permission to operate a virtual machine or change a resource group.</p>
+<p>Don't use “my Azure account” as a substitute for all those distinctions.</p>
+<h2>Separate directory administration from Azure resource access</h2>
+<p>Entra roles and Azure role-based access control govern different kinds of authority:</p>
+<table>
+<thead>
+<tr>
+<th>Permission system</th>
+<th>What it governs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Entra roles</strong></td>
+<td>Administrative tasks in the directory</td>
+</tr>
+<tr>
+<td><strong>Azure role-based access control</strong></td>
+<td>Access to Azure resources at the relevant scope</td>
+</tr>
+</tbody>
+</table>
+<p>A role containing “administrator” doesn't tell you enough on its own. Identify the permission system, object, action, and scope.</p>
+<p>Microsoft explains the <a href="https://learn.microsoft.com/en-us/azure/role-based-access-control/rbac-and-directory-admin-roles">difference between Azure and Entra roles</a>. Use that reference when planning the permissions for a test account.</p>
+<p>Don't grant progressively broader roles until something works. First ask which specific action requires permission and where that authority is enforced.</p>
+<p>That habit makes both the configuration and your explanation more precise than treating every administrator label as equivalent.</p>
+<h2>An application registration and a service principal are related objects</h2>
+<p>These terms often appear together, which makes them easy to merge mentally.</p>
+<p>The application object describes the application. A service principal represents that application in a particular tenant. Microsoft explains the relationship in its <a href="https://learn.microsoft.com/en-us/entra/identity-platform/app-objects-and-service-principals">application-object documentation</a>.</p>
+<p>For an early lab, you don't need to memorize every object property. You should understand why an application can have a definition and a tenant-specific representation with its own permissions and assignments.</p>
+<p>Draw the relationship once. A small diagram can prevent a lot of confused clicking.</p>
+<h2>SSO and provisioning solve different problems</h2>
+<p>Single sign-on concerns authentication into an application. Provisioning concerns creating, updating, or removing the accounts and related information that the application needs.</p>
+<p>A successful sign-in doesn't prove that a user's application account has the correct role. A provisioned account doesn't prove that the authentication flow is configured correctly.</p>
+<p>When troubleshooting, ask which function failed. That question narrows the evidence you need before you change anything.</p>
+<p>See <a href="https://cyberandchill.com/posts/a-beginner-s-guide-to-the-identity-provider-and-service">the identity-provider and application relationship</a> for a simpler starting diagram.</p>
+<h2>Keep a glossary tied to your own project</h2>
+<p>Create a two-column note: the term and where it appears in your lab.</p>
+<p>For “tenant,” identify the boundary. For “role,” name the permission and scope. For “service principal,” identify the application representation you're discussing.</p>
+<p>Definitions become more useful when you can point to an example and explain its effect. You also discover which words you have been repeating without understanding.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> provides a $9 route from existing IT experience to a focused IAM role and practical lab evidence. Use it to choose which concepts deserve your attention first.</p>
+<p>You don't need to learn every Microsoft name at once. Start by knowing which kind of thing each name describes.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/the-microsoft-identity-terms-that-confuse-even-experienced">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

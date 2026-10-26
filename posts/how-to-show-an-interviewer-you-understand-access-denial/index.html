@@ -1,0 +1,58 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>How to Show an Interviewer You Understand Access Denial | CyberAndChill</title><meta name="description" content="How to Show an Interviewer You Understand Access Denial"><link rel="canonical" href="https://blog.cyberandchill.com/posts/how-to-show-an-interviewer-you-understand-access-denial/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">Career · 2026-10-26</p><h1>How to Show an Interviewer You Understand Access Denial</h1><article class="content">
+<p>“Access denied” can be a correct control result, a mistake, or an unrelated failure.</p>
+<p><strong>Explain the intended rule and show evidence that the specific action was refused for the relevant reason.</strong> A failed network connection or wrong resource path isn't proof of authorization working.</p>
+<p>Use paired tests and ordinary accounts to make the boundary visible. Then describe the permission path, investigation, and limitations clearly enough for an interviewer to assess your understanding.</p>
+<h2>State what the user should and should not do</h2>
+<p>Begin with a small scenario. A reviewer should read a test document but should not modify it. A contributor should be able to update it. Both accounts are fictional and the resource is part of an isolated lab.</p>
+<p>That gives the denial a purpose. The restriction exists because the reviewer's responsibility doesn't require editing, not because denying everything is automatically more secure.</p>
+<p><strong>Write the requirement before changing permissions so you have a stable definition of success.</strong></p>
+<h2>Distinguish authorization from general failure</h2>
+<p>Suppose the reviewer cannot open the document at all.</p>
+<p>That might be caused by the permission model, but it could also involve an incorrect path, unavailable server, or another problem in the test setup. You need evidence before calling it an authorization result.</p>
+<p>Confirm the intended resource and test identity. Use a control account or an allowed action to establish that the relevant path works under the expected conditions.</p>
+<p>Microsoft's <a href="https://learn.microsoft.com/en-us/windows/security/identity-protection/access-control/access-control">access-control overview</a> provides the underlying vocabulary for principals, permissions, and protected resources.</p>
+<h2>Explain the permission path you evaluated</h2>
+<p>Show how the user receives the relevant access: directly, through a group, or through the mechanism used in your environment.</p>
+<p><strong>Don't simply point to one permission entry and assume it represents every way access could be granted.</strong> Investigate the applicable scope and other paths that could affect the result.</p>
+<p>For the interview, keep the explanation focused on the specific lab. You don't need to imply that a small test covers every permission interaction in a production environment.</p>
+<p>The question is whether you understand why this account should receive this result.</p>
+<h2>Pair a permitted action with the prohibited action</h2>
+<p>For a fictional reviewer, test the two intended behaviors separately:</p>
+<table>
+<thead>
+<tr>
+<th>Identity and action</th>
+<th>Expected result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reviewer reads the sample document</td>
+<td>Allowed</td>
+</tr>
+<tr>
+<td>Reviewer edits it</td>
+<td>Denied</td>
+</tr>
+<tr>
+<td>Authorized contributor edits it</td>
+<td>Allowed, if this control is part of the scenario</td>
+</tr>
+</tbody>
+</table>
+<p>The comparison is more informative than a single error screenshot. It helps show that the resource is usable and the action can succeed for an identity that should have permission.</p>
+<p>The <strong><a href="https://cyberandchill.com/posts/three-identity-test-cases-that-make-an-access-control-demo">three-case access-control test set</a></strong> adds a removal case when lifecycle behavior is part of the objective.</p>
+<p>Record session conditions and other limitations. Don't choose whichever test context produces a convenient result; use the context relevant to the requirement and explain what that evidence supports.</p>
+<h2>Describe what you did when denial was unexpected</h2>
+<p>An interviewer may ask about a user who should have access but does not.</p>
+<p>Explain how you would compare the requirement with the actual identity, entitlement, resource, and evidence. Avoid immediately granting broad permissions just to make the problem disappear.</p>
+<p>In your lab, investigate one mismatch and verify the correction against both the allowed and prohibited actions. Make sure the fix doesn't restore the user's task by removing an important boundary.</p>
+<p>That's the practical difference between troubleshooting access and bypassing the access model.</p>
+<h2>Keep the final explanation concise and bounded</h2>
+<p>A strong summary might be: “I verified the test resource was available, confirmed the account's intended role, demonstrated read access and edit denial, and checked that the contributor control could still edit.”</p>
+<p>Follow with what you did not test. That makes the claim precise and gives the interviewer a clear place to ask for more detail.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> includes directory-access labs and guidance on turning test results into portfolio and interview evidence. It's $9.</p>
+<p>The point isn't to make a denial look impressive. It's to show that you can connect a business requirement, an access decision, and an observed result without confusing one for another.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/how-to-show-an-interviewer-you-understand-access-denial">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

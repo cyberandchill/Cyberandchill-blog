@@ -1,0 +1,50 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Part of Zero Trust That Has to Work Before Anything Else | CyberAndChill</title><meta name="description" content="The Part of Zero Trust That Has to Work Before Anything Else"><link rel="canonical" href="https://blog.cyberandchill.com/posts/the-part-of-zero-trust-that-has-to-work-before-anything-else/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">Career · 2026-10-25</p><h1>The Part of Zero Trust That Has to Work Before Anything Else</h1><article class="content">
+<p>A defensible access decision needs an explanation of <strong>who or what is requesting access, what action is intended, and why it should be allowed</strong>.</p>
+<p>That makes identity a useful part of learning Zero Trust, but not the entire architecture. Understanding an account or permission doesn't mean you've implemented every related control.</p>
+<p>Start with one concrete decision. It gives the technical concepts a purpose and helps you demonstrate a bounded capability without making an oversized security claim.</p>
+<h2>Don't treat network location as a complete answer</h2>
+<p>Being on a familiar network does not, by itself, explain why a user should access a particular resource.</p>
+<p>NIST's <a href="https://www.nist.gov/publications/zero-trust-architecture">Zero Trust Architecture publication</a> describes an approach that does not grant implicit trust solely from physical or network location or asset ownership.</p>
+<p>For a beginner, the practical lesson is to stop equating “inside” with “authorized.”</p>
+<p>You still need to identify the requested resource, the relevant identity, the intended action, and the controls that apply. Network protections remain important; they simply don't answer every access question alone.</p>
+<h2>Separate identity verification from permission</h2>
+<p>A successful sign-in helps establish an identity within a particular authentication process. It does not mean that identity should receive every available permission.</p>
+<p>Imagine a fictional employee who can sign in to the organization's environment but should not open payroll records.</p>
+<p>That is not a contradiction. Authentication and authorization address different questions.</p>
+<p>An IAM learning project becomes more useful when it demonstrates both: the intended identity can authenticate, and the resulting access remains limited to the defined requirement.</p>
+<h2>Turn “give them access” into a complete requirement</h2>
+<p>Before implementing the permission, ask:</p>
+<ul>
+<li>
+<strong>Resource:</strong> What system or information is involved?</li>
+<li>
+<strong>Action:</strong> What must the identity be able to do?</li>
+<li>
+<strong>Purpose:</strong> Which work requires that action?</li>
+<li>
+<strong>Approval:</strong> Who can confirm the need?</li>
+<li>
+<strong>Duration:</strong> When should the access be reconsidered or removed?</li>
+</ul>
+<p>These questions connect configuration to business responsibility. A technically correct assignment can still grant the wrong access if the requirement is unclear.</p>
+<p>In a fictional lab, define a narrow role and compare an authorized user with an unrelated user. Verify the behavior relevant to the requirement.</p>
+<p>Present it as evidence of one access boundary. You can show thoughtful identity reasoning without claiming that two test accounts and a successful denial constitute a complete Zero Trust architecture.</p>
+<h2>Keep identity information current as circumstances change</h2>
+<p>An access decision can become outdated when a person's role changes or their relationship with the organization ends.</p>
+<p>That is why identity lifecycle work matters. The account and permissions need to remain connected to the current approved state, not only the state when the person first joined.</p>
+<p>For a learning example, show a transfer between two fictional teams. Identify which access should be added, retained, or removed, then test the relevant result.</p>
+<p>Explain the limits of the demonstration, including any application or session behavior you did not model.</p>
+<h2>Recognize the other parts of the architecture</h2>
+<p>Identity is not a substitute for understanding devices, resources, telemetry, application behavior, and policy enforcement.</p>
+<p>A credible explanation acknowledges those dependencies. Avoid saying “we enabled MFA, so we implemented Zero Trust.” A single control does not establish the entire design.</p>
+<p>Instead, explain the particular decision your control supports and the information it relies on.</p>
+<p><strong>Use <a href="https://cyberandchill.com/posts/cloud-networking-security-where-does-iam-fit-in-the-stack">the relationship between identity, cloud, networking, and security</a> to keep your mental model connected rather than turning each technology into an isolated specialty.</strong></p>
+<h2>Build a career example around one access decision</h2>
+<p>A small project can state the requirement, identify the actors, show the permission path, and record allowed and denied tests.</p>
+<p>Add a lifecycle change or a controlled failure when it genuinely deepens the example. Keep the business question visible throughout the writeup.</p>
+<p>That gives you something more useful to discuss than a collection of broad architectural slogans.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> helps translate identity concepts into practical labs and a targeted career plan. The $9 guide is a starting point for building evidence, not a claim that one book or lab implements an enterprise security architecture.</p>
+<p>Understand one decision well enough to explain it. Then expand the surrounding design with a clear reason for each new piece.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/the-part-of-zero-trust-that-has-to-work-before-anything-else">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

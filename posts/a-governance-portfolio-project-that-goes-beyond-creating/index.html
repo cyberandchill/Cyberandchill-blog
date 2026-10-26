@@ -1,0 +1,63 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A Governance Portfolio Project That Goes Beyond Creating Users | CyberAndChill</title><meta name="description" content="A Governance Portfolio Project That Goes Beyond Creating Users"><link rel="canonical" href="https://blog.cyberandchill.com/posts/a-governance-portfolio-project-that-goes-beyond-creating/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-26</p><h1>A Governance Portfolio Project That Goes Beyond Creating Users</h1><article class="content">
+<p>A governance project should show <strong>how an access decision becomes a completed, verified change</strong>.</p>
+<p>Creating users is only one possible technical action. The more useful demonstration explains why access is appropriate, who decides, what must change, and what evidence confirms the result.</p>
+<p>You can model this with fictional users, a small test environment, and ordinary records. The goal is a traceable chain from request or review to actual access—not a claim that you've reproduced an enterprise governance program.</p>
+<h2>Start with an access inventory that contains a reason</h2>
+<p>Create a fictional project resource and a small set of users with different responsibilities.</p>
+<p>For each assignment, record the identity, permission, owner, business reason, and expected end or review condition. Use enough variation to make the review meaningful: a current employee, a former project participant, and a contractor with an approaching end date.</p>
+<p>Do not populate a large table just to simulate scale. A few carefully chosen cases can reveal the questions you want the project to answer.</p>
+<h2>Give the reviewer a decision they can understand</h2>
+<p>The reviewer needs context, not just usernames and a button labeled approve.</p>
+<p>Show what the access permits, why it was originally granted, and what has changed. Ask the fictional resource owner to retain, remove, or investigate each assignment.</p>
+<p>You are modeling a decision process. Clearly distinguish a manually recorded review from a review enforced by a governance platform.</p>
+<p><a href="https://learn.microsoft.com/en-us/entra/id-governance/access-reviews-overview">Microsoft's access-review overview</a> provides an example of how review capabilities can be organized around resources and reviewers. Check current feature requirements before attempting a product-specific implementation.</p>
+<h2>Keep the decision separate from the completed change</h2>
+<p>A reviewer selecting “remove” is not proof that access has disappeared.</p>
+<p>Track the resulting action: which membership, assignment, or permission needs to change, who is responsible for carrying it out, and what evidence will confirm completion.</p>
+<p>For the lab, perform the authorized change on your fictional identities and test the relevant resource action afterward.</p>
+<p>The project becomes more useful when it shows the entire chain rather than stopping at a completed review spreadsheet.</p>
+<h2>Include one exception and one unresolved item</h2>
+<p>Realistic decision-making does not require inventing a production incident.</p>
+<p>For a fictional exception, let a contractor receive a short extension with a named sponsor and a new end condition. Record why the exception exists and how it will be revisited.</p>
+<p>For an unresolved item, make the business reason unclear. Show that it needs investigation rather than silently treating uncertainty as approval.</p>
+<p>The <a href="https://cyberandchill.com/posts/what-a-good-access-request-workflow-should-capture">information a useful access request should capture</a> can help explain why incomplete records create difficult review decisions later.</p>
+<h2>Compare the decision with the access that actually exists</h2>
+<p>After implementing the review decisions, reconcile the inventory with the system state you can observe.</p>
+<p>Use separate records for:</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Decided</td>
+<td>The reviewer authorized keeping, changing, or removing access.</td>
+</tr>
+<tr>
+<td>Implemented</td>
+<td>The corresponding technical change was made.</td>
+</tr>
+<tr>
+<td>Verified</td>
+<td>The observed state or resource test supports the intended result.</td>
+</tr>
+<tr>
+<td>Unresolved</td>
+<td>A failure, dependency, or untested condition remains.</td>
+</tr>
+</tbody>
+</table>
+<p>Where practical, test the actual action instead of relying only on a configuration screenshot.</p>
+<p>Document the identities, resources, and session conditions checked. A small review cannot establish that every possible access path in an organization is correct.</p>
+<p>This reconciliation is what makes the project more than a form-filling exercise: it shows that you distinguish a policy decision from an outcome you have evidence to support.</p>
+<h2>Present the project as an evidence chain</h2>
+<p>Your portfolio can show five connected artifacts: the initial inventory, reviewer decisions, change record, test results, and unresolved or exception items.</p>
+<p>Explain the business question first: who should still have access, and how do we know the system now reflects that decision?</p>
+<p>Then describe the implementation and limitations. The project does not need a commercial platform to demonstrate the reasoning, though platform experience may be a separate requirement for particular roles.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> introduces IAM lanes and practical lifecycle work within a 90-day career plan. The $9 guide helps you turn a governance interest into a concrete project that shows decision-making, implementation, and verification—not just another batch of user accounts.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/a-governance-portfolio-project-that-goes-beyond-creating">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

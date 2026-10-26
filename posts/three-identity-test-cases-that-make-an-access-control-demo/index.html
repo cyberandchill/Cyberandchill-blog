@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Three Identity Test Cases That Make an Access-Control Demo Credible | CyberAndChill</title><meta name="description" content="Three Identity Test Cases That Make an Access-Control Demo Credible"><link rel="canonical" href="https://blog.cyberandchill.com/posts/three-identity-test-cases-that-make-an-access-control-demo/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-26</p><h1>Three Identity Test Cases That Make an Access-Control Demo Credible</h1><article class="content">
+<p>A credible access-control demo shows <strong>intended access, excluded access, and what happens after permission is removed</strong>.</p>
+<p>One successful login doesn't establish those boundaries. Use a small isolated lab, fictional accounts, and a harmless resource to test them separately.</p>
+<p>Write expected results before running the tests. That keeps you from treating whichever behavior happens to occur as the result you meant to build, and gives the final explanation a clear standard for success.</p>
+<h2>Define one resource and one allowed action</h2>
+<p>Imagine a project folder containing synthetic planning documents. Members of the project-review group should be able to read the documents. People outside the project should not.</p>
+<p>Keep the scenario that narrow at first. Don't combine it with privileged administration, cloud synchronization, and multiple applications unless those are part of the question you intend to answer.</p>
+<p>Record the resource, the group, the accounts, and the permission path. Microsoft's <a href="https://learn.microsoft.com/en-us/windows/security/identity-protection/access-control/access-control">access-control documentation</a> explains how permissions connect security principals with protected resources.</p>
+<p>Your test evidence should connect that configuration to observable behavior.</p>
+<h2>Test one: verify the approved user's intended action</h2>
+<p>Use an ordinary fictional account in the approved group—not an administrator session.</p>
+<p>Record:</p>
+<ul>
+<li>
+<strong>Identity:</strong> The account used for the attempt.</li>
+<li>
+<strong>Resource:</strong> The designated sample folder or document.</li>
+<li>
+<strong>Action:</strong> The specific operation, such as reading.</li>
+<li>
+<strong>Expectation and observation:</strong> What should happen and what did happen.</li>
+</ul>
+<p>If the requirement is read-only access, opening the file establishes that reading worked. It doesn't by itself establish that editing is blocked.</p>
+<p>You can add an action-boundary check within this case, but keep its purpose explicit. The approved person should be able to do the approved work without silently receiving unnecessary authority.</p>
+<p>This first case demonstrates usable permission. The excluded-user and removal cases add different evidence; don't use the success screenshot as a substitute for those tests.</p>
+<h2>Test two: an excluded person cannot use the resource</h2>
+<p><strong>Use a separate ordinary account that should not have project access.</strong> Attempt the same read action against the same resource.</p>
+<p>A denied result is useful only when you know why it happened. A powered-off server or an incorrect path would also prevent access, but would not demonstrate your authorization rule.</p>
+<p>Confirm that the resource is reachable through the intended path and that the authorized control account still works.</p>
+<p>This comparison helps distinguish a meaningful access denial from a general failure of the environment.</p>
+<h2>Test three: removed access actually stops working</h2>
+<p>Now take an account that previously had access and remove the relevant entitlement according to your lab design.</p>
+<p>Retest under conditions appropriate to the system. Existing sessions or cached authorization information can affect what you observe, so document whether you started a fresh session and what you did not evaluate.</p>
+<p>Don't promise that removing one group membership instantly terminates every possible session in every application. State the specific result your test demonstrates.</p>
+<p>This case turns a static permission screenshot into a lifecycle example: someone had a reason for access, that reason ended, and you checked the effect.</p>
+<h2>Use consistent identities, resources, and conditions across tests</h2>
+<p>For each case, record the account's intended role, starting condition, action, expected result, actual result, and relevant evidence.</p>
+<p><strong>Use the same naming and resource references across the document.</strong> A reviewer shouldn't have to guess whether three screenshots refer to three different folders.</p>
+<p>When a test behaves unexpectedly, keep the failed result and explain the investigation. The <a href="https://cyberandchill.com/posts/why-troubleshooting-notes-can-be-more-impressive-than-the">troubleshooting notes behind the final screenshot</a> can be as useful as the successful retest.</p>
+<p>Add a limitation such as “This exercise tested fresh Windows sessions against one test folder; it did not evaluate cloud application sessions.”</p>
+<h2>Explain what the three cases demonstrate</h2>
+<p>Together, the cases show intended access, exclusion, and removal. They don't prove that an entire identity environment is secure.</p>
+<p>That bounded claim is enough for a useful portfolio project. It gives an interviewer concrete questions to ask about your reasoning and the design.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> includes directory access, SSO, and identity lifecycle lab guidance for $9.</p>
+<p>Use the projects to build evidence that answers a hiring question. A small demonstration with clear tests is easier to trust than a large environment with unexplained screenshots.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/three-identity-test-cases-that-make-an-access-control-demo">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

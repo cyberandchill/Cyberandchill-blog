@@ -1,0 +1,45 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>If You've Worked on Permissions, You've Worked on Authorization | CyberAndChill</title><meta name="description" content="If You've Worked on Permissions, You've Worked on Authorization"><link rel="canonical" href="https://blog.cyberandchill.com/posts/if-you-ve-worked-on-permissions-you-ve-worked-on/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">Career · 2026-10-25</p><h1>If You've Worked on Permissions, You've Worked on Authorization</h1><article class="content">
+<p>When you give someone read access but not edit access, you're working with authorization: what an identity is allowed to do with a resource.</p>
+<p><strong>Explain the decision behind the permission change, not just the click that applied it.</strong> Your existing permissions work may already provide relevant IAM experience.</p>
+<p>Name the identity, resource, action, and conditions. Then explain who approved the access and how you checked it. That turns “I added the user” into a more useful example without overstating the responsibility you actually held.</p>
+<h2>Name the action instead of saying only “access”</h2>
+<p>“Needs access to the finance system” is incomplete. The person may need to view reports, submit a request, approve a payment, or administer the application.</p>
+<p>Those actions can require different permissions and different approvals.</p>
+<p>In a fictional lab, define one action precisely: a purchasing employee may read approved supplier documents but may not modify them.</p>
+<p>That requirement is easier to implement and test than a broad statement that the user should “have access.” It also gives you a clear basis for deciding whether the result is correct.</p>
+<h2>Identify the identity receiving the permission</h2>
+<p>The user account matters, but so can the groups or roles through which the permission is assigned.</p>
+<p>Microsoft's <a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-groups">security group documentation</a> explains one common way to organize Windows permissions.</p>
+<p>Your explanation should connect the specific account to the relevant membership and then to the resource permission. Do not assume the relationship is obvious from a screenshot of a directory console.</p>
+<p>Also check whether another assignment grants the same capability. Removing one path does not prove the user has no remaining access.</p>
+<h2>Distinguish authorization from authentication</h2>
+<p>A user can prove who they are and still be denied a particular action.</p>
+<p>That is not necessarily an error. It may be the intended result of the access model.</p>
+<p>Conversely, a user who cannot authenticate has not yet reached the point where your resource permission can be tested meaningfully.</p>
+<p>In a portfolio, describe which stage you are evaluating. A failed login screenshot is not automatically evidence that your authorization rule worked.</p>
+<p><a href="https://cyberandchill.com/posts/the-difference-between-authentication-and-authorization-gets">A practical explanation of authentication versus authorization</a> helps make that boundary clear without turning it into a terminology exercise.</p>
+<h2>Distinguish permission-setting ability from approval authority</h2>
+<p>Being able to grant access doesn't mean you're authorized to decide it is appropriate. Include the business decision in your scenario:</p>
+<ul>
+<li>
+<strong>Resource owner:</strong> Who understands the resource and its sensitivity?</li>
+<li>
+<strong>Approver:</strong> Who can authorize the requested action?</li>
+<li>
+<strong>Need:</strong> Which responsibility justifies the permission?</li>
+<li>
+<strong>Duration:</strong> When should the permission end or be reviewed?</li>
+</ul>
+<p>In a lab, use fictional owners and clearly label approval as simulated.</p>
+<p>This also explains why copying another user's access is not a reliable decision method. Similar job titles don't establish identical responsibilities.</p>
+<p>A temporary project may require an end date or review rather than indefinite access. Authorization concerns continued permission as well as the initial grant.</p>
+<p>Document enough for another person to understand why the access exists and what would cause that decision to change.</p>
+<h2>Demonstrate the boundary with two accounts</h2>
+<p><strong>Use an ordinary account that should receive the permission and another that should not.</strong> Test the same resource and action under comparable conditions.</p>
+<p>Then test an action outside the allowed scope, such as editing when only reading should be permitted. Record the results and relevant session conditions.</p>
+<p>You now have evidence for a specific authorization claim. You have not proved an entire enterprise security model, and you do not need to pretend you have.</p>
+<p>The directory and lifecycle projects in <a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> give familiar permissions work a more deliberate career purpose. The $9 guide helps connect that evidence with roles and positioning.</p>
+<p>You may already know the mechanics. Learning to explain the authorization decision is what makes the experience easier for an identity team to recognize.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/if-you-ve-worked-on-permissions-you-ve-worked-on">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

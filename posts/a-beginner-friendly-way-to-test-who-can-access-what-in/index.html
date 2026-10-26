@@ -1,0 +1,59 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A Beginner-Friendly Way to Test Who Can Access What in Windows | CyberAndChill</title><meta name="description" content="A Beginner-Friendly Way to Test Who Can Access What in Windows"><link rel="canonical" href="https://blog.cyberandchill.com/posts/a-beginner-friendly-way-to-test-who-can-access-what-in/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">Career · 2026-10-26</p><h1>A Beginner-Friendly Way to Test Who Can Access What in Windows</h1><article class="content">
+<p>To understand Windows permissions, <strong>test the actual resource actions with ordinary user accounts—not only with an administrator account</strong>.</p>
+<p>One account may be able to read a file but not change it. Another may be denied entirely. Those differences are the point of the exercise.</p>
+<p>Use an isolated Windows lab, dummy documents, and fictional users. Keep personal files and employer resources out of the experiment, then record which identity attempted each action and what actually happened.</p>
+<h2>Define two users and one clear requirement</h2>
+<p>Create a fictional project reader and a fictional user with no project access. Use a test folder containing harmless sample files.</p>
+<p>The requirement is straightforward: the reader can open the files but cannot modify them; the other user cannot read them.</p>
+<p>Write those expectations before changing permissions. You now have a small access matrix instead of the vague goal “make the folder secure.”</p>
+<p><strong>Keep the setup within an environment you can recover.</strong> Do not change permissions on system folders or remove the administrative recovery path.</p>
+<h2>Configure permissions through a clearly named group</h2>
+<p>Use a project-reader group to represent the intended membership, then inspect the folder's permissions and inheritance.</p>
+<p><a href="https://learn.microsoft.com/en-us/windows/security/identity-protection/access-control/access-control">Microsoft's access-control overview</a> explains how permissions, security principals, and inheritance affect access to Windows resources.</p>
+<p>Check for broader inherited grants that might make your test meaningless. Do not assume the new group is the only route to the folder.</p>
+<p>For the first exercise, you do not need a complicated set of explicit deny rules. You need a configuration whose effective access matches the stated requirement.</p>
+<h2>Test reading and modifying as separate operations</h2>
+<p>Sign in with the intended reader account and test the actions explicitly.</p>
+<table>
+<thead>
+<tr>
+<th>Identity and action</th>
+<th>Intended result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Approved reader opens a sample file</td>
+<td>Allowed</td>
+</tr>
+<tr>
+<td>Approved reader tries to modify and save it</td>
+<td>Denied under the read-only requirement</td>
+</tr>
+<tr>
+<td>Unapproved user tries to open the file</td>
+<td>Denied</td>
+</tr>
+</tbody>
+</table>
+<p>Record the observed results beside the expectations. Being able to browse to a folder does not prove the user can read every file, and reading does not prove modifying is allowed.</p>
+<p><strong>Keep the active identity visible in your private test record.</strong> Accidentally testing with an administrator account can make a permission error look like success.</p>
+<p>If the outcome differs from the requirement, investigate the access path and relevant permissions before changing anything. The mismatch is useful evidence to understand, not a result to hide.</p>
+<h2>Keep local access and network-share access distinct</h2>
+<p>A local folder test and a test through a network share are not identical.</p>
+<p>If you extend the project to sharing, inspect both the share configuration and the file-system permissions. Document the route used for each test rather than mixing local and network results in one unexplained table.</p>
+<p>Microsoft provides separate guidance for <a href="https://learn.microsoft.com/pl-pl/iis/web-hosting/configuring-servers-in-the-windows-web-platform/configuring-share-and-ntfs-permissions">share and NTFS permissions</a>.</p>
+<p>You do not need to add a network share to make the first project useful. Add it when you are ready to explain the extra control boundary.</p>
+<h2>Remove membership and retest under documented conditions</h2>
+<p>Remove the reader from the project group, then establish a fresh sign-in session for the retest. Close existing resource connections as appropriate for your setup.</p>
+<p>Record exactly what you did. Do not interpret one result as proof that every existing session or open handle would behave the same way.</p>
+<p>This gives you a lifecycle test as well as an initial-access test.</p>
+<p>The <a href="https://cyberandchill.com/posts/can-you-prove-access-was-denied-that-s-a-better-lab-than-you">value of proving an action was correctly denied</a> becomes clearer when the result follows a deliberate change rather than an unrelated failure.</p>
+<h2>Document the result in a small table</h2>
+<p>Include the test identity, attempted action, expected result, observed result, and session conditions.</p>
+<p>Add a short explanation of the group and permission relationship. Keep screenshots limited to the evidence that supports your claim, and remove identifying information before publication.</p>
+<p>The finished project should let someone understand why access was allowed, why it was denied, and what changed when membership was removed.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> includes directory access as one of three practical IAM lab areas. The $9 guide helps connect a manageable exercise like this with role selection and career positioning, without requiring a large environment before you can demonstrate a useful skill.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/a-beginner-friendly-way-to-test-who-can-access-what-in">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

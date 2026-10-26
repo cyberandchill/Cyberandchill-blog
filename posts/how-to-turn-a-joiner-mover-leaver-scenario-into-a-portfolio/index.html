@@ -1,0 +1,54 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>How to Turn a Joiner-Mover-Leaver Scenario Into a Portfolio Project | CyberAndChill</title><meta name="description" content="How to Turn a Joiner-Mover-Leaver Scenario Into a Portfolio Project"><link rel="canonical" href="https://blog.cyberandchill.com/posts/how-to-turn-a-joiner-mover-leaver-scenario-into-a-portfolio/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>How to Turn a Joiner-Mover-Leaver Scenario Into a Portfolio Project</h1><article class="content">
+<p>A joiner-mover-leaver lab can show that you understand how access should change when an employee starts, transfers, and leaves.</p>
+<p><strong>Use one fictional employee and test the access at each stage.</strong> Give them a role, a manager, and a small set of resources. Then record which permissions should be added, retained, or removed.</p>
+<p>You don't need an enterprise governance platform to demonstrate the reasoning. You need a clear starting state, approved changes, and evidence that the resulting access matches the requirement.</p>
+<h2>Define one employee and a small access model</h2>
+<p>Suppose Casey joins a fictional company in customer support.</p>
+<p>Support employees need the support application and a shared knowledge resource. Finance employees need a separate finance resource. Neither role requires administrative privileges.</p>
+<p>Create a table showing the access intended for each role.</p>
+<p>Keep the system count small. Two resources are enough to expose the important decisions.</p>
+<p><strong>Record which facts trigger a change and who approves access.</strong> In a real organization, the authoritative source and approval process require explicit design; in your lab, state the assumptions clearly.</p>
+<p>You're building a model, so make its boundaries visible.</p>
+<h2>Test onboarding access, not just account creation</h2>
+<p>For the joiner event, define the starting state before making changes. Use Casey's fictional account to answer:</p>
+<ul>
+<li>
+<strong>Identity:</strong> Does the account exist, with the attributes your scenario needs?</li>
+<li>
+<strong>Approval:</strong> Who approved each requested entitlement?</li>
+<li>
+<strong>Required access:</strong> Which task should Casey be able to complete?</li>
+<li>
+<strong>Restricted access:</strong> What unrelated resource should remain unavailable?</li>
+</ul>
+<p>Perform the setup, then test through Casey's ordinary account rather than your administrator session.</p>
+<p>Record both an allowed action and an intended denial. Seeing an account appear in a console is not enough: the business requirement was usable, appropriate access.</p>
+<p>If the test fails, keep the result and investigate before moving to the transfer stage. Your portfolio will be more useful when it shows how you verified the requirement than when it only shows the account-creation screen.</p>
+<h2>Make the transfer the interesting part</h2>
+<p>Now move Casey from support to finance. Add the required finance access and decide what should happen to the support access.</p>
+<p>This is where a simple project can reveal a meaningful design issue. A process that only adds permissions will accumulate access as the employee <a href="https://cyberandchill.com/posts/what-should-happen-to-access-when-an-employee-changes-teams">changes roles</a>.</p>
+<p><strong>Record any temporary overlap as an explicit exception with an owner and review point.</strong> Don't let “maybe they still need it” become an undocumented permanent decision.</p>
+<p>Then test the intended new state. Microsoft describes joiner, mover, and leaver as phases that lifecycle workflows can address. The concept is useful even when you model it manually. <a href="https://learn.microsoft.com/en-us/entra/id-governance/what-are-lifecycle-workflows">Source: Microsoft lifecycle workflows</a>.</p>
+<h2>Define what leaving means for each system</h2>
+<p>For the leaver event, list the relevant accounts, assigned permissions, and application access.</p>
+<p>Explain the actions your lab performs and what it cannot verify.</p>
+<p>Disabling one account isn't sufficient evidence that every possible downstream account or active session has been handled. Different systems can require different controls.</p>
+<p>You don't need to simulate every complication. You do need to avoid claiming more than you tested.</p>
+<p>Include a check for a failed or incomplete action. In a small lab, that might simply be an exception record showing which step needs review and why.</p>
+<h2>Publish the state changes, not a wall of screenshots</h2>
+<p>A reader should be able to compare three states: joined, transferred, and departed.</p>
+<p>Show the intended access beside the observed results.</p>
+<p>Include the event, approval assumption, action, verification, and any exception. Add a compact diagram when it clarifies which systems participate.</p>
+<p>Automation can come later. First prove the workflow makes sense.</p>
+<p>An automated mistake is still a mistake, and a script that reports success doesn't remove the need to test the resulting access.</p>
+<p>Use only fictional data and keep credentials out of the public repository.</p>
+<h2>Tie the project to a responsibility</h2>
+<p>The strongest explanation is not “I built an IAM lab.”</p>
+<p>It is “I modeled an employee lifecycle, implemented role-based access changes, and verified both the required access and its removal.”</p>
+<p>Use wording that matches what you actually completed.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> includes lifecycle work among its three lab directions and explains how to present the evidence alongside your existing IT experience. The ebook is $9.</p>
+<p>This project is valuable because it gives you a process to explain.</p>
+<p>A person changed. Their access needed to change with them. You showed how, and you checked the result.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/how-to-turn-a-joiner-mover-leaver-scenario-into-a-portfolio">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

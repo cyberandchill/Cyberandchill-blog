@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Your First IAM Lab Should Probably Start With Active Directory | CyberAndChill</title><meta name="description" content="Your First IAM Lab Should Probably Start With Active Directory"><link rel="canonical" href="https://blog.cyberandchill.com/posts/your-first-iam-lab-should-probably-start-with-active/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>Your First IAM Lab Should Probably Start With Active Directory</h1><article class="content">
+<p>Active Directory is a useful first IAM lab when it helps you connect Windows users, groups, devices, and permissions you already encounter at work.</p>
+<p><strong>Start with AD because it addresses your learning gap—not because every identity career must begin with a domain.</strong> A cloud-focused role may call for a different starting project.</p>
+<p>For a Windows-oriented background, a small directory-access exercise can make those relationships concrete. Keep the environment isolated and the requirement narrow so you can finish with an explanation, not just a functioning domain controller.</p>
+<h2>AD makes several identity relationships concrete</h2>
+<p>A small domain lets you distinguish a user account from a computer account, a group from an organizational unit, and authentication from access to a particular resource.</p>
+<p>Those distinctions can remain vague when you have only handled isolated tickets. A lab lets you connect them in one controlled environment.</p>
+<p>Microsoft's <a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/get-started/virtual-dc/active-directory-domain-services-overview">AD DS overview</a> describes the directory's role. Your exercise should go beyond reproducing the installation and show how an identity reaches a resource.</p>
+<p>You should be able to point at each object and explain why it exists in the scenario.</p>
+<h2>Use two users and one resource to demonstrate access</h2>
+<p>Build a small test around this requirement: one fictional employee needs read access to a resource, and another does not.</p>
+<p>The project needs:</p>
+<ul>
+<li>
+<strong>Two ordinary test accounts</strong> representing the different access requirements.</li>
+<li>
+<strong>An appropriate group and permission</strong> connecting the authorized account to the resource.</li>
+<li>
+<strong>A suitable test client</strong> where you can verify both allowed and denied actions.</li>
+<li>
+<strong>A separate administrator account</strong> for configuration rather than ordinary-user testing.</li>
+</ul>
+<p>That is enough to explore identity, membership, permission, and verification. Ten departments and an elaborate organizational chart aren't prerequisites.</p>
+<p>Use isolated lab machines, fictional data, and supported software. Keep your personal device and employer environment outside the experiment.</p>
+<p>Check edition and licensing requirements before building. Then focus your documentation on the access result and why it occurred, rather than treating the setup itself as the finished lesson.</p>
+<h2>Use setup problems to understand dependencies</h2>
+<p>When a client cannot join the domain, resist the urge to reinstall everything immediately.</p>
+<p><strong>Check which system should answer the client's directory-related name queries, whether the required systems can communicate, and what the recorded error actually says.</strong></p>
+<p>Microsoft's <a href="https://learn.microsoft.com/en-us/troubleshoot/windows-server/active-directory/active-directory-domain-join-troubleshooting-guidance">domain-join troubleshooting guidance</a> is a better reference than a random sequence of fixes.</p>
+<p>Document one dependency you learned. For example, describe why the client needed the correct DNS configuration rather than simply recording that you changed a setting and the problem disappeared.</p>
+<h2>Recognize when an AD lab is not your first priority</h2>
+<p>You may already administer AD confidently while lacking experience with application sign-in. Repeating a basic domain build might add little evidence.</p>
+<p>A target role might focus on cloud-only identity, customer registration, or access governance. In that case, choose a project that addresses that work directly.</p>
+<p>You can still use AD knowledge as background. You do not have to rebuild every prerequisite whenever you begin a new specialty.</p>
+<p><a href="https://cyberandchill.com/posts/cloud-only-vs-hybrid-identity-which-should-a-career-changer">Choosing between cloud-only and hybrid identity learning</a> is useful when you are unsure which environment best matches your target.</p>
+<p>A short written comparison can prevent unnecessary setup: list the target requirement, the evidence you already have, and the evidence the proposed AD project would add. If the final column is empty, choose a different exercise.</p>
+<h2>Finish with an explanation that survives a change</h2>
+<p>After the normal test works, change one condition. Remove a group membership, use a different test account, or attempt an action the permission should not allow.</p>
+<p>Predict the result, test it under the correct session conditions, and explain any difference. That is where a directory installation becomes evidence of understanding.</p>
+<p>The directory project in <a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> sits alongside SSO and lifecycle work so you can choose a relevant starting point. The $9 guide connects those projects to a role rather than asking you to collect infrastructure for its own sake.</p>
+<p><strong>Start with AD when it helps you answer a real access question.</strong> Then make sure your final project answers that question.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/your-first-iam-lab-should-probably-start-with-active">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

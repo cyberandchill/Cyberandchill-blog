@@ -1,0 +1,72 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A Home Lab With No Tests Is Just a Screenshot Collection | CyberAndChill</title><meta name="description" content="A Home Lab With No Tests Is Just a Screenshot Collection"><link rel="canonical" href="https://blog.cyberandchill.com/posts/a-home-lab-with-no-tests-is-just-a-screenshot-collection/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>A Home Lab With No Tests Is Just a Screenshot Collection</h1><article class="content">
+<p>A home lab needs tests that support the claim you're making. <strong>A screenshot of a configuration does not prove that the intended user received access—or that an unauthorized user was blocked.</strong></p>
+<p>Before installing another product, identify the result your project should demonstrate. Then record what you expected, what happened, and which evidence supports the conclusion.</p>
+<p>This can improve a small lab more than adding complexity. It also gives you a better interview explanation because you can describe behavior, not just the setup screens.</p>
+<h2>Turn the project claim into an observable result</h2>
+<p>Start with a sentence. “Only members of the approved group can read the test resource.”</p>
+<p>Now ask what evidence would make that statement credible.</p>
+<p>You'll need at least an approved account, an unapproved account, and a consistent attempt to perform the relevant action. You'll also need to know which account is active during each test.</p>
+<p>The exact setup will vary, but the reasoning is simple: the claim determines the check.</p>
+<p>A screenshot of the group configuration supports the explanation. The observed access results test whether the configuration achieved the requirement.</p>
+<p>Those are different kinds of evidence.</p>
+<h2>Record the expected result before you run the test</h2>
+<p>Use a simple table rather than relying on memory:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What to record</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Test case</strong></td>
+<td>The account, resource, and action attempted</td>
+</tr>
+<tr>
+<td><strong>Expected result</strong></td>
+<td>What should be allowed or denied, and why</td>
+</tr>
+<tr>
+<td><strong>Observed result</strong></td>
+<td>What actually happened</td>
+</tr>
+<tr>
+<td><strong>Conditions and evidence</strong></td>
+<td>Session state, recent changes, and the relevant screenshot or log</td>
+</tr>
+</tbody>
+</table>
+<p>Write the expected outcome first. Otherwise, it's easy to observe a result and quietly redefine that result as your original goal.</p>
+<p>Include details that help someone interpret the test. Was this a new session? Had group membership changed? Were you using the ordinary user or an administrator account?</p>
+<p>You don't need a formal testing platform. You do need enough context to investigate a surprise without rewriting the requirement to make the test pass.</p>
+<h2>Test that an unapproved user is denied access</h2>
+<p>A <a href="https://cyberandchill.com/posts/why-every-iam-lab-needs-a-positive-test-and-a-failure-test">successful access test</a> is only half of a permission scenario.</p>
+<p>Try an account that should not have the access. Try the action the requirement excludes, where appropriate and safe in your lab.</p>
+<p>The test should be authorized and contained. You are validating your own design, not probing somebody else's environment.</p>
+<p>If the unapproved account succeeds, investigate the permission path. Broad inherited access or an unexpectedly privileged test identity can make the result misleading.</p>
+<p>Don't fix everything at once. Change one relevant variable, then repeat the test.</p>
+<p>That makes your troubleshooting explainable.</p>
+<h2>Check what happens after a change</h2>
+<p>Static screenshots miss an important part of identity work: access changes.</p>
+<p>Remove a test assignment, change a fictional role, or correct a controlled error. Then verify the new expected state under documented conditions.</p>
+<p>Pay attention to sessions and other state that can affect what you observe. Don't claim an instant revocation property you haven't actually tested.</p>
+<p>When the result depends on a fresh sign-in or another action, record that.</p>
+<p>A project becomes more useful when it explains not just the final configuration but the behavior you observed during a transition.</p>
+<h2>Keep the failed test that taught you something</h2>
+<p>You don't need to hide every mistake from a portfolio.</p>
+<p>A genuine failed test can demonstrate how you reasoned.</p>
+<p>Explain what you expected, what contradicted that expectation, which hypothesis you checked, and what changed after the correction.</p>
+<p>Keep the story proportionate. Accidentally granting a test user broad access doesn't make you an incident responder. It gives you a specific troubleshooting example.</p>
+<p><strong>Don't manufacture failures or claim that you discovered a new vulnerability.</strong></p>
+<p>Clear, ordinary technical reasoning is enough.</p>
+<h2>Publish a conclusion with boundaries</h2>
+<p>End the project with a short statement of what the tests support.</p>
+<p>For example: “Within this lab, the approved account could read the resource and the unapproved account could not. After the membership change and documented session refresh, the previous access no longer succeeded.”</p>
+<p>That is much stronger than “The lab worked.”</p>
+<p>It also avoids claiming that a small demonstration proves enterprise readiness.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> includes practical projects and a way to document the architecture, configuration, tests, and lessons learned. The ebook is $9.</p>
+<p>Keep the screenshots that matter. Then make sure at least some of them show an observed result, not just evidence that you finished clicking through the setup.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/a-home-lab-with-no-tests-is-just-a-screenshot-collection">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

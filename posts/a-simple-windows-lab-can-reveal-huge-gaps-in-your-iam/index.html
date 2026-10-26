@@ -1,0 +1,60 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A Simple Windows Lab Can Reveal Huge Gaps in Your IAM Knowledge | CyberAndChill</title><meta name="description" content="A Simple Windows Lab Can Reveal Huge Gaps in Your IAM Knowledge"><link rel="canonical" href="https://blog.cyberandchill.com/posts/a-simple-windows-lab-can-reveal-huge-gaps-in-your-iam/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>A Simple Windows Lab Can Reveal Huge Gaps in Your IAM Knowledge</h1><article class="content">
+<p>A Windows lab becomes useful for IAM when you test <strong>which account can perform which action</strong>, not just whether the machines start.</p>
+<p>Two users with different permissions can expose misunderstandings about identity, group membership, and the context of an access test. Those surprises are valuable learning targets.</p>
+<p>Use a small environment to check your assumptions. You don't need more virtual machines to discover that “the folder opens” is an incomplete security test.</p>
+<h2>Check which identity is actually being tested</h2>
+<p><strong>Start with an ordinary fictional user and a separate account for administration where appropriate.</strong></p>
+<p>When you test access, confirm which identity and context the application or resource is using. An administrator account may succeed for reasons that don't apply to the intended user.</p>
+<p>Write the account context beside the result. If you cannot explain why the request is evaluated as that identity, you've found a useful learning gap before publishing the screenshot as proof.</p>
+<h2>Compare group membership with effective behavior</h2>
+<p>Adding a user to a group is a configuration action. The resulting access depends on how that group is used and what other permissions apply.</p>
+<p>Create a resource with a clear intended access model and test it. Include a user who should be allowed and one who should be denied.</p>
+<p>If the result differs from the group names, inspect the actual permission path rather than renaming the groups or assuming the system is inconsistent.</p>
+<p>A tidy directory is not the same thing as a verified access model.</p>
+<h2>Test reading, changing, and deleting as different actions</h2>
+<p>“Can access the folder” is too vague to describe a permission requirement.</p>
+<p>Suppose a fictional employee only needs to read a document. Write separate tests:</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Intended result for this example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Open and read the document</td>
+<td>Allowed</td>
+</tr>
+<tr>
+<td>Change its contents</td>
+<td>Denied</td>
+</tr>
+<tr>
+<td>Delete the document</td>
+<td>Denied</td>
+</tr>
+</tbody>
+</table>
+<p>Run the tests using the intended ordinary account and record the actual result. Adjust the requirements for your own scenario rather than treating this table as a universal permission model.</p>
+<p>This connects an identity to a resource <strong>and an action</strong>. A successful open doesn't show that modification or deletion is correctly controlled.</p>
+<p>When a result differs from your expectation, investigate the effective access and test context before adding another tool or declaring the lab complete.</p>
+<h2>Investigate the effect of the current user context</h2>
+<p>A permission or membership change may require attention to the relevant session and how the environment evaluates the request.</p>
+<p>Do not assume that changing a console value means every existing interaction immediately reflects the new state.</p>
+<p>In your isolated lab, document the context used for each test and follow the platform's supported way to obtain a fresh comparison. Avoid making broad timing claims based on one observation.</p>
+<p>The useful lesson is to control the test conditions rather than repeatedly change permissions until the screen happens to match your expectation.</p>
+<h2>Explain the difference between organization and authorization</h2>
+<p>A user appearing in a particular OU doesn't automatically tell you which shared resource they can use.</p>
+<p>Groups, permissions, policy, and delegated administration have different roles. Your project should make those relationships visible rather than relying on the appearance of the directory tree.</p>
+<p><strong>Use <a href="https://cyberandchill.com/posts/users-groups-and-ous-what-they-teach-you-about-real-access">a clear users-groups-and-OUs explanation</a> to identify which mechanism actually controls the behavior you're testing.</strong></p>
+<p>A simple diagram with the right relationships is better evidence than a complicated structure you can't explain.</p>
+<h2>Turn each surprise into a focused next lesson</h2>
+<p>After the tests, write three things: the assumption you started with, the observation that challenged it, and the explanation supported by your investigation.</p>
+<p>You don't need to make every surprise into a major incident. A small misunderstanding corrected through testing is worthwhile evidence of learning.</p>
+<p>Choose the next project from the gap you found. That keeps the lab from becoming an endless sequence of installations unrelated to your target role.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> includes directory-access, SSO, and lifecycle lab directions with a 90-day career plan. For $9, it helps connect those experiments to a more deliberate move into identity work.</p>
+<p>The size of the environment is not the measure of the lesson. The useful result is a behavior you can now explain and demonstrate more accurately than before.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/a-simple-windows-lab-can-reveal-huge-gaps-in-your-iam">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

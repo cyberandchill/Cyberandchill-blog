@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>What Happens Between Clicking 'Sign In' and Getting Access? | CyberAndChill</title><meta name="description" content="What Happens Between Clicking 'Sign In' and Getting Access?"><link rel="canonical" href="https://blog.cyberandchill.com/posts/what-happens-between-clicking-sign-in-and-getting-access/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">Career · 2026-10-25</p><h1>What Happens Between Clicking 'Sign In' and Getting Access?</h1><article class="content">
+<p>A failed login can occur before authentication, during the <a href="https://cyberandchill.com/posts/a-beginner-s-guide-to-the-identity-provider-and-service">identity provider</a>'s checks, or after the application receives a response.</p>
+<p><strong>Locate the failed stage before changing a password or permission.</strong> That is easier when you can explain the path from clicking Sign In to using the application.</p>
+<p>The example below follows a simplified OpenID Connect integration with an identity provider. It isn't a universal description of every application. Use it to understand the decisions and boundaries, then compare those with the system you're investigating.</p>
+<h2>The application needs an identity it can trust</h2>
+<p>A user opens the application. The application needs to establish who the user is, so it directs the browser into an authentication flow with the configured identity provider.</p>
+<p>The exact requests depend on the implementation. Modern applications should use supported authentication libraries and documented patterns rather than improvised security code.</p>
+<p>For this explanation, keep three parties visible: the user and browser, the application, and the identity provider.</p>
+<p>Draw them before adding the protocol details. If you can't identify which system owns a step, the rest of the troubleshooting will be guesswork.</p>
+<h2>The identity provider handles its authentication process</h2>
+<p>The user completes whatever authentication the configuration requires.</p>
+<p>That may involve more than a password. It may also involve checks that determine whether this particular sign-in should proceed.</p>
+<p>Don't assume that seeing a login page means the application itself is validating the password.</p>
+<p>The distinction matters when diagnosing a failure. A problem before authentication completes points you toward different evidence than a problem after the application receives a response.</p>
+<p>Record the actual symptom and the time of the attempt rather than jumping to a reset.</p>
+<h2>The application receives and validates identity information</h2>
+<p>In an OIDC flow, identity information is conveyed through an ID token. The application must validate the relevant response and token using the supported implementation. Microsoft's documentation describes ID tokens and the claims they contain. <a href="https://learn.microsoft.com/en-us/entra/identity-platform/v2-protocols-oidc">Source: Microsoft OpenID Connect</a>.</p>
+<p>An ID token and an access token are not interchangeable labels for the same purpose.</p>
+<p>Access tokens are used when requesting access to protected resources. Keep that distinction visible instead of calling every token a “login ticket.” <a href="https://learn.microsoft.com/en-us/entra/identity-platform/access-tokens">Source: Microsoft access tokens</a>.</p>
+<p>Do not paste live tokens into public notes, screenshots, or unapproved analysis tools. They can contain sensitive information or act as credentials.</p>
+<p>For a portfolio, use diagrams and sanitized evidence.</p>
+<h2>The application still decides what the user can do</h2>
+<p>Knowing who signed in doesn't mean giving them every feature.</p>
+<p>The application may use assigned roles, its own permissions, or another access model to determine the allowed actions.</p>
+<p>That is why “authentication succeeded, but access failed” is a coherent problem.</p>
+<p>You should ask whether the user is entitled to the application, whether the relevant role is present, and how the application evaluates it.</p>
+<p>The exact checks depend on the system. A successful identity-provider event and an application error can both be accurate at the same time.</p>
+<h2>Use the symptom to identify the stage that failed</h2>
+<p>Three users can all say “I can't log in” while experiencing different problems:</p>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Where to begin the investigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>The browser never reaches the expected identity provider</strong></td>
+<td>The path and configuration leading to authentication</td>
+</tr>
+<tr>
+<td><strong>The identity provider rejects the sign-in</strong></td>
+<td>Its authentication checks and available error evidence</td>
+</tr>
+<tr>
+<td><strong>The application receives a response but refuses access</strong></td>
+<td>Response validation, application assignments, or authorization as applicable</td>
+</tr>
+</tbody>
+</table>
+<p>These are starting points, not diagnoses. Inspect evidence you're authorized to access before deciding on a correction.</p>
+<p>In a test environment, change one relevant setting at a time and record whether the new result supports your hypothesis. If it doesn't, reconsider the explanation rather than stacking unrelated changes.</p>
+<p><strong>Don't weaken security controls merely to remove the error screen.</strong> A successful sign-in still needs to satisfy the intended access requirements.</p>
+<h2>Turn the flow into a project explanation</h2>
+<p>A useful lab page can show the normal path, one controlled failure, and the steps used to diagnose it.</p>
+<p>Explain which system produced the error and why the correction was appropriate. Include the limits of the demonstration.</p>
+<p>You don't need to implement the protocol yourself to understand the responsibilities at each boundary.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> includes a single sign-on project designed to help you build that kind of practical evidence. The ebook is $9.</p>
+<p>The next time someone says “the login is broken,” you can ask a better question:</p>
+<p>Which part of the sign-in—and what evidence shows us that?</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/what-happens-between-clicking-sign-in-and-getting-access">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

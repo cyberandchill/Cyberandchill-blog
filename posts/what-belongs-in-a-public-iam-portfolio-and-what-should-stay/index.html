@@ -1,0 +1,47 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>What Belongs in a Public IAM Portfolio—and What Should Stay Private | CyberAndChill</title><meta name="description" content="What Belongs in a Public IAM Portfolio—and What Should Stay Private"><link rel="canonical" href="https://blog.cyberandchill.com/posts/what-belongs-in-a-public-iam-portfolio-and-what-should-stay/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>What Belongs in a Public IAM Portfolio—and What Should Stay Private</h1><article class="content">
+<p>A public IAM portfolio should expose <strong>your reasoning and tested results—not sensitive details from the environment</strong>.</p>
+<p>Separate what a reviewer needs, what requires careful sanitization, and what should remain private. Make that decision before copying configuration or screenshots into a repository.</p>
+<p>Fictional identities and sample data make the boundary easier to maintain. A public project should never depend on recreating an employer's environment from information you weren't authorized to share.</p>
+<h2>Publish enough to explain the requirement and result</h2>
+<p>The opening page should establish:</p>
+<ol>
+<li>
+<strong>Problem:</strong> What access need did the exercise model?</li>
+<li>
+<strong>Design:</strong> Which components and permission path matter?</li>
+<li>
+<strong>Test:</strong> What was allowed, what was denied, and under what conditions?</li>
+<li>
+<strong>Scope:</strong> What did you implement, and what remains assumed or untested?</li>
+</ol>
+<p>For a fictional access-control project, a small diagram and expected-versus-observed table can communicate more than a large configuration export.</p>
+<p>Distinguish platform-provided behavior from your own configuration and validation. A reviewer should be able to tell what work was yours without seeing every environmental identifier.</p>
+<p>Choose evidence because it supports the claim. Details that add exposure without helping explain the design or result can remain private. A portfolio is an explanation of useful work, not an obligation to publish everything you possess.</p>
+<h2>Review supporting evidence before sharing it</h2>
+<p>Screenshots, logs, and configuration examples can support the claim, but each one needs inspection.</p>
+<p>Check names, account identifiers, browser tabs, addresses, notifications, tokens, connection strings, and other visible details. Do not assume the only sensitive information is the field you intended to capture.</p>
+<p>Use synthetic values where appropriate and explain that they are examples.</p>
+<p>Sanitization should not change the meaning of the evidence. If removing a detail makes the result impossible to interpret, create a safer fictional test rather than publishing a confusing image covered in redaction boxes.</p>
+<h2>Keep secrets and unnecessary operational detail private</h2>
+<p>Credentials, private keys, authentication tokens, and recovery material do not belong in the public repository.</p>
+<p>Neither do employer or customer records, internal tickets, or confidential architecture simply because they would make the project look more realistic.</p>
+<p>Some personal setup notes may also be unnecessary for the public explanation. Keep them separate instead of treating the repository as a backup of every file in the lab.</p>
+<p>A private repository still needs sensible secret handling. Privacy settings are not a substitute for deciding what should never be committed in the first place.</p>
+<h2>Inspect history as well as the current files</h2>
+<p>A clean-looking current version does not prove that sensitive material was never committed.</p>
+<p>GitHub's <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository">guidance on removing sensitive data</a> explains the importance of addressing exposed credentials and the limits of repository cleanup. Its <a href="https://docs.github.com/articles/ignoring-files">ignore-file documentation</a> also distinguishes ignoring future files from handling files already tracked.</p>
+<p>Review before the first commit whenever possible. If you discover an exposure, follow the appropriate recovery process rather than assuming that deleting one visible file resolves every risk or copy.</p>
+<h2>Keep a public explanation separate from private implementation notes</h2>
+<p>A useful project folder can have a deliberate publication area containing the README, selected evidence, and sanitized examples.</p>
+<p>Private operational notes can remain elsewhere. Do not rely on remembering which files were safe the last time you pushed changes.</p>
+<p><strong>Use <a href="https://cyberandchill.com/posts/before-publishing-your-iam-lab-remove-these-seven-things">a prepublication removal checklist</a> before sharing an update, especially after adding logs or screenshots.</strong></p>
+<p>The workflow should make safe publication repeatable. If every update requires a rushed search through unrelated files, the project structure needs improvement.</p>
+<h2>Publish enough to support the claim, not everything you possess</h2>
+<p>A skeptical reader needs a clear requirement, an understandable design, and evidence that the result matches the claim.</p>
+<p>They do not need your credentials or your employer's internal details.</p>
+<p>Practice explaining the project without opening private systems. If the public material is too thin to support the explanation, add a fictional test or clearer documentation rather than exposing more sensitive information.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> includes practical lab directions and portfolio guidance for turning existing IT experience into a more focused career move. The $9 guide helps you choose evidence with a purpose.</p>
+<p>A good public portfolio is a curated demonstration. It is not a public backup of the lab, your work history, or every configuration you have access to.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/what-belongs-in-a-public-iam-portfolio-and-what-should-stay">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

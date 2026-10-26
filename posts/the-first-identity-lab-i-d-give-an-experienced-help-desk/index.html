@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The First Identity Lab I'd Give an Experienced Help Desk Technician | CyberAndChill</title><meta name="description" content="The First Identity Lab I'd Give an Experienced Help Desk Technician"><link rel="canonical" href="https://blog.cyberandchill.com/posts/the-first-identity-lab-i-d-give-an-experienced-help-desk/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>The First Identity Lab I'd Give an Experienced Help Desk Technician</h1><article class="content">
+<p>The first IAM lab I'd give an experienced help desk technician uses <strong>two fictional employees and one shared folder</strong>.</p>
+<p>One employee should be allowed to read a file. The other should be denied. Your job is to configure that access, test both accounts, and explain the difference.</p>
+<p>That small project connects familiar account-management work to authorization. It also gives you a clear interview example without installing a dozen products or pretending a home lab is an enterprise deployment.</p>
+<h2>Write down who should be allowed and denied</h2>
+<p><strong>Use fictional employees such as Riley in finance and Jordan in another department.</strong> Put a harmless text file in a test finance folder; don't use real payroll data.</p>
+<p>Define the result before you configure permissions:</p>
+<table>
+<thead>
+<tr>
+<th>Test account</th>
+<th>Required access</th>
+<th>Expected result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Riley, finance</strong></td>
+<td>Read the test finance file</td>
+<td>Allowed</td>
+</tr>
+<tr>
+<td><strong>Jordan, another department</strong></td>
+<td>No finance access</td>
+<td>Denied</td>
+</tr>
+</tbody>
+</table>
+<p>This table becomes your test plan. Keep the permission requirement narrow: reading a file is not the same as changing or deleting it.</p>
+<p>You should be able to explain the scenario to someone who has never used Active Directory. “Finance can read this file; other departments cannot” is enough.</p>
+<p>If you can't make the intended result clear, simplify the requirement before adding accounts, groups, or extra software.</p>
+<h2>Build a safe environment you control</h2>
+<p>Use an isolated lab, authorized evaluation software where applicable, and accounts that have no relationship to your employer.</p>
+<p>For a Windows directory example, you'll need a working directory environment and a client or resource server appropriate to the test. A domain controller is important infrastructure, not a general-purpose place to practice risky changes.</p>
+<p>Use separate administrative and ordinary test accounts. Don't expose the lab to the public internet just to make it accessible. Don't reuse workplace credentials. Take a recoverable checkpoint before changes that could leave the environment difficult to restore.</p>
+<p>The goal is to <a href="https://cyberandchill.com/posts/a-beginner-friendly-way-to-test-who-can-access-what-in">learn permissions</a>, not to create an uncontrolled copy of your employer's network.</p>
+<h2>Grant access through a group</h2>
+<p>Create a clearly named security group for the intended access and add Riley.</p>
+<p>Assign the appropriate resource permission to that group. Keep Jordan outside it.</p>
+<p>Microsoft documents security groups as a way to assign permissions to shared resources. <a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-groups">Source: Active Directory security groups</a>.</p>
+<p>For a Windows file share, inspect both the sharing configuration and the file-system permissions. Avoid unrelated broad grants that make the result ambiguous.</p>
+<p>You don't need an explicit denial entry just to demonstrate that someone lacks access. First understand why the ordinary permission model should reject the second account.</p>
+<p>Document the exact design you chose.</p>
+<h2>Test as the employee, not the administrator</h2>
+<p>Sign in as Riley using a fresh session appropriate to the environment. Attempt the allowed action and record the result.</p>
+<p>Repeat as Jordan. Keep the tests comparable: same resource, same requested action, and known account identity.</p>
+<p>If both succeed, don't immediately declare the requirement impossible. Investigate which permission is granting the unexpected access. If both fail, check whether the intended grant is effective and whether the resource is reachable.</p>
+<p>A failed test is useful when it leads to an explanation.</p>
+<p>A screenshot taken while signed in as a privileged account is not proof that the employee's permissions work.</p>
+<h2>Change one thing and test again</h2>
+<p>Remove Riley from the access group. Account for how your environment refreshes group membership and sessions, then repeat the test. Record the conditions under which you verified the changed access.</p>
+<p>Now you have more than a static configuration.</p>
+<p>You have demonstrated a grant, a refusal, and a change. You can explain the difference between the account existing and the account being permitted to use a particular resource.</p>
+<p>Don't overstate what you proved. This exercise says nothing about every application, every token, or an enterprise-wide offboarding process.</p>
+<h2>Publish the requirement and the evidence together</h2>
+<p>Your project page needs a short problem statement, a small diagram, the permission matrix, and the test results.</p>
+<p>Include one mistake you investigated when you have a genuine example. Don't manufacture a failure to make the story more interesting.</p>
+<p>Keep the page free of credentials and identifying workplace information.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> includes directory access among its three IAM lab directions and explains how to turn the work into a usable portfolio. The ebook is $9.</p>
+<p>Start with this before adding a second domain, a cloud tenant, or another product.</p>
+<p>Two employees and one folder give you plenty to explain when you actually test the design.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/the-first-identity-lab-i-d-give-an-experienced-help-desk">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

@@ -1,0 +1,63 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>What a Good Access Request Workflow Should Capture | CyberAndChill</title><meta name="description" content="What a Good Access Request Workflow Should Capture"><link rel="canonical" href="https://blog.cyberandchill.com/posts/what-a-good-access-request-workflow-should-capture/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">Career · 2026-10-25</p><h1>What a Good Access Request Workflow Should Capture</h1><article class="content">
+<p>A good access request makes <strong>the person, required action, approver, and end or review condition</strong> clear.</p>
+<p>“Give Alex the same access as Jordan” may not do that. Jordan could have temporary exceptions, old permissions, or a different job.</p>
+<p>Start with the work Alex needs to perform. Then record how the decision becomes an implemented and verified change. Approval, implementation, and verification are separate stages—not three names for the same completed request.</p>
+<h2>Identify the person and the business task</h2>
+<p>For a fictional example, Alex is a contractor helping review a set of sample project documents.</p>
+<p>The request should identify Alex unambiguously within the test scenario and explain the task requiring access. “Needs project access” is less useful than “Needs read access to the sample review documents for the current review period.”</p>
+<p>That description gives the approver and implementer something concrete to evaluate.</p>
+<p>Only collect information appropriate to the workflow. More fields do not automatically create a better decision.</p>
+<h2>Specify the resource and permitted action</h2>
+<p>Name the resource and the level of access required.</p>
+<p>Reading documents, editing them, and administering the application are different permissions. A request should not leave the implementer to choose among them based on convenience.</p>
+<p>For the fictional contractor, define read-only access to the sample review area and explicitly exclude administration.</p>
+<p>The technical implementation may use a group, role, or another mechanism. The request should describe the business need clearly enough that the responsible team can map it to the correct control.</p>
+<h2>Route the decision to the right authority</h2>
+<p><strong>Identify who is responsible for approving access to the resource and what they need to know.</strong></p>
+<p>The person submitting the request may not be authorized to approve it. The person implementing the change may not own the business decision either.</p>
+<p>Keep those responsibilities visible. A good record shows the decision and its basis through the organization's approved process. In a lab, model those roles explicitly rather than treating an administrator's ability to grant access as proof that the grant was appropriate.</p>
+<h2>Include duration and the next lifecycle event</h2>
+<p>Temporary work should prompt a question about how long the access is needed.</p>
+<p>In the fictional scenario, define an end date or another clear condition for review or removal. Also identify who handles changes if the work ends early or the contractor's responsibilities change.</p>
+<p>Microsoft's <a href="https://learn.microsoft.com/en-us/entra/id-governance/entitlement-management-overview">entitlement-management documentation</a> illustrates how access requests, assignments, reviews, and expiration can be connected in a platform implementation.</p>
+<p>The broader lesson is to connect the initial grant to its lifecycle rather than treating approval as the end of the process.</p>
+<h2>Track approval, implementation, and verification separately</h2>
+<p>An approved request is not automatically a completed change. A completed change is not automatically a checked outcome.</p>
+<p>Keep the stages distinct:</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Evidence to record</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Approval</td>
+<td>Who authorized which access and why</td>
+</tr>
+<tr>
+<td>Implementation</td>
+<td>What the responsible person changed</td>
+</tr>
+<tr>
+<td>Verification</td>
+<td>How the intended access was checked</td>
+</tr>
+<tr>
+<td>Follow-up</td>
+<td>Failures, exceptions, removal, or review still required</td>
+</tr>
+</tbody>
+</table>
+<p>In a lab, test Alex's approved read access and confirm an unrelated user remains excluded. If access is temporary, demonstrate removal within the exercise's stated scope.</p>
+<p>Consider <strong><a href="https://cyberandchill.com/posts/what-happens-when-a-contractor-s-access-never-expires">the consequences of contractor access without an end condition</a></strong>. A workflow that records approval but never revisits the assignment can leave the original business need disconnected from the access that remains.</p>
+<h2>Turn the workflow into a small portfolio artifact</h2>
+<p>Create a fictional request form, an approval record, a permission mapping, and a test table.</p>
+<p>You can demonstrate the reasoning with sample data before building sophisticated automation. Label proposed controls as proposals and implemented tests as tests.</p>
+<p>The finished project should show that you understand the decisions around access, not just the mechanics of adding a user to a group.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> includes identity lifecycle work and helps connect practical projects to an IAM career direction. The $9 guide provides a structure for choosing useful evidence without needing an enterprise-sized platform first.</p>
+<p>A good request makes the decision and its boundaries clear. That clarity is valuable before any automation is added.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/what-a-good-access-request-workflow-should-capture">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

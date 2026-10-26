@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Active Directory Isn't Dead. It's a Starting Point for Cloud Identity. | CyberAndChill</title><meta name="description" content="Active Directory Isn't Dead. It's a Starting Point for Cloud Identity."><link rel="canonical" href="https://blog.cyberandchill.com/posts/active-directory-isn-t-dead-it-s-a-starting-point-for-cloud/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>Active Directory Isn't Dead. It's a Starting Point for Cloud Identity.</h1><article class="content">
+<p>Your Active Directory experience can support cloud-identity learning, but it doesn't make Microsoft Entra ID a familiar product with a new name.</p>
+<p><strong>Separate the principles that transfer from the implementation details that change.</strong> Accounts, access, and lifecycle questions remain useful; device relationships, authentication paths, and application trust need their own examination.</p>
+<p>Choose one familiar task and compare how it works in both environments. That gives you a more useful starting point than either dismissing AD knowledge or assuming it answers every cloud-identity question.</p>
+<h2>Keep the identity questions you already understand</h2>
+<p>You are still concerned with accounts, groups, authentication, permissions, ownership, and changes over time.</p>
+<p>If you have investigated why a user received access or why an account could not sign in, you already have useful questions to bring to a new system.</p>
+<p>The transferable part is the reasoning: identify the actor, the resource, the intended action, and the evidence. The specific implementation may be different.</p>
+<p>That distinction is more useful than memorizing a one-to-one translation of every interface label.</p>
+<h2>Do not carry the domain-controller model into every cloud discussion</h2>
+<p>Microsoft describes <a href="https://learn.microsoft.com/en-us/entra/fundamentals/what-is-entra">Entra ID</a> as a cloud identity and access service. It is not simply a domain controller hosted somewhere else.</p>
+<p>Your familiar AD administration tasks may not map directly to the way a cloud application trusts an identity provider or evaluates access.</p>
+<p>When learning a new feature, ask what responsibility it serves and what system enforces the result. Do not assume that an organizational structure, device relationship, or policy behaves exactly like its on-premises counterpart.</p>
+<p>The differences are not evidence that your old knowledge is useless. They are the gaps you need to make explicit.</p>
+<h2>Separate synchronization from authentication</h2>
+<p>A synchronized account record does not, by itself, explain how a particular sign-in is validated.</p>
+<p>Microsoft's <a href="https://learn.microsoft.com/en-us/entra/identity/hybrid/whatis-hybrid-identity">hybrid identity overview</a> is a useful starting reference for how identity information connects across environments.</p>
+<p>In a learning diagram, show where the account is managed, how relevant information moves, and which system handles the sign-in you are discussing.</p>
+<p>If those arrows collapse into one line labeled “sync,” you may be hiding an important part of the explanation.</p>
+<h2>Compare one familiar task across AD and Entra</h2>
+<p>Choose an account-status or group-assignment task you already understand. For each environment, record:</p>
+<ul>
+<li>
+<strong>Authority:</strong> Who is permitted to make the change?</li>
+<li>
+<strong>Effect:</strong> Which identity, resource, or relationship does it affect?</li>
+<li>
+<strong>Verification:</strong> Where can you inspect the result?</li>
+<li>
+<strong>Timing:</strong> What propagation or session behavior could affect the test?</li>
+</ul>
+<p>Don't begin with every feature. One focused comparison is easier to verify and more likely to expose an actual misunderstanding.</p>
+<p><a href="https://cyberandchill.com/posts/what-an-ad-admin-needs-to-know-before-touching-microsoft">What an AD administrator should check before working in Entra</a> includes those boundaries, not just the location of an equivalent-looking screen.</p>
+<p>Keep a notebook with two columns: familiar principle and changed implementation. Both systems represent identities, for example, while device relationships or application trust may work differently.</p>
+<p>The comparison should preserve the value of your background without pretending every concept has a direct replacement.</p>
+<h2>Build evidence of the transition, not just evidence of installation</h2>
+<p>A useful portfolio project can explain a familiar identity requirement implemented in a cloud or hybrid context.</p>
+<p>Show the original requirement, the system-specific decisions, and the test results. State where your existing AD knowledge helped and where you had to learn a new model.</p>
+<p>That is a stronger career story than claiming you moved “from legacy to modern” without explaining what you can now do.</p>
+<p>The role and project guidance in <a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> helps turn existing directory experience into a focused next step. The $9 book does not require you to dismiss the work you already know.</p>
+<p>Keep the useful foundations. Learn the differences deliberately. That is how an AD background becomes a starting point rather than either a limitation or an excuse to skip the next layer.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/active-directory-isn-t-dead-it-s-a-starting-point-for-cloud">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

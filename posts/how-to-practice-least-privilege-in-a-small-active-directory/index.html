@@ -1,0 +1,59 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>How to Practice Least Privilege in a Small Active Directory Lab | CyberAndChill</title><meta name="description" content="How to Practice Least Privilege in a Small Active Directory Lab"><link rel="canonical" href="https://blog.cyberandchill.com/posts/how-to-practice-least-privilege-in-a-small-active-directory/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>How to Practice Least Privilege in a Small Active Directory Lab</h1><article class="content">
+<p>To practice least privilege in Active Directory, start with <strong>one fictional department, one sample resource, and a few ordinary test accounts</strong>.</p>
+<p>You don't need a large enterprise simulation. You need a narrow requirement and tests showing that access stays within it.</p>
+<p>Keep the lab separate from personal files and employer systems. Use synthetic data, define the access path, and make sure administrator privileges aren't hiding what the intended users can actually do.</p>
+<h2>Define a narrow access requirement</h2>
+<p>For this example, the fictional Research team needs to read a folder containing sample reports. They do not need to edit the files. An unrelated employee should not be able to read them.</p>
+<p>Write those three expectations before changing permissions. Use ordinary test accounts for the access checks. An administrative account may have additional rights that make the result misleading.</p>
+<p>The exercise becomes meaningful when you can show exactly which action is permitted and which actions remain unavailable.</p>
+<h2>Make the group represent the access requirement</h2>
+<p>Create a clearly named lab security group for the approved readers and place the relevant fictional user in it.</p>
+<p>Assign the intended resource permission to that group rather than casually adding a broad population. Inspect the existing permissions and inheritance so another entry does not accidentally grant the same access to everyone.</p>
+<p>Microsoft's <a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-groups">security-group documentation</a> explains how groups can be used to assign permissions to resources.</p>
+<p>Your design should make the path understandable: user, group, resource permission, resulting action.</p>
+<h2>Be clear about local access versus network access</h2>
+<p><strong>Choose how the users will reach the sample resource and document that choice.</strong></p>
+<p>If you are demonstrating access through a network share, account for the relevant share and file-system permissions. Don't confuse a local test with the path an ordinary user will actually take.</p>
+<p><strong>Use the same intended path for the positive and negative tests so the comparison is meaningful.</strong></p>
+<p>The point is not to reproduce every possible Windows permission interaction. It is to define the tested path well enough that someone else can interpret the result.</p>
+<h2>Test the allowed action and two boundaries</h2>
+<p>For a read-only sample-file requirement, run three separate checks:</p>
+<table>
+<thead>
+<tr>
+<th>Test identity and action</th>
+<th>Expected result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Approved fictional user reads the file</td>
+<td>Allowed</td>
+</tr>
+<tr>
+<td>Same ordinary user modifies the file</td>
+<td>Denied</td>
+</tr>
+<tr>
+<td>Unrelated fictional user reads the resource</td>
+<td>Denied</td>
+</tr>
+</tbody>
+</table>
+<p>Record the actual result next to each expectation. Keep the account, resource, access path, and session conditions clear.</p>
+<p>If a test behaves differently, investigate the permission path. Don't rewrite the requirement afterward to make the incorrect configuration appear intentional.</p>
+<p>The paired boundaries matter: showing that the approved user can read doesn't establish that they cannot modify, and neither result proves that an unrelated user is excluded. Together, the tests provide a more precise explanation of the access model you built.</p>
+<h2>Remove the approved access and check the new state</h2>
+<p>Now simulate the approved user leaving the Research team by removing the relevant membership.</p>
+<p>Use an appropriate new session or other suitable method for the environment when checking the changed access. Explain session or timing considerations rather than assuming every existing session updates immediately.</p>
+<p>Test the same resource action again and record what happened.</p>
+<p>This adds a lifecycle question to the lab: not only whether access can be granted narrowly, but whether the demonstrated access can be removed through the intended mechanism.</p>
+<h2>Document the evidence without overstating the scope</h2>
+<p>Publish a small diagram, the access requirement, selected configuration evidence, and the test table. Include a note that the data and identities are fictional and that the exercise is not a production deployment.</p>
+<p>For a broader explanation of the principle, see <a href="https://cyberandchill.com/posts/least-privilege-is-easy-to-say-can-you-demonstrate-it">how to demonstrate least privilege rather than merely define it</a>.</p>
+<p>The lab should let you explain why each permission exists and what proves the boundary. That is more useful than a screenshot of an administrator account opening a folder.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> includes directory access, single sign-on, and identity lifecycle projects, along with guidance on turning the work into portfolio evidence. It's a $9 starting point for a more focused IAM career plan.</p>
+<p>A small environment is enough when the question, permission path, and tests are clear.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/how-to-practice-least-privilege-in-a-small-active-directory">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

@@ -1,0 +1,59 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A Better Use for Your Home Lab Than Installing Another Security Dashboard | CyberAndChill</title><meta name="description" content="A Better Use for Your Home Lab Than Installing Another Security Dashboard"><link rel="canonical" href="https://blog.cyberandchill.com/posts/a-better-use-for-your-home-lab-than-installing-another/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-26</p><h1>A Better Use for Your Home Lab Than Installing Another Security Dashboard</h1><article class="content">
+<p>Before installing another security dashboard, <strong>use your existing lab to verify what happens when a fictional employee changes teams</strong>.</p>
+<p>Define the old and new access, make the approved changes, and test both the permissions gained and the permissions that should disappear.</p>
+<p>That gives you a complete IAM problem to explain. Another installation may be useful later, but it won't automatically demonstrate that you understand access decisions, lifecycle changes, or how to investigate an unexpected result.</p>
+<h2>Start with a before-and-after access requirement</h2>
+<p>Imagine a fictional employee moving from a project-support role to a finance-support role.</p>
+<p>Define the resources they need before the move and the resources they need afterward. Include access that should be removed, not only access that should be added.</p>
+<p><strong>Keep the example small: two test resources and a few clearly named groups are enough to begin.</strong></p>
+<p>You now have a question that uses your existing infrastructure: can you make the person's effective access match the new responsibility without retaining unnecessary permissions?</p>
+<h2>Establish what the user can do before changing anything</h2>
+<p>Sign in as the ordinary test user and attempt the relevant actions.</p>
+<p>Record the result against the expected access matrix. Do not assume the starting state is correct because you remember configuring it that way.</p>
+<p>If the baseline is already wrong, investigate and document that before moving on. Otherwise, you may attribute an existing problem to the role-change process.</p>
+<p>A useful project begins with a known state, not a screenshot taken after several unexplained configuration changes.</p>
+<h2>Carry out the role change as a defined process</h2>
+<p>Write the approved changes for the fictional move.</p>
+<p>Which membership should be added? Which should be removed? Who would authorize the decision in a real organization? Which system or resource needs to reflect the change?</p>
+<p>Then perform only the changes in scope for your lab.</p>
+<p>You can model approvals manually as long as you label them clearly. Do not claim automated governance when you manually edited groups after writing an approval note.</p>
+<h2>Test removed access as carefully as newly granted access</h2>
+<p>After the role change, compare the expected and actual behavior.</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Question it answers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Attempt the newly approved action</td>
+<td>Did the employee gain the required permission?</td>
+</tr>
+<tr>
+<td>Attempt the old action</td>
+<td>Is obsolete access unavailable under the test conditions?</td>
+</tr>
+<tr>
+<td>Inspect other relevant assignments</td>
+<td>Could a direct permission or another group preserve access?</td>
+</tr>
+</tbody>
+</table>
+<p>Use fresh sessions where appropriate and record exactly what you tested. State when existing sessions or other applications are outside the exercise.</p>
+<p>The <a href="https://cyberandchill.com/posts/what-should-happen-to-access-when-an-employee-changes-teams">access questions raised by an employee changing teams</a> help explain why this is more than another onboarding task. Adding the new access is only half of the intended change.</p>
+<p>If a result differs from the requirement, investigate the remaining path before adding more tools. The mismatch is an opportunity to demonstrate your reasoning and verify the correction.</p>
+<h2>Investigate one mismatch instead of adding another product</h2>
+<p>If the user retains access unexpectedly, trace the reason.</p>
+<p>Perhaps a broader group still grants access, a direct assignment exists, or your test session does not reflect the changed state. Follow evidence rather than guessing.</p>
+<p>You may discover that the tools already available provide enough information. If an additional tool is genuinely needed, identify the missing evidence first and explain why the tool supplies it.</p>
+<p>That is a stronger reason to expand the lab than wanting another attractive dashboard in the portfolio.</p>
+<h2>Publish the decision and verification trail</h2>
+<p>Your finished project should show the original requirement, baseline access, approved change, resulting access, and any discrepancy you investigated.</p>
+<p>Add a short limitation statement and a sanitized diagram. Keep detailed notes available, but lead with the result and what you personally did.</p>
+<p>This gives an interviewer a clear conversation about lifecycle responsibility, permissions, and troubleshooting. It is more specific than a list of platforms running on your host.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> includes identity lifecycle alongside directory access and SSO as three practical lab areas. The $9 guide helps you turn existing infrastructure into relevant career evidence. You may not need another installation yet; you may need to finish the question your current environment can already answer.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/a-better-use-for-your-home-lab-than-installing-another">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

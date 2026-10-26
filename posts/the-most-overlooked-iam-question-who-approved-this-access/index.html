@@ -1,0 +1,50 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Most Overlooked IAM Question: Who Approved This Access? | CyberAndChill</title><meta name="description" content="The Most Overlooked IAM Question: Who Approved This Access?"><link rel="canonical" href="https://blog.cyberandchill.com/posts/the-most-overlooked-iam-question-who-approved-this-access/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>The Most Overlooked IAM Question: Who Approved This Access?</h1><article class="content">
+<p>Knowing how to grant access doesn't establish whether you should grant it.</p>
+<p><strong>Check who approved the permission and what they actually approved.</strong> An existing account, a valid group, and a technically correct procedure can still produce an inappropriate access change.</p>
+<p>This is a useful IAM distinction for someone moving beyond account administration. Connect the business decision to the implementation, clarify vague requests, and keep exceptions visible. You can improve that process without pretending you personally own every decision about what an employee needs.</p>
+<h2>An approver decides whether access is justified</h2>
+<p>Consider a fictional employee requesting access to a finance application.</p>
+<p>The identity technician may know how to assign the application. The employee's manager may understand the work being assigned. The application owner may know which role exposes sensitive records.</p>
+<p>Those are different kinds of knowledge. The organization needs a defined approval path that brings the relevant authority into the decision. A technician shouldn't have to invent that policy while working through a ticket queue.</p>
+<p><strong>Ask who is authorized to approve the specific access, not simply who replied first.</strong></p>
+<h2>Make the approval specific enough to implement</h2>
+<p>“Approved for finance access” leaves too much unclear. A useful request identifies:</p>
+<ul>
+<li>
+<strong>Recipient:</strong> The person who needs access.</li>
+<li>
+<strong>Application or resource:</strong> What they need to use.</li>
+<li>
+<strong>Role or action:</strong> View invoices, create them, approve payments, or administer users.</li>
+<li>
+<strong>Business reason:</strong> Why the responsibility requires that permission.</li>
+<li>
+<strong>Duration and conflicts:</strong> Whether access is temporary or incompatible with another responsibility.</li>
+</ul>
+<p>The approver needs to understand the actual permission, not just the application's name.</p>
+<p>Otherwise, the record can look complete while the decision remains ambiguous. Ask for clarification rather than choosing the broadest role that makes the request work.</p>
+<p>That is a practical contribution from a technically careful identity professional: make the authorization clear enough to implement and verify, while leaving the business approval with its proper owner.</p>
+<h2>Keep approval and implementation connected</h2>
+<p>A common process weakness is a gap between what was approved and what was granted.</p>
+<p>Suppose the approved role is read-only, but the implementation uses a convenient group that also permits changes. The ticket may be closed, yet the access no longer matches the decision.</p>
+<p><strong>Record the actual role or group used and verify the resulting access.</strong> Where names are ambiguous, document the mapping between the business request and the technical permission.</p>
+<p>The question is not just “Did someone approve something?” It's “Did the implemented access match the approval?”</p>
+<h2>Exceptions need a reason and an owner</h2>
+<p>Sometimes a request doesn't fit the standard process. Perhaps an urgent project needs temporary access before the usual reviewer is available.</p>
+<p>The answer isn't to pretend exceptions never happen. It is to define how they are authorized, recorded, reviewed, and ended.</p>
+<p>A useful exception record identifies who accepted the decision, why the normal route wasn't followed, and when the access must be reconsidered.</p>
+<p>Don't turn an informal message into a permanent permission with no accountable owner. Temporary business urgency should not silently become an indefinite access arrangement.</p>
+<h2>Build a small approval-to-access lab</h2>
+<p>Use fictional identities and a simple application or folder-access scenario.</p>
+<p>Create three requests: one complete and approved, one missing the required authority, and one requesting a role broader than the stated need.</p>
+<p>For each, write the decision you would make and the information you would need before proceeding. Implement only the approved test case in your lab, then compare the resulting access with the request.</p>
+<p>Your evidence should include the request, the decision, the implemented permission, and the verification result. Keep the names and data invented.</p>
+<p>This makes <a href="https://cyberandchill.com/posts/what-a-good-access-request-workflow-should-capture">the fields in an access-request workflow</a> easier to understand than a blank form alone.</p>
+<h2>Use the example to explain your responsibility</h2>
+<p>In an interview, describe the boundary clearly: you checked the required authorization, implemented the approved access, and verified the result.</p>
+<p>Don't claim that you designed governance policy when you followed an existing process. Don't erase the judgment you used to identify an incomplete or mismatched request, either.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> includes identity lifecycle work and guidance on presenting relevant experience. For $9, it gives you a broader plan for turning familiar access tasks into a credible IAM career direction.</p>
+<p>The next time you see an access request, look beyond the implementation step. Understanding who can authorize it—and what they authorized—is part of understanding the work.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/the-most-overlooked-iam-question-who-approved-this-access">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

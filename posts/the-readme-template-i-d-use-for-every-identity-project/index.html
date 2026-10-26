@@ -1,0 +1,64 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The README Template I'd Use for Every Identity Project | CyberAndChill</title><meta name="description" content="The README Template I'd Use for Every Identity Project"><link rel="canonical" href="https://blog.cyberandchill.com/posts/the-readme-template-i-d-use-for-every-identity-project/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>The README Template I'd Use for Every Identity Project</h1><article class="content">
+<p>An IAM README should answer <strong>what problem you modeled, what you built, how you tested it, and what the result proves</strong> before someone opens the configuration files.</p>
+<p>A long installation diary can contain every detail while hiding those answers.</p>
+<p>Use a consistent structure to make the work easy to inspect. Keep the evidence specific to each project so the portfolio doesn't become the same setup story repeated under different titles.</p>
+<h2>Start with the requirement and result</h2>
+<p>Open with a short statement of the fictional business problem.</p>
+<p>For example: “Research users need read-only access to sample reports; unrelated users should be excluded. The lab verified the intended read access and two expected denials.”</p>
+<p>Label the environment as a lab immediately. This gives a skimming reader the purpose and outcome without requiring them to understand every tool first. It also forces you to decide what the project is actually claiming to demonstrate.</p>
+<h2>Show the design with one understandable diagram</h2>
+<p>Identify the components and relationships relevant to the requirement.</p>
+<p>For a directory project, that may be users, groups, and a resource. For SSO, it may be the user, application, identity provider, and the relevant exchanges. Avoid adding decorative systems that do not affect the tested behavior.</p>
+<p>Explain the important boundary below the diagram. A reader should know which component makes which decision and which parts you implemented. Mark external services, assumptions, and untested areas clearly rather than letting the diagram imply a larger deployment.</p>
+<h2>Summarize the configuration, then link to detail</h2>
+<p>Describe the settings that determine the result. Keep the main page readable. Put lengthy setup notes or sanitized examples in separate sections or files when necessary. Do not publish credentials, tokens, personal data, or confidential organizational information.</p>
+<p>GitHub's <a href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes">README guidance</a> explains the README's role as an introduction to the project.</p>
+<p><strong>Treat that introduction as a guided explanation, not a place to paste every command you ran in chronological order.</strong></p>
+<h2>Make the test table the center of the evidence</h2>
+<p>For each test, record the identity, action, expected outcome, observed outcome, and evidence location.</p>
+<p>Include an intended success and a relevant denial or failure case. If the project models a lifecycle change, include the before and after states.</p>
+<p>Explain any result that differed from the expectation.</p>
+<p>This is where the README moves from describing configuration to demonstrating behavior. A screenshot should support a particular test or setting, not appear as an unexplained image that the reader must interpret alone.</p>
+<h2>Include troubleshooting and limits without inventing drama</h2>
+<p>Describe one meaningful problem you actually encountered or deliberately introduced in the isolated lab.</p>
+<p>State the observation, the evidence that guided the next check, the correction, and the retest. If the project worked without a noteworthy incident, don't manufacture a story.</p>
+<p>Then identify the limits: scale, untested scenarios, session assumptions, or features you researched but did not implement.</p>
+<p><strong>Use <a href="https://cyberandchill.com/posts/how-to-document-lab-troubleshooting-without-making-up-drama">honest troubleshooting notes</a> to keep this section useful.</strong> Credibility comes from accurate reasoning, not from making every project sound like an emergency.</p>
+<h2>Use five sections to check that the project is explainable</h2>
+<p>Before publishing, check this outline:</p>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Question it should answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Problem and result</td>
+<td>What should happen, and what did you verify?</td>
+</tr>
+<tr>
+<td>Design and configuration</td>
+<td>Which components and settings matter?</td>
+</tr>
+<tr>
+<td>Tests and evidence</td>
+<td>What was expected and what was observed?</td>
+</tr>
+<tr>
+<td>Troubleshooting and limits</td>
+<td>What did you learn, and what remains outside the claim?</td>
+</tr>
+<tr>
+<td>Reproduction and safety</td>
+<td>What can another person understand or repeat safely?</td>
+</tr>
+</tbody>
+</table>
+<p>Keep the structure consistent while changing the substantive evidence for each project.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> includes three IAM lab directions and guidance on using the evidence in a career move. The $9 guide helps connect the project to a role before you start writing its README.</p>
+<p>Make the route from problem to evidence obvious.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/the-readme-template-i-d-use-for-every-identity-project">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

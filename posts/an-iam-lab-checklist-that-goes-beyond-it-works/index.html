@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>An IAM Lab Checklist That Goes Beyond 'It Works' | CyberAndChill</title><meta name="description" content="An IAM Lab Checklist That Goes Beyond 'It Works'"><link rel="canonical" href="https://blog.cyberandchill.com/posts/an-iam-lab-checklist-that-goes-beyond-it-works/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>An IAM Lab Checklist That Goes Beyond 'It Works'</h1><article class="content">
+<p>Before calling an IAM lab complete, <strong>specify who can do what, what should be denied, and how you verified both</strong>.</p>
+<p>“It works” doesn't answer those questions. It may mean only that an administrator opened a resource once.</p>
+<p>A small environment can still produce rigorous evidence. Use clear requirements, the intended test identities, meaningful success and failure cases, and an explanation another person can follow without watching you rebuild the project.</p>
+<h2>Write the requirement and test scope before checking settings</h2>
+<p>Use a complete statement of intended behavior. For example:</p>
+<p>“Members of the fictional Finance Reports group can read the sample reports. Other ordinary users cannot.”</p>
+<p>Then define the test boundary:</p>
+<ul>
+<li>
+<strong>Resource:</strong> Which sample files or application are involved?</li>
+<li>
+<strong>Access path:</strong> Local folder, network share, or application access?</li>
+<li>
+<strong>Action:</strong> Reading, modifying, or another specific operation?</li>
+<li>
+<strong>Identity:</strong> Which ordinary test accounts represent each case?</li>
+</ul>
+<p>These aren't interchangeable demonstrations. A successful local test doesn't automatically establish the behavior of a network share or an application.</p>
+<p>The requirement determines which screenshots, logs, and observations belong in the write-up. It also prevents the exercise from becoming “I changed settings until something opened” and then retroactively declaring that behavior the goal.</p>
+<h2>Identify the user and the permission path</h2>
+<p>Record which fictional account is being tested and how that account is expected to receive access.</p>
+<p>The path might involve a group membership and a resource permission. In an application scenario, it may include assignment or a role mapping. Explain the path you actually built rather than adding architecture you didn't test.</p>
+<p>Check for unintended alternate access. An administrator account can make an exercise appear successful while hiding whether the ordinary user's permission path works.</p>
+<p>Use accounts appropriate to the scenario and document their relevant scope.</p>
+<h2>Run both the expected success and expected denial</h2>
+<p>Test the intended user performing the intended action. Then test an appropriate control user who should not have that access.</p>
+<p>Record expected and observed outcomes separately. If the control user succeeds, the lab has uncovered a problem. Investigate it instead of selecting only the screenshot that supports the story you hoped to tell.</p>
+<p>A negative test is useful when it is tied to a requirement. Randomly trying unrelated actions doesn't automatically make the project more convincing.</p>
+<h2>Check what happens when access changes</h2>
+<p>Where the exercise includes a lifecycle change, verify the resulting behavior rather than stopping at a membership screenshot.</p>
+<p>For example, remove the fictional user's approved access and test the relevant action using an appropriate fresh session or other method for the system under examination. Explain any session or timing limitation that affects the result.</p>
+<p>Don't claim universal immediate revocation from one narrow test.</p>
+<p>This step connects the project to a real operational question: whether access continues to match the current approved state.</p>
+<h2>Include recovery and safe cleanup</h2>
+<p><strong>Write down how you would return the lab to a known state after a deliberate mistake.</strong></p>
+<p>That might mean restoring the original setting, recreating a test account, or reverting the isolated environment. The method should fit your setup and avoid depending on undocumented memory.</p>
+<p>Then remove unnecessary test artifacts and review anything you plan to publish for secrets or private information.</p>
+<p>The project should leave you with evidence and understanding, not a personal machine accidentally carrying lab permissions or an exposed credential in a repository.</p>
+<h2>Confirm that another person can follow the result</h2>
+<p>Your final page should identify the problem, the relevant design, the tests, the observed result, and the limitations.</p>
+<p>Use <a href="https://cyberandchill.com/posts/how-to-decide-when-a-lab-is-finished-enough-to-publish">a clear definition of “finished enough to publish</a>” to avoid polishing forever after the useful work is complete.</p>
+<p>A reader should not need access to your running environment to understand the main claim. A short diagram, a small test table, and selected evidence may be enough.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> provides three practical IAM lab directions and guidance on turning them into career evidence. The $9 guide is useful when you want a project to do more than occupy a weekend.</p>
+<p>A finished lab doesn't need to prove everything. It needs to prove its stated requirement, honestly and clearly.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/an-iam-lab-checklist-that-goes-beyond-it-works">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

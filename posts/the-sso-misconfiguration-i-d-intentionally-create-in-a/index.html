@@ -1,0 +1,49 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The SSO Misconfiguration I'd Intentionally Create in a Practice Lab | CyberAndChill</title><meta name="description" content="The SSO Misconfiguration I'd Intentionally Create in a Practice Lab"><link rel="canonical" href="https://blog.cyberandchill.com/posts/the-sso-misconfiguration-i-d-intentionally-create-in-a/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>The SSO Misconfiguration I'd Intentionally Create in a Practice Lab</h1><article class="content">
+<p>A redirect-URI mismatch in an isolated OpenID Connect test application is <strong>a useful controlled SSO failure to investigate</strong>.</p>
+<p>It connects a request from the application with a specific registered configuration. Start with a working flow, change one test value, observe the evidence, and restore the intended behavior.</p>
+<p>Use only an application and identity environment you control. The exercise should help you understand a validation boundary, not teach you to weaken it whenever a login fails.</p>
+<h2>Begin with a working OpenID Connect test integration</h2>
+<p><strong>Use a suitable test application and the current official setup guidance for your identity platform.</strong></p>
+<p>Verify that the intended fictional user can complete the sign-in flow. Record the application's expected redirect URI and the corresponding registered value without publishing secrets.</p>
+<p>Draw the basic path: application, identity provider, and return to the application.</p>
+<p>The baseline matters because you want to investigate one deliberate mismatch, not several unrelated setup errors that happen to appear during the same attempt.</p>
+<h2>Make one reversible mismatch without weakening validation</h2>
+<p>In the isolated setup, change the application's test redirect URI so it no longer matches the intended registered value.</p>
+<p>Keep four safeguards:</p>
+<ul>
+<li>
+<strong>Known baseline:</strong> Save the working value privately before changing it.</li>
+<li>
+<strong>Single change:</strong> Record the exact difference you introduced.</li>
+<li>
+<strong>Controlled destination:</strong> Do not redirect the flow to an unrelated third party.</li>
+<li>
+<strong>Validation intact:</strong> Do not add broad wildcard behavior or disable the check to force success.</li>
+</ul>
+<p>The useful result is observing how the supported integration handles the mismatch and which evidence explains it.</p>
+<p>Check the relevant documentation for your platform and test application. Keep the correction focused on restoring the intended configuration.</p>
+<p>A control producing an inconvenient error isn't proof that the control should be removed. Your project is stronger when it explains the boundary and verifies recovery without bypassing it.</p>
+<h2>Observe the failure and compare both sides</h2>
+<p>Attempt the sign-in and inspect the returned error and relevant request context.</p>
+<p>For Microsoft Entra, the official <a href="https://learn.microsoft.com/en-us/troubleshoot/entra/entra-id/app-integration/error-code-aadsts50011-redirect-uri-mismatch">AADSTS50011 troubleshooting article</a> describes a mismatch between the redirect URI sent by the application and the registered redirect URIs.</p>
+<p><strong>Compare the values for the correct application registration and environment.</strong></p>
+<p>Do not assume every sign-in failure is this error. The point is to connect the evidence from this controlled experiment with the configuration you intentionally changed.</p>
+<h2>Explain why the comparison matters</h2>
+<p>The application and identity platform need to agree on the allowed return location for the flow.</p>
+<p>A mismatch is therefore not solved responsibly by accepting arbitrary destinations. The correction should restore the intended, documented configuration for the test application.</p>
+<p>Check the platform's current <a href="https://learn.microsoft.com/en-us/entra/identity-platform/reply-url">redirect-URI requirements</a> for the scenario you are using.</p>
+<p>Your explanation should distinguish understanding the validation from merely copying an error message into a search engine and adding whatever value makes the message disappear.</p>
+<h2>Restore the intended configuration and retest</h2>
+<p>Return the altered setting to the known intended value, or correct the registered configuration if the exercise established that it was the wrong side of the mismatch.</p>
+<p>Use the same relevant test flow and record the result. Make sure you are evaluating the correct application and environment.</p>
+<p>Keep a note of any conditions needed to interpret the retest, such as application configuration reload or a fresh test session where appropriate.</p>
+<p>Do not claim broader integration correctness from this single test. It validates the specific behavior you exercised.</p>
+<h2>Turn the exercise into a concise case study</h2>
+<p>Show the baseline, deliberate mismatch, observed evidence, configuration comparison, correction, and retest.</p>
+<p>Remove secrets and unnecessary identifiers from the public version. State clearly that the fault was introduced in a lab and that you did not handle a production incident.</p>
+<p>Use <a href="https://cyberandchill.com/posts/how-to-turn-a-failed-login-into-an-interview-ready-project">the full failed-login case-study structure</a> to make the reasoning easy to follow.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> includes SSO among its three practical lab directions and helps connect the resulting evidence to a career plan. The $9 guide is designed to move you beyond a successful installation toward something you can explain.</p>
+<p>One controlled mismatch is enough when you can show why it failed, why the correction was appropriate, and what the retest proved.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/the-sso-misconfiguration-i-d-intentionally-create-in-a">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

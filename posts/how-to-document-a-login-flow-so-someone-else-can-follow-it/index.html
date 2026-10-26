@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>How to Document a Login Flow So Someone Else Can Follow It | CyberAndChill</title><meta name="description" content="How to Document a Login Flow So Someone Else Can Follow It"><link rel="canonical" href="https://blog.cyberandchill.com/posts/how-to-document-a-login-flow-so-someone-else-can-follow-it/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">Career · 2026-10-25</p><h1>How to Document a Login Flow So Someone Else Can Follow It</h1><article class="content">
+<p>A login-flow diagram should let someone follow <strong>one tested sign-in from the user's action to the application's access decision</strong>.</p>
+<p>Product logos connected by arrows labeled “authentication” aren't enough. Name the participants, explain what each receives or decides, and connect important stages to evidence from your lab.</p>
+<p>Keep the first view simple. Detailed protocol notes can sit below it without making a reader reconstruct the whole flow from configuration screenshots.</p>
+<h2>Name the participants before drawing the arrows</h2>
+<p><strong>Start with the user agent, the identity provider, the application, and any separate resource relevant to the scenario.</strong></p>
+<p>Use plain-language labels alongside product names. A reader should understand the role of each component even if they haven't used the exact platform.</p>
+<p>Keep the scope narrow. If your lab uses one application and one identity provider, don't add every possible service from an enterprise reference architecture.</p>
+<p>A diagram is useful when it explains the environment you actually tested.</p>
+<h2>Number the observable stages of your tested flow</h2>
+<p>Describe the major stages in the order they occur:</p>
+<ol>
+<li>
+<strong>Start:</strong> What user action begins the attempt?</li>
+<li>
+<strong>Authentication:</strong> Where is the identity checked?</li>
+<li>
+<strong>Return:</strong> What does the supported integration send back to the application?</li>
+<li>
+<strong>Application outcome:</strong> How is the session or permitted access established?</li>
+</ol>
+<p>The exact sequence depends on the protocol and integration. Check the relevant vendor documentation; don't assume every SSO setup follows an identical path.</p>
+<p>Keep each step short enough to sit beside the diagram. Put details that interrupt the first explanation in a separate note.</p>
+<p>Most importantly, distinguish behavior you observed from behavior described in documentation. A copied theoretical diagram doesn't by itself prove your lab followed that path. Make your verification and any unobserved steps clear.</p>
+<h2>Label the decisions, not just the communication</h2>
+<p>An arrow shows that information moves. It doesn't explain what the receiving system decides.</p>
+<p>Add a short label for the relevant validation or access decision. For example, distinguish the identity provider's authentication result from the application's decision about the user's role.</p>
+<p>Avoid publishing actual tokens, credentials, or sensitive claims. Use invented or redacted examples where a message format is useful to explain.</p>
+<p>The reader needs to understand the trust relationship, not receive a reusable authentication artifact.</p>
+<h2>Attach one piece of evidence to each important stage</h2>
+<p>You might use a sanitized log reference, a test observation, or an application result.</p>
+<p>Explain what each item proves and what it does not. A successful identity-provider event doesn't prove the user completed every application action. A browser error doesn't necessarily identify the system that caused it.</p>
+<p>Correlate the evidence to the same test attempt where your tools allow it. Record the time and context so unrelated events don't accidentally become one story.</p>
+<p>Keep detailed logs behind descriptive links rather than crowding the diagram.</p>
+<h2>Show the controlled failure on the same map</h2>
+<p>After establishing the baseline, identify the stage affected by one safe lab misconfiguration.</p>
+<p>Mark where the observed flow diverges from the expected one. Then explain the relevant correction and the recovery test.</p>
+<p>This is more informative than creating a second diagram with a large red cross over the entire application.</p>
+<p><strong>Use <a href="https://cyberandchill.com/posts/how-to-troubleshoot-an-sso-failure-without-guessing">a staged SSO investigation</a> to keep the failure explanation connected to evidence rather than a guessed cause.</strong></p>
+<h2>Add a short reader's guide beneath the diagram</h2>
+<p>Include the scenario, the protocol or method used, the test identities, and the project's exclusions. Keep identities fictional and avoid exposing your actual tenant or personal environment unnecessarily.</p>
+<p>State which parts you implemented and which are conceptual. If the application uses local authorization that your lab doesn't test, say so.</p>
+<p>Then practice explaining the diagram without reading every label. A good visual should support your explanation, not replace understanding of the flow.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> includes an SSO lab direction and portfolio guidance alongside a broader IAM career plan. For $9, it helps you turn a working integration into evidence someone else can evaluate.</p>
+<p>The finished diagram should answer a simple question: what happened in this sign-in attempt, and how do you know? Everything on the page should help the reader follow that answer.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/how-to-document-a-login-flow-so-someone-else-can-follow-it">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

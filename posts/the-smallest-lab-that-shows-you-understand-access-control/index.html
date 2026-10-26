@@ -1,0 +1,58 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Smallest Lab That Shows You Understand Access Control | CyberAndChill</title><meta name="description" content="The Smallest Lab That Shows You Understand Access Control"><link rel="canonical" href="https://blog.cyberandchill.com/posts/the-smallest-lab-that-shows-you-understand-access-control/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>The Smallest Lab That Shows You Understand Access Control</h1><article class="content">
+<p>A useful access-control lab can be much smaller than a domain or cloud environment. It needs an identity, a resource, a permitted action, and a boundary you can test.</p>
+<p><strong>Build and explain that permission boundary before adding infrastructure.</strong> A local exercise can demonstrate the relationship when you label the environment and limitations honestly.</p>
+<p>The project below focuses on read, modify, and denied access with fictional accounts. It is a learning demonstration, not a claim that a small local setup represents a complete enterprise IAM deployment.</p>
+<h2>Use a disposable environment and fictional accounts</h2>
+<p>Create the exercise in an isolated virtual machine or another suitable lab environment, not on a work system or around personal files you cannot afford to lose.</p>
+<p><strong>Use ordinary test accounts and keep a separate administrative recovery path.</strong> Do not test the intended user experience while signed in with broad administrative rights.</p>
+<p><strong>Check your operating system's capabilities and documentation before changing permissions.</strong> The exact interface and supported features depend on the environment.</p>
+<p>The lab should be easy to reset and should contain no real organizational data.</p>
+<h2>Define one resource and two different actions</h2>
+<p>A fictional supplier document can be enough. One test account should be able to read it, but not modify it. A second account should not be able to read it.</p>
+<p>Write those expectations before configuring anything. Microsoft's <a href="https://learn.microsoft.com/en-us/windows/security/identity-protection/access-control/access-control">access-control documentation</a> describes the relevant Windows concepts. Your job is to apply them to a clear, bounded question.</p>
+<p>Avoid vague requirements such as “secure the folder.” A requirement should identify who, what, and which action.</p>
+<h2>Configure the permission path you intend to test</h2>
+<p>You might use a local group to represent the approved readers, then assign the appropriate resource permission to that group.</p>
+<p>Inspect inherited permissions and other assignments that could affect the result. A configuration is not minimal merely because it contains few objects; it is minimal when the relationship is understandable.</p>
+<p>Do not add broad permissions to fix a confusing result. Investigate why the current assignments do or do not support the expected action.</p>
+<p>Keep a short note of the intended permission path so you can compare it with the observed behavior.</p>
+<h2>Test the allowed action, prohibited action, and changed state</h2>
+<p>Use a compact test record:</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>What it checks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Authorized account reads</strong></td>
+<td>The required action is available</td>
+</tr>
+<tr>
+<td><strong>The same account tries a prohibited modification</strong></td>
+<td>Read access hasn't been confused with edit permission</td>
+</tr>
+<tr>
+<td><strong>Another account tries to read</strong></td>
+<td>The intended identity boundary holds</td>
+</tr>
+<tr>
+<td><strong>The grant is removed and retested</strong></td>
+<td>The relevant change affects access under appropriate refreshed conditions</td>
+</tr>
+</tbody>
+</table>
+<p>A successful sign-in is not the same as access to the resource.</p>
+<p><a href="https://cyberandchill.com/posts/three-identity-test-cases-that-make-an-access-control-demo">Three test cases that make an access-control demonstration credible</a> can organize the main comparison, with additional actions recorded where your scenario requires them.</p>
+<p>Keep the access path consistent. Local file access and a network share may involve different checks. Record which path you used rather than combining them as though they prove the same boundary.</p>
+<h2>Explain what the lab does and does not prove</h2>
+<p>The exercise demonstrates a local permission model and your ability to test it. It does not demonstrate directory synchronization, enterprise application integration, or a production access-governance process.</p>
+<p>That is a useful boundary, not a reason to dismiss the work.</p>
+<p>You can later expand the same business requirement into a directory-based scenario and compare what changes. Keeping the requirement stable makes the added infrastructure easier to understand.</p>
+<p>The directory, SSO, and lifecycle projects in <a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> help you choose the next layer based on your target role. The $9 guide is intended to keep the learning connected to a career purpose.</p>
+<p>Start with a result you can explain. Complexity should be added because it answers a new question, not because a small lab feels insufficiently impressive.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/the-smallest-lab-that-shows-you-understand-access-control">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

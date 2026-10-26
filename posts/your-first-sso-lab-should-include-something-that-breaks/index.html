@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Your First SSO Lab Should Include Something That Breaks | CyberAndChill</title><meta name="description" content="Your First SSO Lab Should Include Something That Breaks"><link rel="canonical" href="https://blog.cyberandchill.com/posts/your-first-sso-lab-should-include-something-that-breaks/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>Your First SSO Lab Should Include Something That Breaks</h1><article class="content">
+<p>Include one reversible failure in your first SSO lab after you've established a working sign-in.</p>
+<p><strong>A controlled error tests whether you understand the configuration, not just whether you followed the setup instructions.</strong> Make a prediction, change one relevant setting, inspect the evidence, and restore the baseline.</p>
+<p>Do this only in an isolated environment you control. The project should demonstrate a repeatable investigation and recovery—not create a real outage or invent a dramatic story around a mistake you intentionally introduced for learning.</p>
+<h2>Establish the working path before changing anything</h2>
+<p>Use a test application and fictional accounts. Record which identity provider handles authentication, which application receives the result, and which user is expected to have access.</p>
+<p>Complete a successful sign-in and capture the relevant evidence. Note the configuration values that matter to the integration without publishing secrets.</p>
+<p>Microsoft's <a href="https://learn.microsoft.com/en-us/entra/identity-platform/single-sign-on-saml-protocol">SAML SSO reference</a> is one example of protocol documentation you can use to understand the exchange. Your actual application determines which protocol and settings apply.</p>
+<p>A failure is much easier to investigate when you can compare it with a known working state.</p>
+<h2>Change one setting with a clear prediction</h2>
+<p>Choose a safe configuration change that the application's documentation allows you to reverse. Do not weaken security controls broadly or experiment against production identities.</p>
+<p>Before making the change, write what you expect to happen and where you expect the failure to appear.</p>
+<p>For example, a mismatch in an integration setting may cause the receiving system to reject the sign-in result. The exact behavior depends on the protocol and application.</p>
+<p>If you change several values at once, the test becomes harder to interpret. You may restore the login without learning which change mattered.</p>
+<h2>Follow the evidence to the system that rejected the request</h2>
+<p><strong>Record the time, test user, application, visible error, and relevant logs.</strong> Distinguish a browser message from the underlying system's evidence.</p>
+<p><strong>Ask whether the request reached the identity provider, whether authentication completed, and whether the application accepted the returned result.</strong></p>
+<p>Do not call every failure an authentication failure. The application might reject an integration message after the user has already authenticated.</p>
+<p><a href="https://cyberandchill.com/posts/how-to-troubleshoot-an-sso-failure-without-guessing">Troubleshooting SSO without guessing</a> provides a useful investigation order once you can describe the normal path.</p>
+<h2>Verify that restoration brings back the intended access</h2>
+<p>Return the changed setting to its documented baseline, then run a comparable test.</p>
+<p>Check these results:</p>
+<ul>
+<li>
+<strong>Authorized user:</strong> The original successful action works again under appropriate fresh session conditions.</li>
+<li>
+<strong>Unauthorized user:</strong> An account without the required access has not gained it accidentally.</li>
+<li>
+<strong>Changed setting:</strong> The relevant configuration has actually been restored.</li>
+<li>
+<strong>Evidence:</strong> The failed observation and successful retest remain in your notes.</li>
+</ul>
+<p>A recovery test should show restored intended behavior, not merely that somebody reached a page.</p>
+<p>Keep a private change record with the original value, test value, and restoration step, even when only one setting changes. That makes the exercise repeatable without depending on memory.</p>
+<p>Publish only safe details. You can explain the relationship and results without exposing sensitive configuration or turning the controlled test into an exaggerated incident narrative.</p>
+<h2>Write the project as an investigation, not a rescue story</h2>
+<p>Your summary can be straightforward: “I established a working integration, changed one test setting, observed the resulting failure, identified the relevant mismatch, restored the baseline, and verified recovery.”</p>
+<p>There is no need to invent a panicked customer, a midnight incident, or an impressive business impact. A lab is a legitimate place to practice.</p>
+<p>State what the exercise did not cover, such as production rollout, high availability, or a second application. Those boundaries make the result easier to trust.</p>
+<p>The SSO lab in <a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> can become stronger career evidence when you add this kind of validation. The $9 guide connects the technical work with choosing a role and explaining your skills.</p>
+<p>A perfect demo is useful. Being able to explain a controlled failure makes the demo much more informative.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/your-first-sso-lab-should-include-something-that-breaks">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

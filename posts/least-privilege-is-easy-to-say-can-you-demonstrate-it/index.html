@@ -1,0 +1,65 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Least Privilege Is Easy to Say. Can You Demonstrate It? | CyberAndChill</title><meta name="description" content="Least Privilege Is Easy to Say. Can You Demonstrate It?"><link rel="canonical" href="https://blog.cyberandchill.com/posts/least-privilege-is-easy-to-say-can-you-demonstrate-it/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">Career · 2026-10-25</p><h1>Least Privilege Is Easy to Say. Can You Demonstrate It?</h1><article class="content">
+<p>To demonstrate least privilege, <strong>define the task and show that nearby unnecessary actions remain unavailable</strong>.</p>
+<p>Repeating “give users only what they need” doesn't establish which permissions a particular user needs or whether your configuration enforces that boundary.</p>
+<p>Start with a fictional business task in an isolated lab. Choose a permission based on what it allows, then test both the intended work and the limits you claim to have set.</p>
+<h2>Define the task before selecting the permission</h2>
+<p>Suppose a contractor needs to read a set of project documents.</p>
+<p>Reading does not automatically require editing, deleting, exporting unrelated material, or administering other users. Write the legitimate task in plain language before choosing a convenient role.</p>
+<p>Also identify the resource scope. Access to one project folder is different from access to every departmental share.</p>
+<p>A vague requirement such as “needs project access” makes it too easy to grant a broad permission and call the job complete.</p>
+<h2>Compare what permissions allow, not just their names</h2>
+<p>A role called “reader” or “operator” may not match your requirement as neatly as the label suggests.</p>
+<p>Before selecting it, compare:</p>
+<table>
+<thead>
+<tr>
+<th>Check</th>
+<th>What to record</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Required action</td>
+<td>What must the fictional user accomplish?</td>
+</tr>
+<tr>
+<td>Available permission</td>
+<td>What actions does it actually allow?</td>
+</tr>
+<tr>
+<td>Unnecessary authority</td>
+<td>What else would the assignment permit?</td>
+</tr>
+<tr>
+<td>Remaining mismatch</td>
+<td>What cannot be limited with this configuration?</td>
+</tr>
+</tbody>
+</table>
+<p>Choose the smallest suitable option available within the system and your authority to configure it.</p>
+<p>If that option is still broader than the requirement, document the limitation. You may need a different configuration or a discussion with the appropriate owner. Don't claim precise least privilege merely because you chose the least powerful-looking role in a menu.</p>
+<h2>Test the allowed action and two nearby boundaries</h2>
+<p>Verify that the contractor can read the approved document.</p>
+<p>Then test a prohibited modification and an unrelated resource. Use the intended account and a consistent test context.</p>
+<p>The result should show that the person can perform the work without receiving the extra access you excluded. A total denial is not success if it prevents the legitimate task.</p>
+<p>Capture the expected and observed outcomes in a small table rather than relying only on the configuration screen.</p>
+<p><strong>Keep the approval decision separate from your technical test.</strong> The fact that a role is narrower than an administrator role does not establish that the user needs it. The permission still needs a justified connection to the task.</p>
+<h2>Include time and changing responsibilities</h2>
+<p>Least privilege is not only an initial assignment question.</p>
+<p>If the contractor's work ends, the need changes. Show how your lab removes the relevant permission and verifies the resulting state. Clearly identify any sessions, applications, or processes outside the test's scope.</p>
+<p>If access is temporarily expanded, record the reason, approver, and review or expiry condition in the fictional workflow.</p>
+<p>This makes the principle a lifecycle decision rather than a one-time choice made during onboarding.</p>
+<h2>Apply the same reasoning to administration</h2>
+<p>Your own administrative activity deserves a boundary too.</p>
+<p><strong>Identify which tasks require elevated authority and avoid using an unnecessarily powerful account for ordinary tests.</strong> Keep the lab isolated and follow the platform's supported administration model.</p>
+<p>The demonstration should show that you understand the difference between operating a control and testing it as the user affected by the control.</p>
+<p>Consider <a href="https://cyberandchill.com/posts/why-privileged-accounts-deserve-a-different-set-of-rules">why privileged accounts need separate rules</a> as the next step when the basic user-access example is clear.</p>
+<h2>Explain the result without claiming universal security</h2>
+<p>In the portfolio, state the task, resource, permission choice, tests, and lifecycle change.</p>
+<p>Then state the limit: this proves a specific access boundary in your lab, not that the entire environment is secure or that every application follows the same model.</p>
+<p>That narrow explanation is useful because a reader can evaluate it and ask a relevant follow-up question.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> includes practical access and lifecycle lab directions with guidance on career positioning. The $9 guide helps turn concepts such as least privilege into evidence connected to an IAM role.</p>
+<p>Don't stop at the definition. Show the legitimate action, the denied alternatives, and what happens when the need for access ends.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/least-privilege-is-easy-to-say-can-you-demonstrate-it">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

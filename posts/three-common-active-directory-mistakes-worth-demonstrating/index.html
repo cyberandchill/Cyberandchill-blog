@@ -1,0 +1,60 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Three Common Active Directory Mistakes Worth Demonstrating in a Lab | CyberAndChill</title><meta name="description" content="Three Common Active Directory Mistakes Worth Demonstrating in a Lab"><link rel="canonical" href="https://blog.cyberandchill.com/posts/three-common-active-directory-mistakes-worth-demonstrating/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>Three Common Active Directory Mistakes Worth Demonstrating in a Lab</h1><article class="content">
+<p>You can learn from deliberate Active Directory mistakes <strong>when the changes are isolated, reversible, and tied to a clear test</strong>.</p>
+<p>The goal isn't to create a vulnerable environment for its own sake. It is to recognize an access error in the evidence and verify a correction.</p>
+<p>Use fictional accounts and sample resources for the three examples below. Keep them away from personal files and production systems, and record the expected behavior before introducing the mistake.</p>
+<h2>Mistake one: a broad permission hides the intended group boundary</h2>
+<p>Define a resource that only a fictional Review group should read.</p>
+<p>Then, in the isolated exercise, inspect whether another existing permission entry grants access more broadly than intended. You can model this with a clearly documented test configuration, provided you understand how to restore the intended state.</p>
+<p>Test an unrelated ordinary user. If that user can read the resource, the intended group is not the whole access story. Trace the actual permission path instead of assuming the named Review group alone controls the result.</p>
+<h2>Correct the permission and repeat the comparison</h2>
+<p>Remove or narrow the inappropriate test permission through the lab's planned recovery process.</p>
+<p>Then repeat the approved-user and unrelated-user tests using the intended access path. Record both results.</p>
+<p>Microsoft's <a href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-groups">security-group documentation</a> is useful background for understanding how groups participate in resource permissions.</p>
+<p>Your conclusion should stay bounded: you corrected the specific access path tested. Do not claim you eliminated every possible source of access across an environment you did not inspect.</p>
+<h2>Mistake two: a team transfer only adds access</h2>
+<p>Create a fictional employee who moves from Research to Operations.</p>
+<p>Model the mistake by adding the new team's membership while leaving an old membership that the scenario says should be removed. Compare the resulting state with the approved access requirement.</p>
+<p>The important question is not whether the employee can start the new work. It is whether they retain access that no longer fits their responsibility.</p>
+<p>Correct the membership according to the fictional approval, then test the relevant old and new resource access with appropriate session handling.</p>
+<h2>Explain why the transfer is a lifecycle problem</h2>
+<p>A process that only adds permissions can appear successful because the user gets what they requested.</p>
+<p>The missing check is what should stop being available.</p>
+<p>Document the before state, approved new state, actual changes, and verified result. That turns the exercise into an identity lifecycle example rather than a simple group-management demonstration.</p>
+<p>Use <a href="https://cyberandchill.com/posts/what-should-happen-to-access-when-an-employee-changes-teams">the access decisions involved in a team change</a> to connect the technical correction with the business requirement behind it.</p>
+<h2>Mistake three: using administrator success as the user test</h2>
+<p>An administrator opening a resource doesn't prove an ordinary user's intended access works.</p>
+<p>Separate the identities in the exercise:</p>
+<table>
+<thead>
+<tr>
+<th>Identity</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Authorized administrator</td>
+<td>Configure the lab control</td>
+</tr>
+<tr>
+<td>Approved ordinary user</td>
+<td>Test the required access</td>
+</tr>
+<tr>
+<td>Unrelated ordinary user</td>
+<td>Test the exclusion boundary</td>
+</tr>
+</tbody>
+</table>
+<p>Compare their relevant results with the requirement. If the ordinary user fails while the administrator succeeds, investigate the permission path. Don't treat the broader account's success as completion.</p>
+<p>The identity is part of the evidence, not an incidental testing detail. Record which account performed each action and under what context.</p>
+<p>This makes the project more informative because it demonstrates the boundary intended for actual users rather than the capability of an account with elevated authority.</p>
+<h2>Publish the diagnosis, correction, and limits</h2>
+<p>For each example, show the intended behavior, the deliberate mistake, the observed result, the correction, and the retest.</p>
+<p>State that the environment and identities are fictional and that the mistakes were introduced only in the lab. Keep secrets and private information out of screenshots and configuration files.</p>
+<p>The project should demonstrate your ability to recognize misleading success and verify a correction—not merely collect three error screenshots.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> connects directory access, SSO, and lifecycle projects to portfolio and career guidance. The $9 guide helps you choose exercises that reveal useful understanding without requiring a complicated home environment.</p>
+<p>Small mistakes can teach important concepts when the requirement and tests are clear enough to show exactly what changed.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/three-common-active-directory-mistakes-worth-demonstrating">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

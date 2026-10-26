@@ -1,0 +1,47 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>The Five Screenshots I'd Save From an Identity Lab | CyberAndChill</title><meta name="description" content="The Five Screenshots I'd Save From an Identity Lab"><link rel="canonical" href="https://blog.cyberandchill.com/posts/the-five-screenshots-i-d-save-from-an-identity-lab/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>The Five Screenshots I'd Save From an Identity Lab</h1><article class="content">
+<p>Choose lab screenshots by the claim each one supports, not by how many setup steps you completed.</p>
+<p><strong>A small set of labeled images should explain the scenario, configuration, and tested result.</strong> A screenshot without account context or an explanation may show very little about your IAM understanding.</p>
+<p>For a simple access-control project, the five options below cover the permission relationship, resource, allowed action, denial, and a changed state. Adjust the selection to the project; don't manufacture an extra image just to reach a fixed number.</p>
+<h2>Show the intended identity and group relationship</h2>
+<p>The first image should establish the relevant fictional account and membership, not display the entire directory.</p>
+<p>Crop it to the information needed for the explanation. Label which identity is being tested and which group is supposed to provide access.</p>
+<p>The caption might say: “The test employee belongs to the read-access group used in this scenario.”</p>
+<p>That screenshot does not prove the resource permission is correct. It establishes one part of the path that the next evidence needs to connect.</p>
+<h2>Show the permission on the actual resource</h2>
+<p>The second image should show the relevant permission assignment for the folder, application, or other resource in scope.</p>
+<p>Explain the action it is intended to allow. “Read access” is more useful than “permissions configured.”</p>
+<p>Microsoft's <a href="https://learn.microsoft.com/en-us/windows/security/identity-protection/access-control/access-control">Windows access-control overview</a> provides background on permissions and related concepts. Your image should show the specific configuration you tested.</p>
+<p>Check for inherited or alternate assignments that affect the conclusion. Do not crop away a relevant permission merely because it complicates the story.</p>
+<h2>Show the allowed action under the test identity</h2>
+<p>The third image should demonstrate the intended user performing the intended action.</p>
+<p><strong>Make the account context understandable without exposing real personal information.</strong> A successful action performed as an administrator would not demonstrate the same boundary.</p>
+<p>The caption should name the action and the result: “The authorized test account opened the approved document for reading.”</p>
+<p>A desktop full of unrelated windows makes this harder to evaluate. Keep the image focused and preserve the unedited evidence privately if you need it for your own review.</p>
+<h2>Show a comparable denied action</h2>
+<p>The fourth image should show the comparison account or prohibited action failing for the intended access reason.</p>
+<p>Do not use a network failure as proof of authorization. Confirm that the test reached the relevant system under the conditions you intended.</p>
+<p>Explain the expected denial and the observed result. A red message with no context is not self-explanatory evidence.</p>
+<p><a href="https://cyberandchill.com/posts/can-you-prove-access-was-denied-that-s-a-better-lab-than-you">Proving that access was denied for the right reason</a> is a useful companion when you are unsure whether the negative test actually supports the claim.</p>
+<h2>Show the result after removal or correction</h2>
+<p><strong>Use the final image to document a meaningful change, such as removing access or correcting a controlled configuration error.</strong></p>
+<p>Its caption should identify:</p>
+<ul>
+<li>
+<strong>The change:</strong> What was removed or corrected.</li>
+<li>
+<strong>The test identity:</strong> Which account performed the action.</li>
+<li>
+<strong>The conditions:</strong> Any refreshed session or other state needed to interpret the result.</li>
+<li>
+<strong>The comparison:</strong> Whether the same resource and action were used before and after.</li>
+</ul>
+<p>This closes the investigation by showing that you tested a change, rather than capturing one moment when the setup happened to work.</p>
+<p>If the scenario has no meaningful changed state, a concise result table may be more appropriate.</p>
+<p>Keep captions consistent with the written test record. Don't mix accounts or later configurations in a way that makes the image appear to support a conclusion the actual test never established.</p>
+<h2>Remove sensitive details before publishing</h2>
+<p>Review account names, tenant identifiers, internal domains, paths, tokens, keys, and background windows. Use fictional lab identities from the start rather than trying to sanitize production evidence later.</p>
+<p>The three lab areas in <a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> give you concrete scenarios to document. The $9 guide helps turn the evidence into a portfolio that supports a career move.</p>
+<p>Five useful images with clear captions can explain more than fifty unlabeled screenshots. The objective is inspectable evidence, not a record of every click.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/the-five-screenshots-i-d-save-from-an-identity-lab">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

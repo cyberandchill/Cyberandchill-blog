@@ -1,0 +1,50 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Should You Put Configuration Screenshots on GitHub? | CyberAndChill</title><meta name="description" content="Should You Put Configuration Screenshots on GitHub?"><link rel="canonical" href="https://blog.cyberandchill.com/posts/should-you-put-configuration-screenshots-on-github/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">Career · 2026-10-25</p><h1>Should You Put Configuration Screenshots on GitHub?</h1><article class="content">
+<p>Put configuration screenshots in an IAM portfolio <strong>when they support a specific claim</strong>.</p>
+<p>A setting can help explain how access was configured. A test result can help show what happened. Ten uncaptained administration screens usually make the reader reconstruct the argument for you.</p>
+<p>Choose the evidence first, then the image. Keep the page understandable without requiring someone to open every attachment or guess which part of a screenshot matters.</p>
+<h2>Show the setting that explains the result</h2>
+<p>Suppose your fictional lab grants a project group access to a shared resource.</p>
+<p>Useful evidence might include the relevant permission entry, the test user's membership, and the result from the user session. You don't need an image of every installation screen that preceded those steps.</p>
+<p>Write a caption stating what the image establishes.</p>
+<p>“Project group has read access to the sample folder” is more helpful than “Screenshot 4.” The caption should not claim more than the image actually shows.</p>
+<h2>Keep configuration and validation distinct</h2>
+<p>A configuration screenshot shows what was set at that moment. It doesn't necessarily prove the intended user could complete the task.</p>
+<p>Pair important settings with a test result and enough context to understand the test. Identify the fictional user, action, expected result, and observed result.</p>
+<p>For a denied-access case, make clear that denial was expected. Otherwise, a reader may mistake a successful negative test for an unfinished lab.</p>
+<p>This distinction helps your portfolio demonstrate behavior rather than merely document that you found the correct page in an admin console.</p>
+<h2>Use a fictional environment and inspect the whole frame</h2>
+<p><strong>Don't publish employer administration screens because the names have been blurred in one corner.</strong></p>
+<p><strong>Use synthetic users and a lab you are authorized to share.</strong> Inspect the browser tabs, address bar, side panels, terminal output, and any visible notifications. Sensitive context can appear outside the area you intended to capture.</p>
+<p>Avoid publishing credentials, tokens, private keys, personal data, or confidential organizational details.</p>
+<p>Crop for clarity, but don't crop away information that changes the meaning of the result. Privacy and evidentiary honesty both matter.</p>
+<h2>Treat repository history as part of the exposure</h2>
+<p>Deleting a secret from the current file is not the same as making an exposed credential safe.</p>
+<p>GitHub's guidance on <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/removing-sensitive-data-from-a-repository">removing sensitive data</a> begins with revoking or rotating exposed secrets where applicable, then addressing repository cleanup and other copies.</p>
+<p>Also, an ignore rule is not a retroactive eraser for material already tracked. GitHub explains that distinction in its <a href="https://docs.github.com/articles/ignoring-files">ignoring files documentation</a>.</p>
+<p>The better portfolio workflow is to review material before the first commit, not depend on cleanup after publication.</p>
+<h2>Make the page understandable without opening every image</h2>
+<p>Put the problem, diagram, and main result in readable text near the top.</p>
+<p>Use screenshots as supporting evidence, not as the only explanation. Add descriptive filenames and captions, and make the important result legible at a reasonable display size.</p>
+<p>A reader should be able to skim the page and understand what you demonstrated. They can inspect the images for detail afterward.</p>
+<p>For the larger structure, use <a href="https://cyberandchill.com/posts/the-readme-template-i-d-use-for-every-identity-project">a README that separates the requirement, setup, tests, and limitations</a>.</p>
+<h2>Review each image for usefulness and exposure before sharing</h2>
+<p>Open the page as someone who has never seen the lab.</p>
+<p>Check:</p>
+<ul>
+<li>
+<strong>Requirement:</strong> Can the reader tell what access was intended?</li>
+<li>
+<strong>Purpose:</strong> Does each screenshot support a specific configuration or test claim?</li>
+<li>
+<strong>Identity:</strong> Are the accounts clearly fictional?</li>
+<li>
+<strong>Safety:</strong> Have you inspected the whole frame, current files, and committed history?</li>
+<li>
+<strong>Explanation:</strong> Can you defend what the image does—and doesn't—show?</li>
+</ul>
+<p>Remove an image if it adds exposure without helping understanding. More screenshots do not automatically mean stronger evidence.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> connects three IAM projects with portfolio documentation and career positioning. The $9 guide helps you decide what the work should prove before collecting images.</p>
+<p>A small set of well-explained evidence is easier to evaluate than a gallery of unexplained settings.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/should-you-put-configuration-screenshots-on-github">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

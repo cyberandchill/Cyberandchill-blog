@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Build an IAM Project Around One Job Requirement, Not Ten Tools | CyberAndChill</title><meta name="description" content="Build an IAM Project Around One Job Requirement, Not Ten Tools"><link rel="canonical" href="https://blog.cyberandchill.com/posts/build-an-iam-project-around-one-job-requirement-not-ten/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>Build an IAM Project Around One Job Requirement, Not Ten Tools</h1><article class="content">
+<p>If a job asks for application-access troubleshooting, your lab should demonstrate that troubleshooting—not just the ability to install several tools.</p>
+<p><strong>Turn the job <a href="https://cyberandchill.com/posts/a-lab-should-answer-a-hiring-question-here-s-how-to-pick-one">requirement</a> into an observable test before choosing the components.</strong> A directory, client, or identity provider belongs in the project when it helps you run that test.</p>
+<p>This keeps the lab small enough to finish and makes its value easier to explain. You can show what you investigated, which evidence supported your decision, and how you verified the correction without relying on an impressive architecture diagram alone.</p>
+<h2>Translate the requirement into an observable outcome</h2>
+<p>Take the phrase “troubleshoot application access” and make it concrete.</p>
+<p>In a fictional scenario, an employee can authenticate to an application but cannot use a workspace they are supposed to access. Your project must distinguish the successful sign-in from the missing authorization, identify the relevant configuration, and verify the correction.</p>
+<p>That's a narrower task than “build an IAM environment.” It also gives you a clear reason for each component: a test identity, an application, an access rule, and evidence you can inspect.</p>
+<p>The scenario is illustrative. Choose a platform and configuration you can legitimately access and understand.</p>
+<h2>Write acceptance criteria before building</h2>
+<p>The project is complete when you can demonstrate the expected starting behavior, reproduce the access problem, explain the relevant cause, make an appropriate correction, and verify the intended outcome.</p>
+<p>Add a boundary test: a different fictional user who should not receive the workspace must remain excluded.</p>
+<p>Also define what counts as a failed conclusion. If you grant everyone broad access and the original user can proceed, you've removed the symptom without satisfying the requirement.</p>
+<p>These criteria keep the project focused when a quick workaround looks easier than understanding the actual access decision.</p>
+<h2>Choose the smallest set of components that supports the tests</h2>
+<p>You may need a particular directory or identity provider, but you may not need several clients or a separate monitoring platform.</p>
+<p><strong>Use the logs and tools necessary to inspect the chosen flow.</strong> Add infrastructure only when it answers a question the current setup cannot answer.</p>
+<p>This makes troubleshooting easier. When the environment is small, you have fewer unrelated components to consider and a clearer relationship between a change and its result.</p>
+<p>It also makes the final explanation easier to read. The diagram can show the problem rather than advertise the size of your lab.</p>
+<h2>Keep a short record of each troubleshooting decision</h2>
+<p>For each important hypothesis, record four things:</p>
+<ol>
+<li>
+<strong>Question:</strong> What do you think is causing the access problem?</li>
+<li>
+<strong>Evidence:</strong> Which observation supports or contradicts that explanation?</li>
+<li>
+<strong>Correction:</strong> Why is the proposed change relevant to the cause?</li>
+<li>
+<strong>Retest:</strong> How will you confirm the intended access without broadening it unnecessarily?</li>
+</ol>
+<p>For example, successful authentication may lead you to examine application assignment or authorization instead of credential recovery. The implementation determines whether that reasoning fits; don't force the evidence into a memorized script.</p>
+<p>Keep rejected hypotheses when they explain how you narrowed the problem. A concise note is enough—you don't need a dramatic incident story.</p>
+<p>This record shows understanding that the final screenshot can't display. It also gives you useful material for explaining the project when an interviewer asks why you made a particular change.</p>
+<h2>Present the project as an answer to the original requirement</h2>
+<p>Begin the write-up with the job-relevant responsibility and the fictional problem you used to practice it.</p>
+<p>Then show the acceptance criteria, important configuration, investigation, and verified result. Include the limits of the exercise and label it as a personal lab.</p>
+<p>A reader should be able to connect the project to the responsibility without guessing why ten unrelated tools appear in the repository.</p>
+<p>You can build a larger environment later. First, demonstrate that you can use a small one to answer a precise question.</p>
+<p>Keep a separate parking list for interesting additions. That lets you preserve ideas without changing the acceptance criteria mid-project. Revisit the list only after the original scenario is tested and documented.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> connects role requirements with practical identity projects and portfolio evidence. It helps you choose the work worth demonstrating before the tool list becomes the main achievement. The ebook is $9.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/build-an-iam-project-around-one-job-requirement-not-ten">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

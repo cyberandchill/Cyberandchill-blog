@@ -1,0 +1,49 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>How to Design a Lab Around a Real Employee Access Problem | CyberAndChill</title><meta name="description" content="How to Design a Lab Around a Real Employee Access Problem"><link rel="canonical" href="https://blog.cyberandchill.com/posts/how-to-design-a-lab-around-a-real-employee-access-problem/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>How to Design a Lab Around a Real Employee Access Problem</h1><article class="content">
+<p>Design your next IAM lab around one employee's access requirement before choosing the tools.</p>
+<p><strong>Specify who needs to do what, and what should remain unavailable.</strong> That gives the permissions, approval, and tests a reason to exist.</p>
+<p>A small fictional scenario is enough. Translate it into acceptance criteria, choose only the components needed to test those criteria, and record the result beside the requirement. You will have a clearer project to explain than an architecture copied from a course without a defined business problem.</p>
+<h2>Write a short business scenario</h2>
+<p>Here's a fictional example: a temporary analyst needs to read project documents for four weeks but must not edit them or access finance records.</p>
+<p>The scenario identifies the person, resource, action, time boundary, and prohibited behavior.</p>
+<p>You can simplify it for your available environment. Perhaps the first version tests read-versus-edit permissions manually, while the expiry process is documented rather than automated.</p>
+<p>State that limitation before building. A lab can demonstrate part of a requirement as long as you don't claim the unimplemented parts are working.</p>
+<h2>Turn the scenario into acceptance criteria</h2>
+<p>Write the results that would count as success.</p>
+<p>The analyst can read the project document. The analyst cannot change it. The analyst cannot open the finance document. After the approved removal step, the analyst no longer receives the project access being tested.</p>
+<p>These criteria are more useful than “configure identity correctly.” They give you something observable to compare with the result.</p>
+<p>Include the testing context, such as which account and resource path you'll use. A result is difficult to interpret when the setup changes between attempts.</p>
+<h2>Choose the minimum tools needed to test the criteria</h2>
+<p>A local permissions environment may answer the first version. A directory-based setup may be appropriate if the learning goal includes group administration or domain behavior.</p>
+<p>A governance-focused version might model approval and expiry decisions separately from the technical enforcement.</p>
+<p><strong>Choose based on the requirement and the role you're targeting.</strong> Don't add an application platform simply because it appears in a popular diagram.</p>
+<p>Every new component should enable a test or teach a dependency you can explain.</p>
+<h2>Assign fictional approval and implementation responsibilities</h2>
+<p>Even a small lab benefits from separating the decisions:</p>
+<ul>
+<li>
+<strong>Resource owner:</strong> Who understands the project documents or application?</li>
+<li>
+<strong>Need confirmation:</strong> Who confirms the employee's work requires the access?</li>
+<li>
+<strong>Technical implementation:</strong> Who applies the authorized change?</li>
+<li>
+<strong>Duration review:</strong> Who checks whether temporary access should end?</li>
+</ul>
+<p>You can represent these roles in the documentation. You don't need a complex workflow engine or a separate test account for every stakeholder.</p>
+<p>The purpose is to show that access is a business decision implemented through technology.</p>
+<p>An administrator's ability to grant a permission doesn't establish authority to approve the request. Keep that boundary visible when describing your own professional experience too.</p>
+<p>With an approval model in place, the lab can explain why the configured access is appropriate—not merely that you found a way to make the application work.</p>
+<h2>Build, test, and record the mismatches</h2>
+<p>Implement the first version and compare every acceptance criterion with the observed behavior.</p>
+<p>When a result differs, write the mismatch before trying to fix it. Identify the relevant membership, permission, or state and change one justified factor at a time.</p>
+<p><strong>Don't remove the prohibited test just because it is inconvenient.</strong> The denial is part of the requirement, not a secondary feature.</p>
+<p>Use <a href="https://cyberandchill.com/posts/why-every-iam-lab-needs-a-positive-test-and-a-failure-test">paired success and failure tests</a> to make the result more credible.</p>
+<h2>Publish the requirement beside the evidence</h2>
+<p>Your portfolio should let a reader trace the path from the employee's need to the configuration and final tests.</p>
+<p>Include the scenario, a simple diagram, the access matrix, and a short account of what changed during testing. Mark simulated approvals or manual steps clearly.</p>
+<p>Then explain what you would add next: automatic expiry, broader application coverage, or a more formal review process. Keep those as future work, not implied completed features.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> connects three practical IAM lab directions to role selection and career positioning. For $9, it helps you choose a project with a useful purpose before spending weeks assembling infrastructure.</p>
+<p>A good lab begins with a requirement you can test. Once that is clear, the tools become implementation choices instead of the whole story.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/how-to-design-a-lab-around-a-real-employee-access-problem">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

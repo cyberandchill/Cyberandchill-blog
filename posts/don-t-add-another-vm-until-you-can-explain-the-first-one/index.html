@@ -1,0 +1,49 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Don't Add Another VM Until You Can Explain the First One | CyberAndChill</title><meta name="description" content="Don't Add Another VM Until You Can Explain the First One"><link rel="canonical" href="https://blog.cyberandchill.com/posts/don-t-add-another-vm-until-you-can-explain-the-first-one/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">AI · 2026-10-25</p><h1>Don't Add Another VM Until You Can Explain the First One</h1><article class="content">
+<p>Before adding a VM, explain the responsibility of the machine already in your lab, its dependencies, and the test that shows it works.</p>
+<p><strong>An operating-system name and memory allocation don't explain why the component belongs in the project.</strong> Its purpose should connect to the identity question you're investigating.</p>
+<p>Establish that baseline before expanding. More infrastructure can be useful when it enables a new test, but it can also make a poorly understood environment harder to troubleshoot and harder to explain to someone reviewing your work.</p>
+<h2>Give every machine a job in the scenario</h2>
+<p>A directory server might provide identity services for a test domain. A client might let you evaluate a user's sign-in and access experience. An application server might represent the resource being accessed.</p>
+<p>Those roles justify the machines because they enable specific observations.</p>
+<p>“Another server would make the lab more realistic” is not enough on its own. Realism should serve the problem you're studying, not simply increase the number of boxes on the diagram.</p>
+<p>Write one sentence describing why each component exists.</p>
+<h2>Trace one request through the environment</h2>
+<p>Choose a simple action, such as a test user opening a protected resource.</p>
+<p>Explain which systems participate, what information they need, and where the decision to allow or deny access occurs. Separate what you know from what you still need to investigate.</p>
+<p>You may discover that you understand the installation steps but not the dependency between name resolution, authentication, and resource access.</p>
+<p>That discovery is useful. It gives you a focused learning task without requiring another download or another machine.</p>
+<h2>Verify the existing component before expanding the topology</h2>
+<p>Use a small baseline checklist:</p>
+<ol>
+<li>
+<strong>Reachability:</strong> Can the intended client contact the component?</li>
+<li>
+<strong>Expected operation:</strong> Does the required action succeed under the right conditions?</li>
+<li>
+<strong>Boundary:</strong> Does an inappropriate request fail as intended?</li>
+<li>
+<strong>Evidence:</strong> Can you distinguish a configuration problem from a connectivity problem?</li>
+</ol>
+<p>Run safe, controlled tests inside the isolated environment. Avoid changing several settings merely to see which combination works.</p>
+<p><strong>Record the account, request, and relevant result so the baseline is more than a memory of a successful screen.</strong></p>
+<p>When you add another component, you can compare against this known state. That makes it easier to identify which dependency changed and whether the original role still behaves as expected.</p>
+<p>The additional machine should answer a new question, not conceal uncertainty about the first one.</p>
+<h2>Document the dependency you would otherwise forget</h2>
+<p>Write down the configuration facts that matter to the scenario: names, roles, relationships, and assumptions.</p>
+<p>Keep sensitive values out of public notes. In a portfolio, fictional identifiers and a sanitized diagram are enough to explain the architecture.</p>
+<p>Record why you selected a setting when the choice affects behavior. A list of values without reasoning may help you rebuild the machine, but it won't necessarily help you explain the system in an interview.</p>
+<p>The objective is understanding you can recover after a week away from the project.</p>
+<h2>Add a machine when a new test requires it</h2>
+<p>Expansion is justified when the existing setup cannot demonstrate a meaningful next requirement.</p>
+<p>Perhaps you need a separate client to observe a user experience, or a test application to study federation. State the new question before making the infrastructure change.</p>
+<p>Then define the smallest addition that answers it. You don't need to introduce monitoring, automation, backup, and a second directory at the same time unless the project actually concerns those interactions.</p>
+<p><strong>Use <a href="https://cyberandchill.com/posts/how-much-lab-complexity-is-too-much-for-an-entry-level-iam">a scope limit for an entry-level IAM lab</a> to prevent useful complexity from becoming uncontrolled scope.</strong></p>
+<h2>Explain the small environment well before showing the large one</h2>
+<p>A candidate who can describe one access path, a failed test, and the reasoning behind a configuration has something concrete to discuss.</p>
+<p>A candidate who can only list installed systems has more explaining to do, regardless of the machine count.</p>
+<p>That isn't an argument against ambitious labs. It's an argument for making each layer understandable before adding the next.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> includes three focused IAM lab directions and a plan for connecting them to job requirements. The $9 guide helps keep the build centered on useful evidence.</p>
+<p>Add the next machine when you can explain what question it will answer. Until then, the most valuable work may be a diagram, a test, and a clearer account of what you already built.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/don-t-add-another-vm-until-you-can-explain-the-first-one">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

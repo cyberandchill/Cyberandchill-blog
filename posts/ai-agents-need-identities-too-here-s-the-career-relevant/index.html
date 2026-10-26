@@ -1,0 +1,60 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI Agents Need Identities Too. Here's the Career-Relevant Part. | CyberAndChill</title><meta name="description" content="AI Agents Need Identities Too. Here's the Career-Relevant Part."><link rel="canonical" href="https://blog.cyberandchill.com/posts/ai-agents-need-identities-too-here-s-the-career-relevant/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">AI · 2026-10-26</p><h1>AI Agents Need Identities Too. Here's the Career-Relevant Part.</h1><article class="content">
+<p>An AI agent needs a way to access the documents, databases, or accounts it acts on. <strong>That creates IAM questions even when the interface looks like a chat window</strong>.</p>
+<p>For an IT professional, the relevant work isn't automatically model training. It includes identifying which identity acts, what it may do, who owns it, and how access ends.</p>
+<p>Apply those fundamentals to a small scenario before claiming a new specialty from the presence of an AI tool.</p>
+<h2>Define the allowed actions before discussing the agent</h2>
+<p>Imagine a fictional agent that summarizes approved support tickets.</p>
+<p>Separate its needs:</p>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Question to resolve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Read approved test tickets</td>
+<td>Which dataset and scope are necessary?</td>
+</tr>
+<tr>
+<td>Produce a summary</td>
+<td>Where may the output be stored or sent?</td>
+</tr>
+<tr>
+<td>Change user access</td>
+<td>Is this needed at all, and who could authorize it?</td>
+</tr>
+</tbody>
+</table>
+<p>The ability to request different actions in natural language doesn't mean they should share one permission scope.</p>
+<p>List the resources the workload needs and the actions it must not be able to perform. Then identify how the surrounding systems enforce those boundaries.</p>
+<p>This is familiar access reasoning applied to software that may choose actions dynamically. Start with the task and evidence, rather than treating the “AI” label as a reason to grant broader access.</p>
+<h2>Distinguish the agent from the person requesting work</h2>
+<p>A user asking an agent to do something does not, by itself, explain how the downstream system authorizes it.</p>
+<p>The implementation may involve delegated user permissions, an application or workload identity, or a platform-specific agent identity. You need to understand the actual arrangement rather than assuming the agent simply inherits the right access.</p>
+<p>Microsoft's <a href="https://learn.microsoft.com/en-us/entra/agent-id/what-is-microsoft-entra-agent-id">Entra Agent ID overview</a> describes identity constructs and governance for agents. Treat product-specific features and licensing as details to verify when building, not universal properties of every agent.</p>
+<h2>Keep permission enforcement outside the prompt</h2>
+<p>Telling an agent “don't modify accounts” is not the same as preventing its credential from modifying accounts.</p>
+<p>Design the access boundary so the underlying identity and tools only expose the capabilities needed for the task. Use appropriate approval and validation controls for consequential actions rather than relying on a friendly instruction alone.</p>
+<p>Microsoft's <a href="https://learn.microsoft.com/en-us/security/zero-trust/sfi/least-privilege-for-ai-agents">least-privilege guidance for agents</a> frames identity, scope, tool access, auditing, and revocation as design concerns.</p>
+<p>For a first learning exercise, a read-only workflow is easier to bound and evaluate than broad administrative autonomy.</p>
+<h2>Assign a responsible owner and an end condition</h2>
+<p>Someone should be accountable for why the agent exists and what it is allowed to access.</p>
+<p>That includes reviewing its permissions when the task changes, responding to unexpected behavior, and retiring access when the workflow is no longer needed.</p>
+<p>Don't leave the agent's authority tied indefinitely to the personal account of whoever built the first demo.</p>
+<p>The <a href="https://cyberandchill.com/posts/why-service-accounts-complicate-an-otherwise-simple-iam">ownership and lifecycle problems with service accounts</a> are useful background because agent identity extends a problem that already exists in automated systems.</p>
+<h2>Build a small evidence-based exercise</h2>
+<p>Use synthetic data and an isolated test workflow. Define a narrow task, the permitted resource, and a prohibited action.</p>
+<p>Record the identity used, the permission scope, the result of an allowed request, and evidence that an out-of-scope action is not available or is denied by the relevant control.</p>
+<p>Then test your retirement procedure. Explain what disabling or removing access affects and what you did not evaluate, such as existing sessions or external copies of data.</p>
+<p>You don't need a large agent framework to demonstrate clear access reasoning.</p>
+<h2>Keep the career claim proportional to the project</h2>
+<p>One exercise does not make you an expert in AI security, and a new product category does not guarantee a particular salary.</p>
+<p>It can give you a relevant way to discuss familiar identity concepts in an emerging workflow: authentication, authorization, least privilege, ownership, monitoring, and lifecycle.</p>
+<p>Start with those foundations rather than abandoning your IAM plan every time an agent tool appears.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> is a $9 guide to building the underlying identity skills through practical labs and a focused career plan. It is not an advanced agent-security manual.</p>
+<p>Understanding who or what gets access remains useful when the requester is software. The interface changes; the need for an accountable, testable permission boundary does not disappear.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/ai-agents-need-identities-too-here-s-the-career-relevant">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>

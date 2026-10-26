@@ -1,0 +1,63 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>What Happens to an Employee's Access When AD and Entra Disagree? | CyberAndChill</title><meta name="description" content="What Happens to an Employee's Access When AD and Entra Disagree?"><link rel="canonical" href="https://blog.cyberandchill.com/posts/what-happens-to-an-employee-s-access-when-ad-and-entra/"><link rel="stylesheet" href="../../article.css"></head><body><header><nav><a href="/">CyberAndChill Blog</a><a href="https://cyberandchill.com/products/cyber-and-chill-premium-newsletter">Explore the Vault</a></nav></header><main><p class="meta">IAM & Labs · 2026-10-25</p><h1>What Happens to an Employee's Access When AD and Entra Disagree?</h1><article class="content">
+<p>If an employee's state differs between AD and Entra ID, <strong>name exactly what differs before calling it a synchronization problem</strong>.</p>
+<p>A department attribute, account status, group assignment, and observed sign-in are different kinds of evidence. They may not describe the same thing at the same moment.</p>
+<p>Identify where the information should be managed, inspect the connecting process, and check the actual access outcome. Neither console alone necessarily answers the whole question.</p>
+<h2>Record the specific disagreement and the behavior it affects</h2>
+<p>Replace “AD and Entra are out of sync” with a precise observation.</p>
+<table>
+<thead>
+<tr>
+<th>Observation</th>
+<th>Question to investigate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Different department values</td>
+<td>Where should this attribute be managed and updated?</td>
+</tr>
+<tr>
+<td>Different enabled/disabled state</td>
+<td>What process should carry the relevant change?</td>
+</tr>
+<tr>
+<td>Missing group assignment</td>
+<td>Which assignment and object are being compared?</td>
+</tr>
+<tr>
+<td>Access differs from the visible state</td>
+<td>Which authentication, session, or application behavior is involved?</td>
+</tr>
+</tbody>
+</table>
+<p>These are starting questions, not diagnoses. Use authorized tools to record the object, attribute, timing, and observed behavior. Keep personal information and internal identifiers out of public portfolio notes.</p>
+<p>A precise description makes the next check useful. It also prevents you from changing synchronization settings to fix what may instead be a different source-of-authority, assignment, or session issue.</p>
+<h2>Determine the intended source of the information</h2>
+<p>In the supported configuration, which system owns the relevant change?</p>
+<p>Do not assume that a field visible in both directories can be maintained independently in either place. The configured source and synchronization rules matter.</p>
+<p>Microsoft's <a href="https://learn.microsoft.com/en-us/entra/identity/hybrid/whatis-hybrid-identity">hybrid identity overview</a> provides a starting point for the available relationships, but your investigation must match the actual deployment.</p>
+<p>Changing both sides at once can obscure the cause and create new inconsistency. Establish the intended path before correcting the value.</p>
+<h2>Inspect the process expected to carry the change</h2>
+<p><strong>Check the relevant synchronization or provisioning evidence, supported configuration, and recent changes.</strong></p>
+<p>Was the object included? Did the process report an error? Is the expected attribute mapping appropriate? What does the destination currently show?</p>
+<p><strong>Avoid assuming a universal delay or promising that waiting a fixed number of minutes will solve every case.</strong> Use the observed state and the product's current guidance.</p>
+<p>The goal is to identify whether the change is absent, delayed, rejected, or not expected under the configured rules.</p>
+<h2>Separate identity data from authentication and sessions</h2>
+<p>A directory-state change doesn't automatically describe every active application session.</p>
+<p>The sign-in path, application integration, and session behavior may require separate investigation. Microsoft discusses those distinctions in its <a href="https://learn.microsoft.com/en-us/entra/identity/users/users-revoke-access">access-revocation guidance</a>.</p>
+<p>For a departure or security-related case, follow the organization's approved process rather than assuming one console action ends every access path.</p>
+<p>Be precise about what has been verified and which applications or sessions remain outside the current evidence.</p>
+<h2>Reproduce only the relevant relationship in a lab</h2>
+<p>Use fictional identities and a supported isolated setup.</p>
+<p>Choose one attribute or access change, record the intended source, observe the connecting process, and verify the destination and user outcome that your lab actually supports.</p>
+<p>If you cannot reproduce the full production design, state the difference. A smaller model can still teach the concept without being presented as an identical environment.</p>
+<p>Use <a href="https://cyberandchill.com/posts/how-to-explain-directory-synchronization-in-an-iam-interview">a directory-synchronization explanation</a> to make the flow understandable to someone who hasn't seen your setup.</p>
+<h2>Document the resolution as a path, not a magic fix</h2>
+<p>Your final note should connect the original discrepancy, the evidence, the correction, and the verified result.</p>
+<p>Include the limit of the conclusion. Fixing one attribute mapping does not prove every lifecycle event works. Disabling one account does not by itself prove every separate application session ended.</p>
+<p>That careful explanation is useful career evidence because it shows you understand the system boundaries.</p>
+<p><a href="https://cyberandchill.com/iam-ebook"><strong>The Six-Figure IAM Career Playbook</strong></a> helps connect existing directory experience to practical IAM projects and a more focused role target. The $9 guide includes three lab directions and a 90-day plan.</p>
+<p>When two identity systems appear to disagree, follow the specific data and access paths. The useful skill is knowing which relationship to investigate and what evidence would establish the intended outcome.</p>
+
+<!-- -->
+</article><p class="source">Originally published on <a href="https://cyberandchill.com/posts/what-happens-to-an-employee-s-access-when-ad-and-entra">CyberAndChill</a>.</p><p><a href="/">← All articles</a></p></main></body></html>
