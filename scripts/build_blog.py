@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Build static Pages output and connect related CyberAndChill articles."""
+import hashlib
 import html
 import json
 import re
@@ -83,6 +84,9 @@ for i, post in enumerate(posts):
 # Link hubs from home navigation and keep SEO metadata accurate.
 index = OUT / "index.html"
 home = index.read_text()
+# Refresh cached article data whenever the published index changes.
+article_version = hashlib.sha256((OUT / "articles.json").read_bytes()).hexdigest()[:12]
+home = home.replace("fetch('./articles.json')", f"fetch('./articles.json?v={article_version}')")
 links = " ".join(f'<a href="{esc(hub_urls[c])}">{esc(c)}</a>' for c in categories)
 home = home.replace('<a href="https://cyberandchill.com">Home</a>', links + ' <a href="https://cyberandchill.com">Main site</a>')
 index.write_text(home)
