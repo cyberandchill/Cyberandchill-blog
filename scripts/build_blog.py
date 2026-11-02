@@ -94,4 +94,35 @@ css = OUT / "article.css"
 css.write_text(css.read_text() + '\n.related{border-top:1px solid var(--edge);margin-top:46px;padding-top:16px}.related li{margin:10px 0}.related h2{font-size:1.35rem}\n')
 urls = ["https://blog.cyberandchill.com/"] + ["https://blog.cyberandchill.com"+p["url"] for p in posts] + ["https://blog.cyberandchill.com"+u for u in hub_urls.values()]
 (OUT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{esc(u)}</loc></url>' for u in urls) + '</urlset>')
+
+# Inject analytics into every generated HTML page, including home, articles,
+# and topic hubs. Generated pages are rebuilt on each Pages deployment.
+GA4_ID = "G-FDNQ2GYXD8"
+analytics_tag = """<script async src="https://www.googletagmanager.com/gtag/js?id=G-FDNQ2GYXD8"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-FDNQ2GYXD8');
+document.addEventListener('click', function(event) {
+  const link = event.target.closest('a[href]');
+  if (!link) return;
+  let url;
+  try { url = new URL(link.href, location.href); } catch (_) { return; }
+  if (!(/(^|\\.)cyberandchill\\.com$/i.test(url.hostname))) return;
+  if (!(/^\\/products\\//i.test(url.pathname) || /^\\/iam-ebook\\/?$/i.test(url.pathname))) return;
+  gtag('event', 'product_click', {
+    article_slug: location.pathname.startsWith('/posts/') ? location.pathname.split('/')[2] : '',
+    product_name: (link.textContent || '').trim().slice(0, 100),
+    product_url: url.origin + url.pathname,
+    placement: location.pathname.startsWith('/posts/') ? 'article' : 'site_navigation'
+  });
+});
+</script>"""
+for page in OUT.rglob("*.html"):
+    source = page.read_text()
+    if GA4_ID not in source:
+        assert "</head>" in source, f"Missing HTML head: {page}"
+        page.write_text(source.replace("</head>", analytics_tag + "</head>", 1))
+
 print(f"Built {len(posts)} pages, {len(categories)} hubs, changed {replaced} existing article links, added related links. Output: {OUT}")
